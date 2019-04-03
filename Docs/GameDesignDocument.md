@@ -50,22 +50,19 @@ The Dreary Armada is an army of people who just were to listen to a concert, per
 ## 3. Audience, Platform, and Marketing
 
 ### 3.1. Target Audience
-Describe the demographic you are targeting (age, geographic location, player type, etc.).
+The game targets adults (35-50) living in urban areas of western europe, regardless of gender, with a casual mindset, with any schedule. 
 
 ### 3.2. Platform
-Describe on which platforms your game runs and why you choose them.
+Mobile Android devices, as the market for this kind of games flourishes on mobile platforms. That is where the potential audience of the game would look for it. Match-3 gameplay is experienced at its best on a touch screen.
 
 ### 3.3. System requirements
-What is required to play the game, justifying your choices.
+Android 5.0+, as Android 5 constitutes 89% of the Android market right now.
 
 ### 3.4. Top performers
-List the top-selling games in the same market.
+Candy Crush, Toon Blast, Matchington Mansion, Farm Heroes.
 
 ### 3.5. Feature comparison
-Compare your game with competitors.
-
-## 4. Legal Analysis
-Copyrights, trademarks, licensing agreements, etc.
+Competitors do not feature PvP, while they usually include longer and more complex levels and puzzl-ish mechanics, and the slower pace that comes with them.
 
 ## 5. Gameplay
 
