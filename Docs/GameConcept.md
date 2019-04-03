@@ -31,9 +31,10 @@ In a faraway kingdom, an ancient danger threatens the people of that peaceful la
 This puzzle game features a story-driven single-player mode, immersing the player in playful Match-3 sessions to fight the Dreary Army and set Ludenia free. And when the player runs out of enemies, here comes the multiplayer mode: they can team together with a friend to overwhelm the Army once again, or challenge each other in turn-based 1v1 matches. In-game progress unlocks trophies, achievements, avatar titles and collectables.
 
 ### Key features
-This game takes the social Match-3 experience to a higher new level, allowing gamers to play against actual people rather than a simple leaderboard: competition is funnier when there's someone at the other end of the rope. This applies to cooperative games as well, so that teamwork may triumph where a one-man army can't win.
-Interaction with the other player is fundamental to victory: each player's moves can change completely their opponent's outcome.
-Platform(s): handheld mobile Android devices (a future iOS release may be considered).
+Online games allow players to challenge actual people, rather than just earn points. Interaction with opponents is crucial to winning: each player's moves can alter the opponent's game grid and outcome, while power-ups shake up gameplay in unpredictable ways. Social actions such as quick replies are available during gameplay. Broad customization is available for both players' profile and avatar to show off unlocked items and collectables. Achievements and profile resumes are used to share game progression with other players.
+
+### Platform(s)
+Handheld mobile Android devices (a future iOS release may be considered).
 
 ### Notes
 Nothing to say yet.
