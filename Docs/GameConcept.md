@@ -45,7 +45,7 @@ Try to describe the game you are conceiving in terms of:
 
 ### Formal elements
 1. Players  
-One to two players. Single player and cooperative multiplayer modes feature PvE games, while competitive multiplayer mode sports PvP 1-vs-1 action. The game is addressed to achiever players with casual mindset.
+This game is mainly designed for Bartle's *Achiever* type players with a casual-gamer mindset. That is, the core target audience mainly consists of people looking for a game to spend some spare time on, though committed to completing objectives and unlocking items in the long run. A sense of competition is delivered via a single-player story mode and a multiplayer experience that lets users either fight a series of *AI*-controlled opponents together (*PvE*) or play one against each other in time matches (*PvP*).
 
 2. Objectives  
 The long term goal is to beat every level of the game and gain as many points as possible to be the top player. In order to win a level, the player must get a minimum number of points. Competitive matches require the player to gain more points than their opponent(s).
