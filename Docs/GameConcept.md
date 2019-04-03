@@ -51,7 +51,7 @@ This game is mainly designed for Bartle's *Achiever* type players with a casual-
 The long term goal is to beat every level of the game and gain as many points as possible to be the top player. In order to win a level, the player must get a minimum number of points. Competitive matches require the player to gain more points than their opponent(s).
 
 3. Procedures  
-The player starts seeing their own board of objects to match and the opponent's board, and their own inventory of items, and gains points by matching three or more items horizontally or vertically in the game grid. They can trigger a possible match by selecting an item and moving it over another nearby, resulting in swapping the two. After a match occurs, the involved items disappear while the remaining fall down, and new items are pushed to the grid from the top.
+On game start, the player is presented with a square game grid and a preview of the opponent's, as well as their own inventory. They gain points by matching three or more items horizontally or vertically in the game grid. They can trigger a possible match by selecting an item and moving it over another nearby, resulting in swapping the two. After a match occurs, the involved items disappear while the remaining fall down, and new items are pushed to the grid from the top.
 
 4. Rules  
 In order to score points, a match can occur among items of the same type/colour only, unless otherwise stated. An item can only be swapped with one of those adjacent to it. There is a variable, limited number of moves per level; if the player runs out of them and doesn't fulfill the winning conditions, the game is lost.
