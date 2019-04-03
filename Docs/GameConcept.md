@@ -32,6 +32,7 @@ This puzzle game features a story-driven single-player mode, immersing the playe
 
 ##### Key features
 This game takes the social Match-3 experience to a higher new level, allowing gamers to play against actual people rather than a simple leaderboard: competition is funnier when there's someone at the other end of the rope. This applies to cooperative games as well, so that teamwork may triumph where a one-man army can't win.
+Interaction with the other player is fundamental to victory: each player's moves can change completely their opponent's outcome.
 Platform(s): handheld mobile Android devices (a future iOS release may be considered).
 
 ##### Notes
@@ -44,13 +45,13 @@ Try to describe the game you are conceiving in terms of:
 
 ##### Formal elements
 1. Players
-One to two players. Single player and cooperative multiplayer modes feature PvE games, while competitive multiplayer mode sports PvP 1-vs-1 action.
+One to two players. Single player and cooperative multiplayer modes feature PvE games, while competitive multiplayer mode sports PvP 1-vs-1 action. The game is addressed to achiever players with casual mindset.
 
 2. Objectives
 The long term goal is to beat every level of the game and gain as many points as possible to be the top player. In order to win a level, the player must get a minimum number of points. Competitive matches require the player to gain more points than their opponent(s).
 
 3. Procedures
-The player gains points by matching three or more items horizontally or vertically in the game grid. They can trigger a possible match by selecting an item and moving it over another nearby, resulting in swapping the two. After a match occurs, the involved items disappear while the remaining fall down, and new items are pushed to the grid from the top.
+The player starts seeing their own board of objects to match and the opponent's board, and their own inventory of items, and gains points by matching three or more items horizontally or vertically in the game grid. They can trigger a possible match by selecting an item and moving it over another nearby, resulting in swapping the two. After a match occurs, the involved items disappear while the remaining fall down, and new items are pushed to the grid from the top.
 
 4. Rules
 In order to score points, a match can occur among items of the same type/colour only, unless otherwise stated. An item can only be swapped with one of those adjacent to it. There is a variable, limited number of moves per level; if the player runs out of them and doesn't fulfill the winning conditions, the game is lost.
