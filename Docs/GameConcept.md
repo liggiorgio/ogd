@@ -8,11 +8,13 @@
 
 ### Your “constraints”
 **Card(s):** bird tweeting in the woods  
-**Game Genre(s):** action - fast puzzle  
+**Game Genre(s):** action game/fast puzzle  
 **“Time”:** past  
-**Player mindset:** casual  
+**Player mindset:** casual gamer  
 **Bartle’s type:** achiever  
-**Mode:** multiplayer  
+**Mode:** local single-player, online multiplayer
+
+The tweeting bird is the player's companion through the game, providing tutorial and in-game dialogues and suggestions, and assisting the player when playing solo. The genre is a puzzle game in a medieval fantasy fashion with simple but effective mechanics, suitable for casual gamers with moderate experience. Many game elements have scale-based progression so that completionists can long to get higher scores or all items from a given collection.
 
 ---
 
