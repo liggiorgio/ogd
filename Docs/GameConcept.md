@@ -27,7 +27,7 @@ The tweeting bird is the player's companion through the game, providing tutorial
 “Embark on a journey to fight back the forces of evil, one puzzle at a time.”
 
 ### Introduction
-In a faraway kingdom, an ancient danger threatens the people of that peaceful land. But you and your friends are there to fight back the evil and free people from slavery. Every battle will be a step forward to chasing away the baddies, but a mystery about their presence in these lands is yet to be discovered...
+In a faraway kingdom, an ancient danger threatens the people of those peaceful lands. The enemy, the Dreary Army, wants to bring dullness and boredom upon the realm and reduce every inhabitant to a vapid being. An Unnamed Hero and their loyal bird Zeely were chosen for this perilous journey to save everyone from eternal nothingness. The Hero and Zeely will fight to chase away the baddies once and for all. But the presence of Evil in these lands is just one of the mysteries to be unravelled...
 
 ### Description (of the game)
 This puzzle game features a story-driven single-player mode, immersing the player in playful Match-3 sessions to fight the Dreary Army and set Ludenia free. And when the player runs out of enemies, here comes the multiplayer mode: they can team together with a friend to overwhelm the Army once again, or challenge each other in turn-based 1v1 matches. In-game progress unlocks trophies, achievements, avatar titles and collectables.
