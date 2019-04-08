@@ -36,7 +36,7 @@ This tile-matching game puts the player in front of a series of Match-3 puzzles 
 Online games let users play against actual people rather than just for the highest score. Interaction with opponents is crucial to winning: each player's moves can alter the opponent's game grid and outcome, while power-ups shake up gameplay in unpredictable ways. Social actions such as quick replies are available during gameplay. Broad customisation is available for both players' profile and avatar to show off items and collectables. Achievements and profile summaries are used to share game progression with other players.
 
 ### Platform(s)
-Handheld mobile Android devices (a future iOS release may be considered).
+Handheld mobile Android smartphones produced in 2014 and later.
 
 ### Notes
 Nothing to say yet.
