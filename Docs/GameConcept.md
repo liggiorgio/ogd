@@ -57,7 +57,7 @@ The long term goal is to beat every level of the game and gain as many points as
 On game start, the player is presented with a square game grid and a preview of the opponent's, as well as their own inventory. They gain points by matching three or more items horizontally or vertically in the game grid. They can trigger a possible match by selecting an item and moving it over another nearby, resulting in swapping the two. After a match occurs, the involved items disappear while the remaining fall down, and new items are pushed to the grid from the top.
 
 4. Rules  
-In order to score points, a match can occur among items of the same type/colour only, unless otherwise stated. An item can only be swapped with one of those adjacent to it. There is a variable, limited number of moves per level; if the player runs out of them and doesn't fulfill the winning conditions, the game is lost.
+In order to score points, a match can occur among items of the same type/colour only, unless otherwise stated. An item can only be swapped with one of those adjacent to it; objects can be swapped only if not affected by lock properties. There is a variable, limited number of moves per level; if the player runs out of them and doesn't fulfill the winning conditions, no more actions are permitted and the game is lost.
 
 5. Resources  
 Moves - They are used to move items in the grid and trigger matches; their maximum values can increase while playing.
@@ -70,7 +70,7 @@ Coins - Can be spent to purchase packs of random consumables.
 Two teams (that can be composed of one player/agent each) compete to reach the highest score in the level, doing their best while disturbing each other. Victory awards 20 coins, defeat awards 5.
 
 7. Boundaries  
-The player cannot swap objects that are not adjacent, cannot move objects that are hidden, locked, frozen, or under any peculiar condition, cannot swap their opponent’s objects, cannot swap objects if they got no moves left.
+Players can't directly interact with other players' game grid, or during other players' turn if the grid is shared. Leaving while playing a game is the same as losing it, granting victory to the other player regardless of whether they're humans or agents.
 
 8. Outcomes  
 No player (or team) reaches the minimum score. They both lose.
