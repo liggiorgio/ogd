@@ -27,7 +27,7 @@ The tweeting bird is the player's companion through the game, providing tutorial
 “Embark on a journey to fight back the forces of evil, one puzzle at a time.”
 
 ### Introduction
-In a faraway kingdom, an ancient danger threatens the people of those peaceful lands. The enemy, the Dreary Army, wants to bring dullness and boredom upon the realm and reduce every inhabitant to a vapid being. An Unnamed Hero and their loyal bird Zeely were chosen for this perilous journey to save everyone from eternal nothingness. The Hero and Zeely will fight to chase away the baddies once and for all. But the presence of Evil in these lands is just one of the mysteries to be unravelled...
+In a faraway kingdom, an ancient danger threatens the people of those peaceful lands. The enemy, the Dreary Army, wants to bring dullness and boredom upon the realm and reduce every inhabitant to a vapid being. An Unnamed Hero and their loyal bird Zeely were chosen for this perilous journey to save everyone from eternal nothingness. The Hero and Zeely will fight to chase away the baddies once and for all. But the presence of Evil in these lands is just one of the mysteries to be unravelled.
 
 ### Description (of the game)
 This tile-matching game puts the player in front of a series of Match-3 puzzles while narrating a background story. Every level requires players to accomplish some objectives or satisfy certain conditions. Players can alter the game scheme by directly interacting with its elements, or by using power-ups with given side effects. In solo games, players have to clear every puzzle to progress through the story. Multiplayer games let users play story mode together via a shared scheme or one against each other in objective-based rounds. Unlockable in-game items are available, as well as profile customisation and social tools when playing online.
@@ -48,34 +48,32 @@ Try to describe the game you are conceiving in terms of:
 
 ### Formal elements
 1. Players  
-This game is mainly designed for Bartle's *Achiever* type players with a casual-gamer mindset. That is, the core target audience mainly consists of people looking for a game to spend some spare time on, though committed to completing objectives and unlocking items in the long run. A sense of competition is delivered via a single-player story mode and a multiplayer experience that lets users either fight a series of *AI*-controlled opponents together (*PvE*) or play one against each other in time matches (*PvP*).
+This game is mainly intended for Bartle's *Achiever* type players with a casual-gamer mindset. That is, the core target audience consists of people looking for a game to spend some spare time on, though committed to completing objectives and unlocking items in the long run. The game delivers a sense of competition via a single-player story mode (*PvE*) and a multiplayer experience that lets users play one against each other in objective-based time matches (*PvP*).
 
 2. Objectives  
-The long term goal is to beat every level of the game and gain as many points as possible to be the top player. In order to win a level, the player must get a minimum number of points. Competitive matches require the player to gain more points than their opponent(s).
+The long term goal is to beat every level of the game and gain as many points as possible to be the top player. To finish a puzzle, the player must get a minimum number of points. Competitive matches require the player to gain more points than their opponent(s).
 
 3. Procedures  
-On game start, the player is presented with a square game grid and a preview of the opponent's, as well as their own inventory. They gain points by matching three or more items horizontally or vertically in the game grid. They can trigger a possible match by selecting an item and moving it over another nearby, resulting in swapping the two. After a match occurs, the involved items disappear while the remaining fall down, and new items are pushed to the grid from the top.
+On game start, the game grid shows up on the screen, as well as the player's inventory; in multiplayer games, a preview of the opponent's game grid is also visible. Players gain points by matching three or more grid items horizontally or vertically in the game grid. They can trigger a match by selecting an item and moving it over another nearby, resulting in swapping the two; then matched items disappear while the remaining fall down. Finally, new items populate the remaining empty cells. The more the matching items, the more points players score. Longer matches unlock powerful effects too.
 
 4. Rules  
-In order to score points, a match can occur among items of the same type/colour only, unless otherwise stated. An item can only be swapped with one of those adjacent to it; objects can be swapped only if not affected by lock properties. There is a variable, limited number of moves per level; if the player runs out of them and doesn't fulfill the winning conditions, no more actions are permitted and the game is lost.
+Combinations involve items of the same type/colour only unless otherwise stated. Players can swap adjacent items only, both horizontally and vertically; however, they must be selectable and in any case not in a blocked status. The number of moves available per level is limited, and when the player runs out of them, the game is over.
 
 5. Resources  
-Moves - They are used to move items in the grid and trigger matches; their maximum values can increase while playing.
-Special objects - They can be obtained through special combos or be hidden in the level. They have great destructive power.
-Stars - The player gains them by clearing levels with higher scores, and needs to reach specific thresholds in order to advance in the story mode.
-Items - The “interactive” resource of the game, which the player can spend to hinder the opponent or to help their teammates, depending on the game mode and the item. An “album” of seen items keeps track of everything the player has ever found.
-Coins - Can be spent to purchase packs of random consumables.
+**Moves:** the number of actions players perform to move items in the game grid and trigger matches; their maximum value can increase while playing.  
+**Effect items:** they appear in the game grid after a long match occurred; players can interact as usual, but when these items match they trigger a side-effect. Longer combinations generate more powerful effect items.  
+**Action cards:** they are the “interactive” resource of the game, which the player can use to hinder their opponent or to help their teammates, depending on the effect. An album of "seen" cards keeps track of each one of them the player has ever found. Players can choose the cards to play with from this collection.  
+**Stars:** they measure the player's progress for every level, on a scale out of three stars. The higher the score at the end of a game, the more stars unlock for that level.  
+**Coins:** the currency players can spend to purchase packs of random consumable items for in-game use.
 
 6. Conflict  
-Two teams (that can be composed of one player/agent each) compete to reach the highest score in the level, doing their best while disturbing each other. Victory awards 20 coins, defeat awards 5.
+Two teams (that can be composed of one player/agent each) compete to reach the highest score in the level, doing their best while hampering each other.
 
 7. Boundaries  
-Players can't directly interact with other players' game grid, or during other players' turn if the grid is shared. Leaving while playing a game is the same as losing it, granting victory to the other player regardless of whether they're humans or agents.
+Players can't directly interact with other players' game grid, or during other players' turn if there's a shared grid. Leaving while playing a game is the same as losing it, granting victory to the other player regardless of whether they're humans or agents.
 
 8. Outcomes  
-No player (or team) reaches the minimum score. They both lose.
-At least one player (or team) reaches the minimum score. The side with the highest score wins.
-Both reach the threshold and reach the same score. The side that ended first wins.
+The first player (or team) to reach the minimum score wins the game. If nobody does, the side with the highest score is the winner. Victory awards 20 coins, and defeat awards 5. Also, winners unlock stars as performance rating, depending on pre-computed score thresholds.
 
 ### Dramatic Elements
 1. Challenge  
