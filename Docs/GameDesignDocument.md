@@ -96,14 +96,16 @@ Flowchart that lists every areas and screens that should be created.
 ## 6. Game Characters
 
 ### 6.1. Characters design
-Description and attributes of every character (if any).
 
-### 6.2. Types
+Zeely:
 
-#### 6.2.1. PCs
+The player's guide is a trust-inspiring, colorful little parrot. It has a yellow body, red chest and light blue underwings and head, and green eyes. He is always cheerful and full of energy, never appearing without smiling eyes. The anatomy is a standard Forpus' parrot one.
 
-#### 6.2.2. NPCs
-Any NPCs should be described in detail (properties and functionalities): monster & enemies, friends & allies, neutral, other types, guidelines, traits, behaviour, AI.
+Robin:
+
+The shop-keeper is a short boy, wearing robes a bit too big for him, but not so much to make him look goofy. He has short, brown hair, big blue eyes and a big pair of round glasses on them. His clothes are mostly Risultati immagini per blue color 2661F7 blue, with ocra yellow adornments on the edges. As an apprentice wizard, he also wears a big blue pointy hat of the same making, so big he has to keep a hand on it to prevent it from falling. Just like Zeely, he is always cheerful, presenting himself with an open smile every time he appears.
+
+All the characters described above are NPC. They only appear to tell the player something, or to adobe the shop's screen. They have hence no A.I.
 
 ## 7. Story
 
@@ -121,9 +123,6 @@ Ways used to reveal the story.
 
 ### 7.5. Subplots
 Description and ties to the main stream of the story.
-
-## 8. The Game World
-If the game requires the creation of a world, describe here in detail all its aspects: overview, key locations, travel, mapping, scale, physical objects, weather conditions, day & night, time, physics, society/culture, etc.
 
 ## 9. Media List
 List of all the media that need to be created: interface assets, environments, characters, animation, music and sound effects.
