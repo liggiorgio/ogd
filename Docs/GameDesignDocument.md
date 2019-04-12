@@ -45,7 +45,7 @@ The Dreary Armada is an army of people who just were to listen to a concert, per
 
 >Look and feel
 
-
+![Example of a normal match screen](Look-n-feel-png)
 
 ## 3. Audience, Platform, and Marketing
 
