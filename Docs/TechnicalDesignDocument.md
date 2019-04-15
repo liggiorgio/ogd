@@ -1,6 +1,13 @@
 # Technical Design Document
 
-> FRONT PAGE
+![Alpha Commit logo](./pictures/ac_logo_small.png)  
+`A L P H A // C O M M I T`
+
+### General information
+**Team name:** “Alpha Commit”  
+**Team members:** Baratto Diego (919538), Costella Alessandro (920031), Liggio Giorgio Maria (905471)
+
+---
 
 ##	1. Project Goal
 Our game aims to provide an online multiplayer experience on Android devices (as described in the **Client Side** section of this document). From a technical standpoint, the game aims to offer 24\7 worldwide availability for all the online features, such as searching for and joining online matches, customizing player profiles, accessing leaderboards and collectible lists.
@@ -20,7 +27,7 @@ The minimum hardware requirements are low-to-mid-range smartphones, with the fol
 The game requires at least Android 5.0 (API level 21). More details on the decision can be found in the **Platform** and **System Requirements** section of the GDD.
 
 ##	4. Workload estimation
-The online part of the game is composed of a classic client-server system, with the server hosted on the Google Firebase platform. 
+The online part of the game is composed of a classic client-server system, with the server hosted on the Google Firebase platform.
 The rollout plan consists of an open beta phase, to test and improve the game based on user feedback, and a release phase, when the game will be fully available to anyone through the Google Play Store.
 
 The open beta phase will be rolled out through the Google Play Beta Test Management plan, to make our game readily available on the most trusted source for Android apps.
@@ -31,7 +38,7 @@ The open beta phase will be rolled out through the Google Play Beta Test Managem
 On release, we expect an increase in the number of players
 * Expected average number of daily players: 15,000
 * Expected average number of simultaneous players: 4,500
-* Expected number of total players: 25,000 
+* Expected number of total players: 25,000
 
 Each match is played on the server. Each player sends the server their move, that is then verified and executed. The results are sent back to the client and then visualized on the player's screen. Since this must happen quasi-real-time, each user (or better, each match) has enough dedicated resources to be able to compute everything in the required time. Since everything is hosted on the Firebase platform, resources are allocated and paid as needed.
 
@@ -39,7 +46,7 @@ Each match is played on the server. Each player sends the server their move, tha
 
 ##	5. Frontend
 
-The frontend receives all the players' interaction and sends them to the correct backend service to be handled. Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image. 
+The frontend receives all the players' interaction and sends them to the correct backend service to be handled. Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image.
 
 ###	5.1	Platforms
 Our solution of choice is a Platform-as-a-Service set of products, Firebase, provided by Google. Firebase lets us deploy our frontend services to their Functions product, that will be used for both the frontend and the backend.
@@ -91,25 +98,25 @@ Since our backend is completely cloud-based, we can expect new computational pow
 ##	8.	External Services
 To simplify our network and to avoid potential mismanagement of heavily sensitive data, we delegate the payment service to Google, the publisher of our game. This has no upfront cost (except for the € 25 license needed to publish the game) but Google takes 30% out of every transaction as management fees.
 
-##	9.	Communication	
+##	9.	Communication
 
 ###	9.1	Global Infrastructure Outline
+At this early stage of development, architecture design establishes a centralized server to which client applications connect to on app start. Since main services (account management, database storage...) are provided by the Firebase framework, this will be the main component installed on the proprietary server. Other third-party services (such as Google Play Games) are not the development team's concern.
 [comment]: # (How servers are connected (hint: use a picture What is installed on each server)
 
-###	9.2	Network Requirements
-Bandwidth, latency, type of connection, QoS in general
-Inside and outside your infrastructure
+###  9.2  Network Requirements
+As a matter of early estimate, server-side network must satisfy minimal requirements for testing-purpose only during the development & testing phases. No more than a dozen devices are to connect simultaneously during prototypization, and a common 30 Mbps broadband connection will be enough for this purpose. As soon as the game enters beta testing phase, these requirements may change.
 
 ##	10.	Delivery
 
-###	10.1	Estimated Delivery Time
-To be compliant with your GANTT
+###  10.1  Estimated Delivery Time
+The development will go on for at least one month. Overall design and development of the prototype are due on 16th of June, so the estimated delivery time is topmost 2 months.
 
 ###	10.2	Delivery Platform
 The game will be delivered through the Google Play store.
 
 ###	10.3	Delivery Methodology
-This is about how you are going to use your distribution channel
+The game will be delivered through the Beta Tester program of Google Play store.
 
 ##	11.	Staff
 
