@@ -1,9 +1,3 @@
-# The Game Design Document: an example
-
-NOTA BENE: this outline is a list of suggested topics. Please exclude from your document the items that do not apply to your game (e.g.: the does not have a story with subplots, etc.)!
-
-NOTA BENE 2: the final version of the GDD should be complete (i.e. it describes the whole game) and it must include a section that summarizes which are the parts of the game that have been included in the prototype. Otherwise, we will expect that everything described in the GDD have been developed...
-
 Add a cover page including at least:
 - Game title
 - Team name + team members
@@ -17,7 +11,8 @@ This section tracks the changes made to the document.
 Colorful match-3 puzzle game, with quick, 1v1, interactive matches in real time. Aimed to be very explosive and cheerful, in a cartoonish way. The campaign and multiplayer modes both reward the player with items and coins to buy them, in order to win more games and complete the item album. The game aims to convey a feeling of great accomplishment in completing sections of the campaign and pages of the album, awarding special prizes when the player can achieve these results.
 
 ### 2.1. Game Logline
-Describe the game in one sentence.
+
+Match-3, with the thrill of PvP!
 
 ### 2.2. Gameplay Synopsis
 
