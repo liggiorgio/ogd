@@ -137,7 +137,7 @@ Levels are generated through an Random Content Generation algorithm, with due re
 
 ### 5.6. Flowchart
 
-![Flowchart] (./flowchart.png)
+![Flowchart] (./pictures/flowchart.png)
 
 ## 6. Game Characters
 
@@ -154,4 +154,22 @@ The shop-keeper is a short boy, wearing robes a bit too big for him, but not so 
 All the characters described above are NPC. They only appear to tell the player something, or to adobe the shop's screen. They have hence no A.I.
 
 ## 9. Media List
-List of all the media that need to be created: interface assets, environments, characters, animation, music and sound effects.
+
+	Faces
+	Score board
+	Timers
+	Background
+	Board
+	Buttons
+	Zeely
+	Robin
+	Faces animations
+	Cards animations
+	Menu music
+	In-game music
+	Match-3 sound effect
+	Zeely entering sound
+	Robin entering sound (shop)
+	Victory fanfare
+	Defeat riff
+	Button sound
