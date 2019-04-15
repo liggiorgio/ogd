@@ -72,57 +72,54 @@ Since our backend is completely cloud-based, we can expect new computational pow
 ##	7.	Development
 
 ###	7.1	Hardware
-Not just “what” but also “how many”
+| Product | Quantity | Cost per Unit | Usage |
+| -- | -- | -- |
+| Dell Precision 3630 Tower | 6 | € 909 | High performance desktop workstation for the whole team. Mouse and keyboard included. |
+| Dell UltraHD 24 - P2415Q | 6 | € 465 | High resolution and color accurate screen for the whole team. |
+| Wacom Cintiq 16 | 1 | € 600 | Professional display with pen for artistic work. |
 
 ###	7.2	Software
-Not just “what” but also “how many”
+| Product | Quantity | Cost |
+| -- | -- | -- |
+| Unity Pro | 5 | € 115 per month per seat |
+| Visual Studio Professional | 1 | € 1200 first year |
+| Adobe Creative Cloud All Apps | 1 | € 70 per month per seat |
 
-###	7.3	Major Software Development Tasks
-We need a list here
-
-###	7.4	Development Gantt
+###	7.3	Development Gantt
 ![Gantt planning until open beta phase](pictures/gantt.png)
 
 ##	8.	External Services
-Whatever service you will buy/rent from third parties
-If you opt in for cloud, this is NOT the right place, put it in § 6 or § 7
+To simplify our network and to avoid potential mismanagement of heavily sensitive data, we delegate the payment service to Google, the publisher of our game. This has no upfront cost (except for the € 25 license needed to publish the game) but Google takes 30% out of every transaction as management fees.
 
-##	8.	Communication	
+##	9.	Communication	
 
-###	8.1	Global Infrastructure Outline
-How servers are connected (hint: use a picture)
-What is installed on each server
+###	9.1	Global Infrastructure Outline
+[comment]: # (How servers are connected (hint: use a picture What is installed on each server)
 
-###	8.2	Network Requirements
+###	9.2	Network Requirements
 Bandwidth, latency, type of connection, QoS in general
 Inside and outside your infrastructure
 
-###	8.3	Network Hardware
-Not just “what” but also “how many” … if any
+##	10.	Delivery
 
-##	9.	Delivery
-
-###	9.1	Estimated Delivery Time
+###	10.1	Estimated Delivery Time
 To be compliant with your GANTT
 
-###	9.2	Delivery Platform
+###	10.2	Delivery Platform
 The game will be delivered through the Google Play store.
 
-###	9.3	Delivery Methodology
+###	10.3	Delivery Methodology
 This is about how you are going to use your distribution channel
 
-##	10.	Staff
+##	11.	Staff
 
-###	10.1	For Infrastructure Setup
+###	11.1	For Infrastructure Setup
 Cloud services developer
 
-###	10.2	For Infrastructure Management
+###	11.2	For Infrastructure Management
 System Administrator
 
-###	10.3	In Game
-Senior Game Designer
-Junior Game Designer
+###	11.3	In Game
+Senior Game Designerx2
 Game Developer
 Graphic Artist
-
-###	10.4	Other
