@@ -141,6 +141,21 @@ The card selection pop-up appears before queuing for a game or going into a camp
 
 The in-game interface is as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
 
+>Settings menu
+
+The settings menu has the same look of the main menu. The background and X button stay the same, will the menu button change into:
+
+Music
+Sound effects
+Credits
+
+Music and Sound effects button, if tapped, will grey out and turn music or sound effects off. If tapped on again, the effect will be reverted.
+The Credits button, if tapped, will show our team's and respective names - yay!
+
+>Level selection
+
+The campaign level selection screen features a "path" connecting the levels, which are represented with buttons with their numbers above them. The background shows the land of Ludenia.
+All completed levels will appear as blue, smiling faces, the next level to complete will appear as a sad, red face. Unlocked levels will appear as sad, stone-grey faces.
 
 #### 5.3.2. Rules
 
