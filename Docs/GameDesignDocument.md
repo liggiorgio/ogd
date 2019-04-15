@@ -127,9 +127,9 @@ PvP: the player who, having reached the threshold, reaches the highest score, wi
 
 ### 5.4. Modes and other features
 
-Campaign
+Campaign: A series of levels to be played in a sequence. A level cannot be accessed if the previous one has not been defeated. The campaign is a single player mode of 30 different levels, with different mechanics emerging with higher levels. This mode awards coins and cards with the rules described above. In this mode, griefing cards (the ones that hinder the opponent's gameplay) are not usable.
 
-PvP
+PvP: The core of the game. This mode consists of 1v1 matches, not longer than 3 minutes. In this mode, all cards are allowed. This mode rewards coins as described above.
 
 ### 5.5. Levels
 
