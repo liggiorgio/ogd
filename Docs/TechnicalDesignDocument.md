@@ -39,27 +39,35 @@ Each match is played on the server. Each player sends the server their move, tha
 
 ##	5. Frontend
 
-Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image. The frontend also receives all the players' interaction and sends them to the correct backend service to be handled.
+The frontend receives all the players' interaction and sends them to the correct backend service to be handled. Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image. 
 
 ###	5.1	Platforms
+Our solution of choice is a Platform-as-a-Service set of products, Firebase, provided by Google. Firebase lets us deploy our frontend services to their Functions product, that will be used for both the frontend and the backend.
 
 ###	5.2	Scalability and Extensibility
-Since our solution of choice is the Firebase cloud platform, the system automatically scales according to the needs of our userbase. In case of an increase in the number of players, Firebase automatically adjusts to our needs.
+Since our solution of choice is the Firebase cloud platform, the system automatically scales according to the needs of our userbase. In case of an increase in the number of players, Firebase automatically adjusts the provided compute time to suit our needs.
 
 ##	6.	Backend
-Remember to put databases here!
+Our game uses three main backend services and two external components. The external components are used to handle user authentication and microtransaction and are both provided by Google, that lets us have information about the player and confirmation of successful transactions.  
+Our services are:
+* Matchmaking: a matchmaker will pair players and create an instance of their game in our Game Service, making them able to play competitively.
+* Game Service: this service receives player moves, validates them, makes changes to the game board according to the information received and sends the result back to the client. It is the core of the online game experience.
+* User Database: a database containing all the information regarding our players, like their achievements, their win\loss ratio and their collected cards. It also has a secondary database used as backup.
 
 ###	6.1	Platforms
-Motivate your selection
+As said in the **Frontend** section, we use Firebase as our cloud platform of choice. The decision was made after considering what best suits our needs for an affordable, scalable and easily manageable backend platform. We chose Firebase because it has low initial costs (most of its products are free under a certain data threshold) and fine-grained billing plans, is very well integrated with the whole Google environment (since it is also owned by Google) and provides a specific SDK for game development in Unity.   
+Once this choice is done, we have no control on which software Firebase uses but we can access all of their products, many of which have, as previously stated, a monthly usage threshold under which they are provided for free.
 
-###	6.2 Hardware
-Not just “what” but also “how many”
+###	6.2	Software
 
-###	6.3	Software
+| Service | Solution |   Reason   |
+| -- | -- | -- |
+| Matchmaking | Realtime Database | This service provides a very fast NoSQL database, focused on real-time data availability. This lets us handle the pairing and creation of matches without having the users wait in long queues before playing. |
+| Game Service | Cloud Functions  | This service lets us host our game matches on Firebase's servers, reacting to actions like player moves or match timeouts.  |
+| User Database | Cloud Firestore | This service provides a robust cloud-hosted NoSQL database with efficient queries and offline availability, letting us store all player data while also making them accessible in a read-only fashion while the user is offline.  |
 
-###	6.4	Workload capacity
-Give some rationale why this infrastructure should stand the intended workload
-
+###	6.3	Workload capacity
+Since our backend is completely cloud-based, we can expect new computational power and storage space to be provided as needed. So, the system should be capable of handling a very large amount of simultaneous matches should the need arise.
 
 ##	7.	Development
 
