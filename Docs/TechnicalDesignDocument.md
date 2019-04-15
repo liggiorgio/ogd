@@ -39,18 +39,12 @@ Each match is played on the server. Each player sends the server their move, tha
 
 ##	5. Frontend
 
-Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image.
+Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image. The frontend also receives all the players' interaction and sends them to the correct backend service to be handled.
 
 ###	5.1	Platforms
-Motivate your selection
 
-###	5.2	Hardware
-Not just “what” but also “how many”
-
-###	5.3	Software
-
-###	5.4	Scalability and Extensibility
-How are you planning to quickly extend you infrastructure when and if needed
+###	5.2	Scalability and Extensibility
+Since our solution of choice is the Firebase cloud platform, the system automatically scales according to the needs of our userbase. In case of an increase in the number of players, Firebase automatically adjusts to our needs.
 
 ##	6.	Backend
 Remember to put databases here!
