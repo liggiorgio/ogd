@@ -77,8 +77,8 @@ The first player (or team) to reach the minimum score wins the game. If nobody d
 
 ### Dramatic Elements
 1. Challenge  
-Story mode - The score threshold and the opponent’s “skill” rise throughout the campaign. Level-based mechanics make solutions harder.
-PvP mode - Most of the challenge is defined by the opponent’s skill level and playstyle. The level is randomized, introducing level-based mechanics in the player vs player.
+**Story mode:** the score threshold and the opponent’s “skill” rise throughout the campaign. Level-based mechanics make solutions harder.  
+**PvP mode:** most of the challenge is defined by the opponent’s skill level and playstyle. The level is randomized, introducing level-based mechanics in the player vs player.
 
 2. Play  
 There is no “fixed path” to follow to the solution, each player is free to approach the challenge how they prefer. Consumable “shuffling” items give the player freedom to “reset” the scenario if they do not like their position. The player can play more conservatively, focusing on their own performance, or more aggressively by trying to disturb the opponent more.
