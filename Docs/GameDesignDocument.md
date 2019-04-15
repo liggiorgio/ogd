@@ -30,9 +30,9 @@ The game is a match-3 that delivers a 1v1, competitive experience, both in PvP a
 Each player has a set number of moves:
 	-During the campaign, it depends on the level
 	-In PvP, 30 moves
-Each move consists in swapping 2 objects or using a consumable item from the inventory.
+Each move consists in swapping 2 faces or using a consumable item from the inventory.
 
-Each player plays on a board of 6x7 tiles, all filled with objects to match.
+Each player plays on a board of 6x7 tiles, all filled with faces to match.
 
 The match has a set timer of 3 minutes, after which, if the match hasn't ended already, the player with the highest current score will result as winner.
 
@@ -96,25 +96,47 @@ Packs
 	There are 2 card packs that can be bought in the Shop (see Interfaces for the Shop), one providing 1 card for 100 coins and one providing 3 cards for 250 coins. Cards are randomized based on their rarity: each card has 95% of being common and 5% of being rare.
 	
 ### 5.3. Controls
-Map out in detail the game procedures and control.
+
+The game is controlled through the phone's touch screen.
+
+	Swapping: swapping 2 faces is done by "dragging" one in a particular direction, either vertical or horizontal. The first point of pressure pinpoints the face to move, moving the finger towards another face selects it as the second one to swap.
+	
+	Using non-targeting cards: a card can be used by double tapping on it. The first tap will highlight the card, while the second will "confirm" the selection and activate the effect. Tapping anywhere else after the first tap will cancel the card selection.
+	
+	Using targeting cards: a card that needs to target a cell can be activated by tapping on it once. An arrow will appear from it towards the center of the board. The second tap, that is to be performed on a face, will activate the effects on the selected face. Tapping outside of the board will cancel the card selection.
 
 #### 5.3.1. Interfaces
-Wireframe (with description) of all the interfaces you need.
 
 #### 5.3.2. Rules
-Description of the rules of the game.
+
+The number of possible moves is set for each game. Time is set only in multiplayer games.
+
+It is not possible to swap 2 faces if this does not cause any match to happen. The swap will be reversed and the move will not be spent.
+
+A PvP match can result in a player's victory or a draw. A draw happens if both players hit the same score or if no player can reach the score threshold.
+
+The player has to make at least one move every 30 seconds. Otherwise, victory will be granted to the opponent due to inactivity. If this happens, it will not be possible for the inactive player to join a game for 3 minutes.
+
+[number and drawing of cards]
 
 #### 5.3.3. Scoring/winning conditions
-Detailed description for each play mode (es. multiplayer, single player, …).
+
+Campaign: the level is won if the player can achieve a level-depending score withing the given number of moves.
+
+PvP: the player who, having reached the threshold, reaches the highest score, wins the game. Alternatively, if a player does not make a move for 30 seconds straight, their opponent wins the game.
 
 ### 5.4. Modes and other features
-Describe game modes (es. multiplayer, single player, …).
+
+Campaign
+
+PvP
 
 ### 5.5. Levels
 Design for each level.
 
 ### 5.6. Flowchart
-Flowchart that lists every areas and screens that should be created.
+
+![Flowchart] (./flowchart.png)
 
 ## 6. Game Characters
 
@@ -129,23 +151,6 @@ Robin:
 The shop-keeper is a short boy, wearing robes a bit too big for him, but not so much to make him look goofy. He has short, brown hair, big blue eyes and a big pair of round glasses on them. His clothes are mostly Risultati immagini per blue color 2661F7 blue, with ocra yellow adornments on the edges. As an apprentice wizard, he also wears a big blue pointy hat of the same making, so big he has to keep a hand on it to prevent it from falling. Just like Zeely, he is always cheerful, presenting himself with an open smile every time he appears.
 
 All the characters described above are NPC. They only appear to tell the player something, or to adobe the shop's screen. They have hence no A.I.
-
-## 7. Story
-
-### 7.1. Synopsis
-Max 2 pars. To describe the story (if any).
-
-### 7.2. Complete story
-Outline of the complete story that mirrors gameplay.
-
-### 7.3. Backstory
-Any important elements not directly tied to the gameplay.
-
-### 7.4. Narrative devices
-Ways used to reveal the story.
-
-### 7.5. Subplots
-Description and ties to the main stream of the story.
 
 ## 9. Media List
 List of all the media that need to be created: interface assets, environments, characters, animation, music and sound effects.
