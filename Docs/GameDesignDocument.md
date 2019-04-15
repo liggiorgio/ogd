@@ -99,6 +99,8 @@ Packs
 
 The game is controlled through the phone's touch screen.
 
+	Choosing the cards before a game: tapping a card on the grid will move it into the "selected cards" area. Tapping on it in the selected cards area will move it back into the grid.
+
 	Swapping: swapping 2 faces is done by "dragging" one in a particular direction, either vertical or horizontal. The first point of pressure pinpoints the face to move, moving the finger towards another face selects it as the second one to swap.
 	
 	Using non-targeting cards: a card can be used by double tapping on it. The first tap will highlight the card, while the second will "confirm" the selection and activate the effect. Tapping anywhere else after the first tap will cancel the card selection.
@@ -106,6 +108,39 @@ The game is controlled through the phone's touch screen.
 	Using targeting cards: a card that needs to target a cell can be activated by tapping on it once. An arrow will appear from it towards the center of the board. The second tap, that is to be performed on a face, will activate the effects on the selected face. Tapping outside of the board will cancel the card selection.
 
 #### 5.3.1. Interfaces
+
+For all interfaces, the phone is considered to be in portrait mode, vertically held.
+
+>Main menu
+
+The main screen features the necessary buttons, the details of which will be further described in the assets section, on a static background. The buttons are, as they appear from top to bottom:
+
+Campaign
+Duel
+Shop
+Settings
+
+The main menu screen will also feature a red X button to quit the game on the top right side of the screen.
+
+>Shop screen
+
+The shop will feature Robin on the bottom left of the screen, filling the whole bottom part with a conversazion balloon containing "Hey! Nothing better than some new gear to go into battle again!". Above him the screen will show 3 different kinds of card packs, with their pricing and the "BUY!" button.
+When the player taps on a pack, a small balloon will appear from it. From top to bottom, the packs will be:
+
+Card Pack - 60 gold - Balloon: "Contains 3 new cards!"
+BIG Pack - 120 gold - Balloon: "Contains 7 new cards, convenient!"
+THE PACK-O - 300 gold - Balloon: "Contains 20 new cards! HUGE DEAL!"
+
+The top left corner shows a little insertion with the player's money account, with a small "+" button on the side. Tapping on the money or the + will open the "buy coins with real money" pop-up. The exchange rate is €1 - 100 gold, with bigger bundles to be decided upon.
+
+>Card selection
+
+The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far.
+
+>In-game UI
+
+The in-game interface is as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
+
 
 #### 5.3.2. Rules
 
@@ -158,7 +193,8 @@ All the characters described above are NPC. They only appear to tell the player 
 	Faces
 	Score board
 	Timers
-	Background
+	In-game background
+	Loading screen
 	Board
 	Buttons
 	Zeely
