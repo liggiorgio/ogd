@@ -1,5 +1,8 @@
 # Game Concept
 
+![Alpha Commit logo](./pictures/ac_logo_small.png)  
+`A L P H A // C O M M I T`
+
 ### General information
 **Team name:** “Alpha Commit”  
 **Team members:** Baratto Diego (919538), Costella Alessandro (920031), Liggio Giorgio Maria (905471)
