@@ -117,7 +117,7 @@ A PvP match can result in a player's victory or a draw. A draw happens if both p
 
 The player has to make at least one move every 30 seconds. Otherwise, victory will be granted to the opponent due to inactivity. If this happens, it will not be possible for the inactive player to join a game for 3 minutes.
 
-[number and drawing of cards]
+The card the player can use are to be selected through an ad-hoc screen before entering the game (or level). The same card cannot be used again without making 10  9 other moves first.
 
 #### 5.3.3. Scoring/winning conditions
 
@@ -132,7 +132,8 @@ Campaign
 PvP
 
 ### 5.5. Levels
-Design for each level.
+
+Levels are generated through an Random Content Generation algorithm, with due restrictions (for example on the number of face colours present in the level) based on their "position" in the campaign.
 
 ### 5.6. Flowchart
 
