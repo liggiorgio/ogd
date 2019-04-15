@@ -182,7 +182,7 @@ Levels are generated through an Random Content Generation algorithm, with due re
 
 ### 5.6. Flowchart
 
-![Flowchart] (./pictures/flowchart.png)
+![Flowchart](pictures/flowchart.png)
 
 ## 6. Game Characters
 

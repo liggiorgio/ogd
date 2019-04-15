@@ -5,107 +5,122 @@
 ##	1. Project Goal
 Our game aims to provide an online multiplayer experience on Android devices (as described in the **Client Side** section of this document). From a technical standpoint, the game aims to offer 24\7 worldwide availability for all the online features, such as searching for and joining online matches, customizing player profiles, accessing leaderboards and collectible lists.
 
-##	3. Provided Services (besides the game)
-In addition to the game itself, we provide a complete Google Play integration to ease access to leaderboards and achievements.
+## 2. Provided Services (besides the game)
+In addition to the game itself, we provide a complete Google Play Games integration to ease access to leaderboards and achievements.
 
-##	4. Client Side
+##	3. Client Side
 
-	###	4.1	Hardware requirements
-	The minimum hardware requirements are low-to-mid-range smartphones, with the following specifications:
-		* At least 50MB of free internal storage
-		* A 3G or Wi-Fi Internet connection
-		* At least 1GB of RAM
+###	3.1	Hardware requirements
+The minimum hardware requirements are low-to-mid-range smartphones, with the following specifications:
+* At least 50MB of free internal storage
+* A 3G or Wi-Fi Internet connection
+* At least 1GB of RAM
 
-	###	4.2	Software requirements
-	The game requires at least Android 5.0 (API level 21). More details on the decision can be found in the **Platform** and **System Requirements** section of the GDD.
+###	3.2	Software requirements
+The game requires at least Android 5.0 (API level 21). More details on the decision can be found in the **Platform** and **System Requirements** section of the GDD.
 
-##	5. Workload estimation
-Target workload for your infrastructure in term of total users, peak users, and resources dedicated to each user.
-Starting from an initial system capacity and extend later is fine but then you must provide an extension plan.
-MOTIVATE THIS referencing the GDD
+##	4. Workload estimation
+The online part of the game is composed of a classic client-server system, with the server hosted on the Google Firebase platform. 
+The rollout plan consists of an open beta phase, to test and improve the game based on user feedback, and a release phase, when the game will be fully available to anyone through the Google Play Store.
 
-##	6. Frontend
+The open beta phase will be rolled out through the Google Play Beta Test Management plan, to make our game readily available on the most trusted source for Android apps.
+* Expected average number of daily players: 1,000
+* Expected average number of simultaneous players: 500
+* Expected number of total players: 5,000
 
-	###	6.1	Platforms
-	Motivate your selection
+On release, we expect an increase in the number of players
+* Expected average number of daily players: 15,000
+* Expected average number of simultaneous players: 4,500
+* Expected number of total players: 25,000 
 
-	###	6.2	Hardware
-	Not just “what” but also “how many”
+Each match is played on the server. Each player sends the server their move, that is then verified and executed. The results are sent back to the client and then visualized on the player's screen. Since this must happen quasi-real-time, each user (or better, each match) has enough dedicated resources to be able to compute everything in the required time. Since everything is hosted on the Firebase platform, resources are allocated and paid as needed.
 
-	###	6.3	Software
+[comment]: # (Target workload for your infrastructure in term of total users, peak users, and resources dedicated to each user. Starting from an initial system capacity and extend later is fine but then you must provide an extension plan. MOTIVATE THIS referencing the GDD)
 
-	###	6.4	Scalability and Extensibility
-	How are you planning to quickly extend you infrastructure when and if needed
+##	5. Frontend
 
-##	7.	Backend
-Remember to put databases here!
+Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image.
 
-	###	7.1	Platforms
+###	5.1	Platforms
 Motivate your selection
 
-	###	7.2 Hardware
+###	5.2	Hardware
 Not just “what” but also “how many”
 
-	###	7.3	Software
+###	5.3	Software
 
-	###	7.4	Workload capacity
+###	5.4	Scalability and Extensibility
+How are you planning to quickly extend you infrastructure when and if needed
+
+##	6.	Backend
+Remember to put databases here!
+
+###	6.1	Platforms
+Motivate your selection
+
+###	6.2 Hardware
+Not just “what” but also “how many”
+
+###	6.3	Software
+
+###	6.4	Workload capacity
 Give some rationale why this infrastructure should stand the intended workload
 
 
-##	8.	Development
+##	7.	Development
 
-	###	8.1	Hardware
+###	7.1	Hardware
 Not just “what” but also “how many”
 
-	###	8.2	Software
+###	7.2	Software
 Not just “what” but also “how many”
 
-	###	8.3	Major Software Development Tasks
+###	7.3	Major Software Development Tasks
 We need a list here
 
-	###	8.4	Development Gantt
+###	7.4	Development Gantt
 ![Gantt planning until open beta phase](pictures/gantt.png)
 
-##	9.	External Services
+##	8.	External Services
 Whatever service you will buy/rent from third parties
 If you opt in for cloud, this is NOT the right place, put it in § 6 or § 7
 
-##	10.	Communication	
+##	8.	Communication	
 
-	###	10.1	Global Infrastructure Outline
+###	8.1	Global Infrastructure Outline
 How servers are connected (hint: use a picture)
 What is installed on each server
 
-	###	10.2	Network Requirements
+###	8.2	Network Requirements
 Bandwidth, latency, type of connection, QoS in general
 Inside and outside your infrastructure
 
-	###	10.3	Network Hardware
+###	8.3	Network Hardware
 Not just “what” but also “how many” … if any
 
-##	11.	Delivery
+##	9.	Delivery
 
-	###	11.1	Estimated Delivery Time
+###	9.1	Estimated Delivery Time
 To be compliant with your GANTT
 
-	###	11.2	Delivery Platform
-	The game will be delivered through the Google Play store.
+###	9.2	Delivery Platform
+The game will be delivered through the Google Play store.
 
-	###	11.3	Delivery Methodology
+###	9.3	Delivery Methodology
 This is about how you are going to use your distribution channel
 
-##	12.	Staff
+##	10.	Staff
 
-	###	12.1	For Infrastructure Setup
-		Cloud services developer
+###	10.1	For Infrastructure Setup
+Cloud services developer
 
-	###	12.2	For Infrastructure Management
-		System Administrator
+###	10.2	For Infrastructure Management
+System Administrator
 
-	###	12.3	In Game
-		Senior Game Designer
-		Junior Game Designer
-		Game Developer
-		Graphic Artist
+###	10.3	In Game
+Senior Game Designer
+Junior Game Designer
+Game Developer
+Graphic Artist
 
-	###	12.4	Other
+###	10.4	Other
