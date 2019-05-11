@@ -32,7 +32,7 @@
 Colorful match-3 puzzle game, with quick, 1v1, interactive matches in real time. Aimed to be very explosive and cheerful, in a cartoonish way. The campaign and multiplayer modes both reward the player with items and coins to buy them, in order to win more games and complete the item album. The game aims to convey a feeling of great accomplishment in completing sections of the campaign and pages of the album, awarding special prizes when the player can achieve these results.
 
 ### 2.1. Game Logline
-Match-3, with the thrill of PvP!
+“Embark on a journey to fight back the forces of evil, one puzzle at a time.”
 
 ### 2.2. Gameplay Synopsis
 
