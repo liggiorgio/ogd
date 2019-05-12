@@ -29,7 +29,9 @@
 | Liggio Giorgio | 2019-04-03 | Push first game design writing |
 
 ## 2. Vision Statement
-Colorful match-3 puzzle game, with quick, 1v1, interactive matches in real time. Aimed to be very explosive and cheerful, in a cartoonish way. The campaign and multiplayer modes both reward the player with items and coins to buy them, in order to win more games and complete the item album. The game aims to convey a feeling of great accomplishment in completing sections of the campaign and pages of the album, awarding special prizes when the player can achieve these results.
+*Sunday Knights: Magic & Mayhem* is a marriage of Candy Crush + Clash Royale. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and exuberant. In each game, the player will face an AI opponent or a real-life user in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
+
+There's huge emphasis on the multiplayer game pacing, with head-to-head fast matches where anything can happen due to special actions. Many in-game rewards such as game cards, resources, and currency are designed to convey a sense of accomplishment and achievement.
 
 ### 2.1. Game Logline
 “Embark on a journey to fight back the forces of evil, one puzzle at a time.”
@@ -37,6 +39,7 @@ Colorful match-3 puzzle game, with quick, 1v1, interactive matches in real time.
 ### 2.2. Gameplay Synopsis
 
 #### Uniqueness
+*Sunday Knights: Magic & Mayhem* is a Match 3 game with fast-paced action and CCG elements. It focuses on the
 The game is a match-3 that delivers a 1v1, competitive experience, both in PvP and in PvE. In addition to converting the classic match-3 gameplay experience into a multiplayer one, it features consumables the player can collect and use to win matches (or campaign levels), as bonuses for themselves or maluses for the enemy.
 
 #### Functioning & Core Mechanics
