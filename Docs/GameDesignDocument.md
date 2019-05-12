@@ -39,8 +39,7 @@ There's huge emphasis on the multiplayer game pacing, with head-to-head fast mat
 ### 2.2. Gameplay Synopsis
 
 #### Uniqueness
-*Sunday Knights: Magic & Mayhem* is a Match 3 game with fast-paced action and CCG elements. It focuses on the
-The game is a match-3 that delivers a 1v1, competitive experience, both in PvP and in PvE. In addition to converting the classic match-3 gameplay experience into a multiplayer one, it features consumables the player can collect and use to win matches (or campaign levels), as bonuses for themselves or maluses for the enemy.
+*Sunday Knights: Magic & Mayhem* is a Match 3 game featuring fast-paced action and CCG (Collectible Card Game) elements. It stands out from other titles in the category because it combines puzzle games with a 1v1 player-vs-player experience; as a matter of fact, the design focuses on the long-term engagement of users thanks to the social gaming aspect.
 
 #### Functioning & Core Mechanics
 Each player has a set number of moves:
