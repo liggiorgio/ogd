@@ -29,12 +29,12 @@
 | Liggio Giorgio | 2019-04-03 | Push first game design writing |
 
 ## 2. Vision Statement
-*Sunday Knights: Magic & Mayhem* is a marriage of Candy Crush + Clash Royale. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and exuberant. In each game, the player will face an AI opponent or a real-life user in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
+*Sunday Knights: Magic & Mayhem* is a marriage of *Candy Crush* + *Clash Royale*. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and exuberant. In each game, the player will face an AI opponent or a real-life user in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
 
 There's huge emphasis on the multiplayer game pacing, with head-to-head fast matches where anything can happen due to special actions. Many in-game rewards such as game cards, resources, and currency are designed to convey a sense of accomplishment and achievement.
 
 ### 2.1. Game Logline
-“Embark on a journey to fight back the forces of evil, one puzzle at a time.”
+*“Embark on a journey to fight back the forces of evil, one puzzle at a time.”*
 
 ### 2.2. Gameplay Synopsis
 
