@@ -66,8 +66,11 @@ As non-exhaustive, non-final examples, we can estimate the following values:
   * Card limit: **4 cards**
 
 #### Setting
-Ludenia was a peaceful kingdom, full of joy and inhabited by carefree, happy people. But that all changed, the day the Dreary Armada attacked. Battle rages on throughout the kingdom, and there's only one hero that can stop this catastrophe from destroying the happiness of the Ludenians and avoid the worst: the player. The kingdom of Ludenia is a fantasy, medieval kingdom, where the citizens have been morphed into sad statues.
-The Dreary Armada is an army of people who just were to listen to a concert, performed by [Pun on some singer name + sadness], and armed up to deprive the whole world of the happiness they will never grasp again.
+The game takes place in an archetypical medieval fantasy era, in the peaceful Kingdom of Ludenia. The first impression the player gets is one of peace and carefreeness since Ludenians are happy and cheery people. Ludenia has many views to offer; beautiful landscapes hold majestic castles and quiet villages, the woods are home to many animals, and the mountains contrast a sea stretching as far as the eye can see.
+
+Things change when the story antagonists show up. The Dreary Army is driven only by the need for stealing everyone's happiness, and this reflects in a duller mood in the environments. Wherever they go, life withers and joy disappears, nature recedes, and desolation overcomes everything.
+
+A hero must save the realm from becoming another wasteland.
 
 #### Look and feel
 
