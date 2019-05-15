@@ -204,7 +204,12 @@ All the characters described above are NPC. They only appear to tell the player 
 
 ## 9. Media List
 
-*	Faces
+>Faces
+
+![Faces' sketch before and after getting matches](pictures/face_colorless.png)
+
+Faces apppear in 3 different colours: red (E00201), green (rgb 10, 255, 60) and blue (0038a8). As seen in the example above, they have 2 stages, a sad one before being matched, and a happy one after being matched.
+
 *	Score board
 *	Timers
 *	In-game background
@@ -213,7 +218,11 @@ All the characters described above are NPC. They only appear to tell the player 
 *	Buttons
 *	Zeely
 *	Robin
-*	Faces animations
+
+>Faces animation
+
+Faces have a specific animation when they get matched, turning their frown into a smile in 0.5 seconds and then popping away towards their center. This is accompanied by a "pop" sound.
+
 *	Cards animations
 *	Menu music
 *	In-game music
@@ -221,5 +230,9 @@ All the characters described above are NPC. They only appear to tell the player 
 *	Zeely entering sound
 *	Robin entering sound (shop)
 *	Victory fanfare
-*	Defeat riff
+
+>Defeat riff
+
+This is what the player heards upon defeat. It's a riff of 4 notes, on descending demitones, from Bb (or Sib) to G (or Sol), with a long tremble on the last one.
+
 *	Button sound
