@@ -38,10 +38,10 @@ There's huge emphasis on the multiplayer game pacing, with head-to-head fast mat
 
 ### 2.2. Gameplay Synopsis
 
-#### Uniqueness
+#### 2.2.1. Uniqueness
 *Sunday Knights: Magic & Mayhem* is a Match 3 game featuring fast-paced action and CCG (Collectible Card Game) elements. It stands out from other titles in the category because it combines puzzle games with a 1v1 player-vs-player experience; as a matter of fact, the design focuses on the long-term engagement of users thanks to the social gaming aspect.
 
-#### Functioning & Core Mechanics
+#### 2.2.2. Functioning & Core Mechanics
 > This section is intentionally descriptive. For further information and implementation details, please refer to Chapter 4 ("*Gameplay*") of this document.
 
 The fight between Good and Evil takes place on a square grid filled with tiles in the form of coloured gemstones. Although winning conditions may vary, the core mechanics stay the same across all game modes.
@@ -65,14 +65,14 @@ As non-exhaustive, non-final examples, we can estimate the following values:
   * Time limit: **2 minutes**
   * Card limit: **4 cards**
 
-#### Setting
+#### 2.2.3. Setting
 The game takes place in an archetypical medieval fantasy era, in the peaceful Kingdom of Ludenia. The first impression the player gets is one of peace and carefreeness since Ludenians are happy and cheery people. Ludenia has many views to offer; beautiful landscapes hold majestic castles and quiet villages, the woods are home to many animals, and the mountains contrast a sea stretching as far as the eye can see.
 
 Things change when the story antagonists show up. The Dreary Army is driven only by the need for stealing everyone's happiness, and this reflects in a duller mood in the environments. Wherever they go, life withers and joy disappears, nature recedes, and desolation overcomes everything.
 
 A hero must save the realm from becoming another wasteland.
 
-#### Look and feel
+#### 2.2.4. Look and Feel
 
 ![Example of a normal match screen](pictures/Look-n-feel.png)
 
@@ -99,34 +99,42 @@ The study shows how the public is diverse among some genres. Age is not a restri
 
 The intended audience for our game consists of adults aged 25-35 (spread ±5), with a part-time or full-time occupation (e.g. job, school). They are casual players and enjoy playing games in their spare time, to take a break from the daily routine, or while travelling. Our target has no specific gender identity; while the core game is suitable to anyone, additional content may be appealing to a particular gender group or subgroup.
 
-### 3.4. Top performers
+### 3.3. Top Performers
 Candy Crush, Toon Blast, Matchington Mansion, Farm Heroes.
 
-### 3.5. Feature comparison
+### 3.4. Feature Comparison
 Competitors do not feature PvP, while they usually include longer and more complex levels and puzzl-ish mechanics, and the slower pace that comes with them.
 
-## 5. Gameplay
+### 3.5. Target Platform
+Mobile Android devices, as the market for this kind of games flourishes on mobile platforms. That is where the potential audience of the game would look for it. Match-3 gameplay is experienced at its best on a touch screen.
 
-### 5.1. Overview
+### 3.6. System Requirements
+Android 5.0+, as Android 5 constitutes 89% of the Android market right now.
+
+### 3.7. Business Model
+
+## 4. Gameplay
+
+### 4.1. Overview
 The game is about matching groups of 3 or more faces on a grid by swapping couples of them. Only adjacent faces can be swapped, vertically or horizontally. Furthermore, the game includes playable cards that can change the state of the game for the player or their opponent.
 
-### 5.2. Gameplay description
+### 4.2. Gameplay description
 
-##### Mechanics
+#### 4.2.1. Mechanics
 
-###### Faces
+##### Faces
 The game is about making faces disappear ("freeing" them from the evil curse) by matching groups of them. The main part of the in-match GUI consists of a grid of 6x7 faces of random colours (6 columns x 7 rows), as is described in further detail in the Interfaces section. The player can swap couples of adjacent faces by "spending" a move - meaning their move count diminishes by one for each swap they perform. A swap is EFFECTIVE only if it actually "groups" 3 or more faces of the same colour, meaning if a swap doesn't cause any face to disappear, it is automatically reverted by the game. In this case, the move is not spent.
 
-###### Moves
+##### Moves
 Every player starts the match with a set number of moves and cannot usually gain any (some cards cause exceptions to this rule). PvP matches grant 30 starting moves, campaign scenarios grant a different number of moves based on the single level.
 
-###### Score
+##### Score
 Each time faces disappear, they grant score based on the size of the group of faces matched. 3-faces matches grant 30 points, 4-faces grant 60, 5-faces grant 100, 7-faces grant 300
 
-###### Score Threshold
+##### Score Threshold
 Each level has a minimum score the player must reach in order to achieve victory. This number varies throughout the campaign, while in PvP matches it's a fixed 1200.
 
-###### Cards
+##### Cards
 Cards are items the player can use at the expense of moves, with the cost depending on the single card. The player can unlock them by playing the campaign or by buying packs with coins they gain through PvP matches. Cards are either blue, if they provide a bonus or help for the player, or red, if they damage the opponent. Cards are played by tapping on them.
 
 ######Card List
@@ -162,10 +170,10 @@ The Gimme that juice! bomb covers all the faces in sparkly raspberry juice, maki
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
 	Card example: Bomb
 
-###### Packs
+##### Packs
 There are 2 card packs that can be bought in the Shop (see Interfaces for the Shop), one providing 1 card for 100 coins and one providing 3 cards for 250 coins. Cards are randomized based on their rarity: each card has 95% of being common and 5% of being rare.
 
-### 5.3. Controls
+### 4.3. Controls
 The game is controlled through the phone's touch screen.
 
 **Choosing the cards before a game:** tapping a card on the grid will move it into the "selected cards" area. Tapping on it in the selected cards area will move it back into the grid.
@@ -176,10 +184,10 @@ The game is controlled through the phone's touch screen.
 
 **Using targeting cards:** a card that needs to target a cell can be activated by tapping on it once. An arrow will appear from it towards the center of the board. The second tap, that is to be performed on a face, will activate the effects on the selected face. Tapping outside of the board will cancel the card selection.
 
-#### 5.3.1. Interfaces
+#### 4.3.1. Interfaces
 For all interfaces, the phone is considered to be in portrait mode, vertically held.
 
-##### Main menu
+##### Main Menu
 The main screen features the necessary buttons, the details of which will be further described in the assets section, on a static background. The buttons are, as they appear from top to bottom:
 
 * Campaign
@@ -189,7 +197,7 @@ The main screen features the necessary buttons, the details of which will be fur
 
 The main menu screen will also feature a red X button to quit the game on the top right side of the screen.
 
-##### Shop screen
+##### Shop Screen
 The shop will feature Robin on the bottom left of the screen, filling the whole bottom part with a conversazion balloon containing "Hey! Nothing better than some new gear to go into battle again!". Above him the screen will show 3 different kinds of card packs, with their pricing and the "BUY!" button.
 When the player taps on a pack, a small balloon will appear from it. From top to bottom, the packs will be:
 
@@ -199,13 +207,13 @@ When the player taps on a pack, a small balloon will appear from it. From top to
 
 The top left corner shows a little insertion with the player's money account, with a small "+" button on the side. Tapping on the money or the + will open the "buy coins with real money" pop-up. The exchange rate is €1 - 100 gold, with bigger bundles to be decided upon.
 
-##### Card selection
+##### Card Selection
 The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far.
 
-##### In-game UI
+##### In-Game UI
 The in-game interface is as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
 
-##### Settings menu
+##### Settings Menu
 The settings menu has the same look of the main menu. The background and X button stay the same, will the menu button change into:
 
 * Music
@@ -215,11 +223,11 @@ The settings menu has the same look of the main menu. The background and X butto
 Music and Sound effects button, if tapped, will grey out and turn music or sound effects off. If tapped on again, the effect will be reverted.
 The Credits button, if tapped, will show our team's and respective names - yay!
 
-##### Level selection
+##### Level Selection
 The campaign level selection screen features a "path" connecting the levels, which are represented with buttons with their numbers above them. The background shows the land of Ludenia.
 All completed levels will appear as blue, smiling faces, the next level to complete will appear as a sad, red face. Unlocked levels will appear as sad, stone-grey faces.
 
-#### 5.3.2. Rules
+#### 4.3.2. Rules
 The number of possible moves is set for each game. Time is set only in multiplayer games.
 
 It is not possible to swap 2 faces if this does not cause any match to happen. The swap will be reversed and the move will not be spent.
@@ -232,26 +240,26 @@ The card the player can use are to be selected through an ad-hoc screen before e
 
 If a player disconnects from the game more than 30 seconds from the end, their time will deplete naturally and they will lose the game. If a player disconnects during the last 30 seconds, the will just result inactive for that last part of the match, with no mechanical consequences. The winner will be computed regularly.
 
-#### 5.3.3. Scoring/winning conditions
+#### 4.3.3. Scoring/winning conditions
 Campaign: the level is won if the player can achieve a level-depending score withing the given number of moves.
 
 PvP: the player who, having reached the threshold, reaches the highest score, wins the game. Alternatively, if a player does not make a move for 30 seconds straight, their opponent wins the game.
 
-### 5.4. Game modes and other features
+### 4.4. Game Modes and Other Features
 **Campaign:** a series of levels to be played in a sequence. A level cannot be accessed if the previous one has not been defeated. The campaign is a single player mode of 30 different levels, with different mechanics emerging with higher levels. This mode awards coins and cards with the rules described above. In this mode, griefing cards (the ones that hinder the opponent's gameplay) are not usable.
 
 **PvP:** the core of the game. This mode consists of 1v1 matches, not longer than 3 minutes. In this mode, all cards are allowed. This mode rewards coins as described above.
 
-### 5.5. Levels
+### 4.5. Levels
 Levels are generated through an Random Content Generation algorithm, with due restrictions (for example on the number of face colours present in the level) based on their "position" in the campaign.
 
-### 5.6. Flowchart
+### 4.6. Flowchart
 
 ![Flowchart](pictures/flowchart.png)
 
-## 6. Game Characters
+## 5. Game Characters
 
-### 6.1. Characters design
+### 5.1. Character Design
 
 ##### Zeely
 The player's guide is a trust-inspiring, colorful little parrot. It has a yellow body, red chest and light blue underwings and head, and green eyes. He is always cheerful and full of energy, never appearing without smiling eyes. The anatomy is a standard Forpus' parrot one.
@@ -261,7 +269,7 @@ The shop-keeper is a short boy, wearing robes a bit too big for him, but not so 
 
 All the characters described above are NPC. They only appear to tell the player something, or to adobe the shop's screen. They have hence no A.I.
 
-## 9. Media List
+## 6. Media List
 
 >Faces
 
