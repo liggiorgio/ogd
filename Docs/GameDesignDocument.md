@@ -77,12 +77,24 @@ A hero must save the realm from becoming another wasteland.
 ![Example of a normal match screen](pictures/Look-n-feel.png)
 
 ## 3. Audience, Platform, and Marketing
+Audience analysis and definition is based on, but is not limited to, the core demographics of leading titles in the genre; other factors such as business objectives and mobile market tendencies were also considered.
 
-### 3.1. Target Audience
-The game targets adults (35-50) living in urban areas of western europe, regardless of gender, with a casual mindset, with any schedule.
+> The following paragraphs are about the game audience. For a more comprehensive comparison with other competitors, please refer to paragraphs 3.3 ("*Top Performers*") and 3.4 ("*Feature Comparison*") of this chapter.
 
-### 3.2. Platform
-Mobile Android devices, as the market for this kind of games flourishes on mobile platforms. That is where the potential audience of the game would look for it. Match-3 gameplay is experienced at its best on a touch screen.
+### 3.1. Market Insights
+Puzzle games have no well-defined target audience, due to the high flexibility of both gameplay and cosmetic elements; this means that marketing choices, such as defining a target audience, heavily influence their core design.
+
+A user analysis by Newzoo [1] on King's *Candy Crush*, a top performer on both Google Play and Apple Store, shows that the actual player base is broader than the intended audience: although King's core demographic is mostly women, a significant portion of players (40%) are male. In particular, *Candy Crush* appeals to a demographic with 42% of players between the age of 21-35 and almost 40% above 35.
+
+The same analysis also highlights some features of Supercell's *Clash Royale* core players: they are predominantly male (77%), and over half of them fall into the 21-35 age category with only 23% of players over the age of 35. We account for these insights due to the presence of fast-action elements in our game, considered in titles not belonging to the classic puzzle game genre.
+
+Finally, most *Candy Crush* players enjoy the game on mobile devices, and define themselves as "casual gamers" (45%); they mainly play games to pass the time and don’t invest a lot of money in them. On the other hand, *Clash Royale* players are at least "mid-core", playing games on a regular basis and being also open to try different type of games (16%) such as a puzzle game.
+
+Of *Candy Crush Saga*’s players, males (54%), are more likely to pay for mobile games.
+
+These consideration are still valid when considering other titles for comparison purposes, and not restricted to the *Candy Crush Saga* and *Clash Royale* titles only.
+
+### 3.2 Target Audience
 
 ### 3.3. System requirements
 Android 5.0+, as Android 5 constitutes 89% of the Android market right now.
