@@ -139,7 +139,12 @@ The Da Bath Bomb! card requires the player to target a specific face cell. Upon 
 
 ![The Da Bath Bomb! card](pictures/cards_DaBathBomb!.png)
 
-4. 
+4. Gimme that juice!
+
+The Gimme that juice! bomb covers all the faces in sparkly raspberry juice, making it so they provide double points for 5 seconds.
+
+![The Gimme that juice! card](pictures/cards_GimmeThatJuice!.png)
+
 
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
