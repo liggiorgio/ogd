@@ -95,9 +95,9 @@ Of *Candy Crush Saga*’s players, males (54%), are more likely to pay for mobil
 These consideration are still valid when considering other titles for comparison purposes, and not restricted to the *Candy Crush Saga* and *Clash Royale* titles only.
 
 ### 3.2 Target Audience
+The study shows how the public is diverse among some genres. Age is not a restriction since a large share of users can enjoy the same contents and themes in games; gender is blatantly relevant for similar reasons.
 
-### 3.3. System requirements
-Android 5.0+, as Android 5 constitutes 89% of the Android market right now.
+The intended audience for our game consists of adults aged 25-35 (spread ±5), with a part-time or full-time occupation (e.g. job, school). They are casual players and enjoy playing games in their spare time, to take a break from the daily routine, or while travelling. Our target has no specific gender identity; while the core game is suitable to anyone, additional content may be appealing to a particular gender group or subgroup.
 
 ### 3.4. Top performers
 Candy Crush, Toon Blast, Matchington Mansion, Farm Heroes.
