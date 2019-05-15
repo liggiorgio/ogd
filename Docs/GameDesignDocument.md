@@ -117,6 +117,30 @@ Each level has a minimum score the player must reach in order to achieve victory
 ###### Cards
 Cards are items the player can use at the expense of moves, with the cost depending on the single card. The player can unlock them by playing the campaign or by buying packs with coins they gain through PvP matches. Cards are either blue, if they provide a bonus or help for the player, or red, if they damage the opponent. Cards are played by tapping on them.
 
+######Card List
+
+>Blue cards
+
+1. Shuffle!
+
+The Shuffle! card allows the player to change their side's layout. By activating the card, all the faces will flip and become of a random color. This card must not generate "automatic" matches by creating 3-or-more groups of faces.
+
+![The Shuffle! card](pictures/cards_Shuffle!.png)
+
+2. Move on!
+
+The Move on! card increases the Remaining Moves counter of the user by 3 upon activation.
+
+![The Move on! card](pictures/cards_Moveon!.png)
+
+3. Da Bath Bomb!
+
+The Da Bath Bomb! card requires the player to target a specific face cell. Upon targeting, the card will "demolish" the selected face (by making it happy, of course) and the 8 faces in the square around it, in an explosion of soap foam. This will grant the player 150 points.
+
+![The Da Bath Bomb! card](pictures/cards_DaBathBomb!.png)
+
+4. 
+
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
 	Card example: Bomb
@@ -189,6 +213,8 @@ The player has to make at least one move every 30 seconds. Otherwise, victory wi
 
 The card the player can use are to be selected through an ad-hoc screen before entering the game (or level). The same card cannot be used again without making 10  9 other moves first.
 
+If a player disconnects from the game more than 30 seconds from the end, their time will deplete naturally and they will lose the game. If a player disconnects during the last 30 seconds, the will just result inactive for that last part of the match, with no mechanical consequences. The winner will be computed regularly.
+
 #### 5.3.3. Scoring/winning conditions
 Campaign: the level is won if the player can achieve a level-depending score withing the given number of moves.
 
@@ -224,7 +250,7 @@ All the characters described above are NPC. They only appear to tell the player 
 
 ![Faces' sketch before and after getting matches](pictures/face_colorless.png)
 
-Faces apppear in 3 different colours: red (E00201), green (rgb 10, 255, 60) and blue (0038a8). As seen in the example above, they have 2 stages, a sad one before being matched, and a happy one after being matched.
+Faces apppear in 5 different colours: red (E00201), green (rgb 10, 255, 60), yellow (FFFF33), violet (710193) and blue (0038a8). As seen in the example above, they have 2 stages, a sad one before being matched, and a happy one after being matched.
 
 *	Score board
 *	Timers
