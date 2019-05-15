@@ -46,11 +46,11 @@ There's huge emphasis on the multiplayer game pacing, with head-to-head fast mat
 
 The fight between Good and Evil takes place on a square grid filled with tiles in the form of coloured gemstones. Although winning conditions may vary, the core mechanics stay the same across all game modes.
 
-The player's goal is to gain points and resources by clearing tiles from the game grid. Players can swap tiles with nearby ones; when a group of tiles satisfies the matching rules, they are removed from the grid. Finally, remaining tiles fall downwards, and new tiles spawn from the top of the grid columns.
+The game goal is to gain points and resources by clearing tiles from the game grid. Players can swap tiles with nearby ones; when a group of tiles satisfies the matching rules, they are removed from the grid. Finally, remaining tiles fall downwards, and new tiles spawn from the top of the grid columns.
 
 Combined ("combos") and cascade matches award more points. Certain tiles can behave differently, like matching with any colour or performing special actions.
 
-Players can also perform special actions by consuming an action card; the effects are the same ones activated by special tiles, but they can be invoked at any time.
+Players can also perform special actions by consuming an action card; these produce the same effects activated by special tiles, but they can be invoked at any time.
 
 Players face some constraints while playing, depending on the game mode. There may be a maximum number of moves or a time limit before the game is over.
 
