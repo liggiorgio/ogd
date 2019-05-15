@@ -94,6 +94,9 @@ Of *Candy Crush Saga*’s players, males (54%), are more likely to pay for mobil
 
 Comparing *Clash of Clans* with its younger brother *Clash Royale* [2], it shows the player base is virtually the same with small variations of the statistical values. Then, previous considerations are still valid when considering similar titles for comparison purposes, and not restricted to the *Candy Crush Saga* and *Clash Royale* titles only.
 
+[1] ["Supercell vs King: How do Clash of Clans and Candy Crush gamers compare?"](https://newzoo.com/insights/articles/supercell-vs-king-how-do-their-gamers-compare/)  
+[2] [SimilarWeb's App Analysis on Clash Royale](https://www.similarweb.com/app/google-play/com.supercell.clashroyale/statistics)
+
 ### 3.2 Target Audience
 The study shows how the public is diverse among some genres. Age is not a restriction since a large share of users can enjoy the same contents and themes in games; gender is blatantly relevant for similar reasons.
 
