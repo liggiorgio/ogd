@@ -164,10 +164,19 @@ The Da Bath Bomb! card requires the player to target a specific face cell. Upon 
 
 4. Gimme that juice!
 
-The Gimme that juice! bomb covers all the faces in sparkly raspberry juice, making it so they provide double points for 5 seconds.
+The Gimme that juice! card covers all the faces in sparkly raspberry juice, making it so they provide double points for 5 seconds.
 
 ![The Gimme that juice! card](pictures/cards_GimmeThatJuice!.png)
 
+>Red cards
+
+1. Who wants Pie?
+
+The Who wants Pie? card throws - surprisingly - a pie to the opponent. Upon activation, the user will see the pie fly to the opponent's screen, on the top right corner. The opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are.
+
+![The Who wants Pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie)
+
+2. 
 
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
