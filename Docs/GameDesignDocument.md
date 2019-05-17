@@ -146,37 +146,43 @@ Cards are items the player can use at the expense of moves, with the cost depend
 
 1. Shuffle!
 
-The Shuffle! card allows the player to change their side's layout. By activating the card, all the faces will flip and become of a random color. This card must not generate "automatic" matches by creating 3-or-more groups of faces.
-
 ![The Shuffle! card](pictures/cards_Shuffle!.png)
+
+The Shuffle! card allows the player to change their side's layout. By activating the card, all the faces will flip and become of a random color. This card must not generate "automatic" matches by creating 3-or-more groups of faces.
 
 2. Move on!
 
-The Move on! card increases the Remaining Moves counter of the user by 3 upon activation.
-
 ![The Move on! card](pictures/cards_Moveon!.png)
+
+The Move on! card increases the Remaining Moves counter of the user by 3 upon activation.
 
 3. Da Bath Bomb!
 
-The Da Bath Bomb! card requires the player to target a specific face cell. Upon targeting, the card will "demolish" the selected face (by making it happy, of course) and the 8 faces in the square around it, in an explosion of soap foam. This will grant the player 150 points.
-
 ![The Da Bath Bomb! card](pictures/cards_DaBathBomb!.png)
+
+The Da Bath Bomb! card requires the player to target a specific face cell. Upon targeting, the card will "demolish" the selected face (by making it happy, of course) and the 8 faces in the square around it, in an explosion of soap foam. This will grant the player 150 points.
 
 4. Gimme that juice!
 
-The Gimme that juice! card covers all the faces in sparkly raspberry juice, making it so they provide double points for 5 seconds.
-
 ![The Gimme that juice! card](pictures/cards_GimmeThatJuice!.png)
+
+The Gimme that juice! card covers all the faces in sparkly raspberry juice, making it so they provide double points for 5 seconds.
 
 >Red cards
 
-1. Who wants Pie?
+1. Who wants pie?
 
-The Who wants Pie? card throws - surprisingly - a pie to the opponent. Upon activation, the user will see the pie fly to the opponent's screen, on the top right corner. The opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are.
+![The Who wants pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie)
 
-![The Who wants Pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie)
+The Who wants pie? card throws - surprisingly - a pie to the opponent. Upon activation, the user will see the pie fly to the opponent's screen, on the top right corner. The opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are.
 
-2. 
+2. Isn't it time?
+
+![The Isn't it time? card](pictures/cards_Isn'tItTime.png)
+
+The Isn't it time? card "stop" the time for the user's opponent's board, without stopping the game timer. The opponent will see a series of 12 numbered buttons, representing hours, appear in sparse order around their screen. To remove the effect, the 12 numbers must be tapped in order. Every time the victim taps on the lowest number still present, that number will disappear. Once the 12 is gone, the victim's game will resume.
+
+![The 12 Isn't it time? card's button](pictures/hour.png)
 
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
