@@ -144,17 +144,17 @@ Cards are items the player can use at the expense of moves, with the cost depend
 
 >Blue cards
 
-1. Shuffle!
+1. It's raining men!
 
-![The Shuffle! card](pictures/cards_Shuffle!.png)
+![The It's raining men! card](pictures/cards_It'sRainingMen.png)
 
-The Shuffle! card allows the player to change their side's layout. By activating the card, all the faces will flip and become of a random color. This card must not generate "automatic" matches by creating 3-or-more groups of faces.
+The It's raining men! card provides a way to change the colour of the user's board side faces. For 5 seconds after activation, small stars of random colours among the five faces' colours will fall, one per second. By dragging and dropping those stars on a face, the player will make that face's colour change into that of the star.
 
-2. Move on!
+2. Go Go Go!
 
-![The Move on! card](pictures/cards_Moveon!.png)
+![The Go Go Go! card](pictures/cards_GoGoGo!.png)
 
-The Move on! card increases the Remaining Moves counter of the user by 3 upon activation.
+The Go Go Go! card allows the user to gain extra moves. Upon activation, all faces will star shining slightly in their colour. The player will then have to perform a match. After the match and comboes caused by it end, the player will gain a number of extra moves equal to the combo counter they achieved.
 
 3. Da Bath Bomb!
 
@@ -174,7 +174,7 @@ The Gimme that juice! card covers all the faces in sparkly raspberry juice, maki
 
 ![The Who wants pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie)
 
-The Who wants pie? card throws - surprisingly - a pie to the opponent. Upon activation, the user will see the pie fly to the opponent's screen, on the top right corner. The opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are.
+The Who wants pie? card throws - surprisingly - a pie to the opponent. Upon activation, the user will see the pie fly to the opponent's screen, on the top right corner. The opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are. "Being moved" means they either get successfully swapped or they fall due to a match on a lower row.
 
 2. Isn't it time?
 
@@ -307,12 +307,9 @@ All the characters described above are NPC. They only appear to tell the player 
 
 Faces apppear in 5 different colours: red (E00201), green (rgb 10, 255, 60), yellow (FFFF33), violet (710193) and blue (0038a8). As seen in the example above, they have 2 stages, a sad one before being matched, and a happy one after being matched.
 
-*	Score board
+*	Score screen
 *	Timers
-*	In-game background
 *	Loading screen
-*	Board
-*	Buttons
 *	Zeely
 *	Robin
 
@@ -324,8 +321,6 @@ Faces have a specific animation when they get matched, turning their frown into 
 *	Menu music
 *	In-game music
 *	Match-3 sound effect
-*	Zeely entering sound
-*	Robin entering sound (shop)
 *	Victory fanfare
 
 >Defeat riff
