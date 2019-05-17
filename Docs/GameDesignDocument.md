@@ -184,6 +184,12 @@ The Isn't it time? card "stop" the time for the user's opponent's board, without
 
 ![The 12 Isn't it time? card's button](pictures/hour.png)
 
+3. Did you say ice?
+
+![The Did you say ice? card. Quite the fresh guy](pictures/cards_DidYouSayIce.png)
+
+The Did you say ice? card shatters the opponent's screen. Not for real, that is. Upon use, the opponents screen will creak like ice under weight, then the center of it (a circlish portion as wide as the board) will shatter into 5 pieces. The victim will have to put the pieces back into place in order to resume their game. Each piece, after being placed in it's place, will stay there for 3 seconds, then will tremble for 2 seconds, then, if the puzzle hasn't been solved, will fall again.
+
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
 	Card example: Bomb
