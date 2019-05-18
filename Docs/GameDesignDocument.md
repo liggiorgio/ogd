@@ -220,10 +220,7 @@ For all interfaces, the phone is considered to be in portrait mode, vertically h
 ##### Main Menu
 The main screen features the necessary buttons, the details of which will be further described in the assets section, on a static background. The buttons are, as they appear from top to bottom:
 
-* Campaign
-* Duel
-* Shop
-* Settings
+![The main menu](pictures/main_menu.png)
 
 The main menu screen will also feature a red X button to quit the game on the top right side of the screen.
 
@@ -238,7 +235,7 @@ When the player taps on a pack, a small balloon will appear from it. From top to
 The top left corner shows a little insertion with the player's money account, with a small "+" button on the side. Tapping on the money or the + will open the "buy coins with real money" pop-up. The exchange rate is €1 - 100 gold, with bigger bundles to be decided upon.
 
 ##### Card Selection
-The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far.
+The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen.
 
 The card selection pop-up also features cards' brief descriptions. A small button in the shape of a question mark is placed on the top-right corner of the pop-up, to visualize those tooltips. The tips will appear in the form of comic baloons coming out of the cards' icons. The tooltips are as follows.
 
@@ -252,7 +249,7 @@ The card selection pop-up also features cards' brief descriptions. A small butto
 8. You jellous?: cover your opponent in jelly
 
 ##### In-Game UI
-The in-game interface is as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
+The in-game interface looks as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
 
 ##### Settings Menu
 The settings menu has the same look of the main menu. The background and X button stay the same, will the menu button change into:
@@ -263,6 +260,16 @@ The settings menu has the same look of the main menu. The background and X butto
 
 Music and Sound effects button, if tapped, will grey out and turn music or sound effects off. If tapped on again, the effect will be reverted.
 The Credits button, if tapped, will show our team's and respective names - yay!
+
+#####Score Screen
+
+When the game ends, both players will see the score section of the screen move to the screen center in 1 second, while the rest of the screen gets shadowed. Once this is done, the highest of the 2 scores will start shining and be moved in the center of the screen, blue if it's the current player's, red if it's their opponent's.
+
+![End game's zoom on scores](pictures/end_game_zoom.png)
+
+At that point, the sentence "You win!" or "You lose!" will appear, depending on the situation, and the Victory Fanfare or the Defeat Riff will sound. A button with the word "continue" will appear just under "You Win/Lose" to return to the main menu.
+
+![Victory screen. Upon defeat, the red "You lose!" will substitute the blue "You win!"](pictures/victory_screen.png)
 
 ##### Level Selection
 The campaign level selection screen features a "path" connecting the levels, which are represented with buttons with their numbers above them. The background shows the land of Ludenia.
