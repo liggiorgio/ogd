@@ -240,6 +240,17 @@ The top left corner shows a little insertion with the player's money account, wi
 ##### Card Selection
 The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far.
 
+The card selection pop-up also features cards' brief descriptions. A small button in the shape of a question mark is placed on the top-right corner of the pop-up, to visualize those tooltips. The tips will appear in the form of comic baloons coming out of the cards' icons. The tooltips are as follows.
+
+1. It's raining men!: mix colours at will
+2. Go Go Go!: perform combos to gain moves
+3. Da Bath Bomb!: bursting happiness!
+4. Gimme that juice!: moves grants more points
+5. Who wants pie?: throw a cake at your opponent
+6. Isn't it time?: time out your opponent
+7. Did you say ice?: breaks your opponent board
+8. You jellous?: cover your opponent in jelly
+
 ##### In-Game UI
 The in-game interface is as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
 
