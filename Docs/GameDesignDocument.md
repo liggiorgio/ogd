@@ -225,17 +225,16 @@ The main screen features the necessary buttons, the details of which will be fur
 The main menu screen will also feature a red X button to quit the game on the top right side of the screen.
 
 ##### Shop Screen
-The shop will feature Robin on the bottom left of the screen, filling the whole bottom part with a conversazion balloon containing "Hey! Nothing better than some new gear to go into battle again!". Above him the screen will show 3 different kinds of card packs, with their pricing and the "BUY!" button.
-When the player taps on a pack, a small balloon will appear from it. From top to bottom, the packs will be:
+The shop will feature Robin on the bottom left of the screen, filling the whole bottom part with a conversazion balloon containing "Hey! Nothing better than some new gear to go into battle again!". Above him the screen will show 3 different kinds of card packs, with their pricing and the "buy" button with only the packs prices on it.
 
-* Card Pack - 60 gold - Balloon: "Contains 3 new cards!"
-* BIG Pack - 120 gold - Balloon: "Contains 7 new cards, convenient!"
-* THE PACK-O - 300 gold - Balloon: "Contains 20 new cards! HUGE DEAL!"
+![The shop interface](pictures/shop_screen.png)
 
 The top left corner shows a little insertion with the player's money account, with a small "+" button on the side. Tapping on the money or the + will open the "buy coins with real money" pop-up. The exchange rate is €1 - 100 gold, with bigger bundles to be decided upon.
 
 ##### Card Selection
-The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen.
+The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen from Duel mode or to the Level Selection in Campaign mode.
+
+![Card selection pop-up. In red, the portion of the screen that can be tapped to quit card selection and go back](pictures/card_selection.png)
 
 The card selection pop-up also features cards' brief descriptions. A small button in the shape of a question mark is placed on the top-right corner of the pop-up, to visualize those tooltips. The tips will appear in the form of comic baloons coming out of the cards' icons. The tooltips are as follows.
 
@@ -252,11 +251,9 @@ The card selection pop-up also features cards' brief descriptions. A small butto
 The in-game interface looks as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
 
 ##### Settings Menu
-The settings menu has the same look of the main menu. The background and X button stay the same, will the menu button change into:
+The settings menu has the same look of the main menu. The background and X button stay the same, while the menu button change into:
 
-* Music
-* Sound effects
-* Credits
+![The settings menu. Music is enabled so the button is yellow, while sound effects are disabled so the button is greyed out](pictures/settings_menu.png)
 
 Music and Sound effects button, if tapped, will grey out and turn music or sound effects off. If tapped on again, the effect will be reverted.
 The Credits button, if tapped, will show our team's and respective names - yay!
