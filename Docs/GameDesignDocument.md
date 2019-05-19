@@ -136,6 +136,19 @@ Taking software constraints into consideration, such as the game engine used, gr
 It's clear this is a non-demanding app, designed to run on most Android devices. A device that has these or equivalent specs is capable of running the game smoothly.
 
 ### 3.7. Business Model
+The monetisation strategy adopted for *SK: M&M* focuses on in-app purchases: with 74% of spending in the Google Play Store coming from in-app purchases in previous years, it is no wonder IAPs are an effective mobile game business model. This monetisation strategy also lets developers manage their sales directly, influencing the users' behaviour within the game.
+
+#### 3.7.1. IAPs and Gameplay
+The game lets players harvest resources by playing, getting rewards, acquiring items with the in-game currency, or purchasing in-game articles with real money. Players are encouraged to purchase items thanks to their trial-and-error approach to the game: acquiring resources needs time, and this leads to a limited number of games per time unit. Since losing a game rewards the player less than winning, if they want to boost their activity, they can then get more resources instantaneously in the shop screen.
+
+#### 3.7.2. Release Strategy
+The release plan for the game is a soft launch with two main phases: closed and open beta.
+
+Once the main features are defined, the closed beta rolls out for a chosen group of users. During this phase, data and feedback are gathered to fix current builds, balance gameplay, and evaluate design choices. Contents can be added, changed, or even removed during this phase, as this is the first test playground.
+
+The second phase is the open beta: the game is publicly downloadable by anyone but is still undergoing improvements and updates. Contents are more stable, yet they can further improve and change until the first stable version comes out.
+
+This release strategy let developers improve the whole software system in a gradual and controlled manner, and collect continuous feedback from the community about both application stability and game contents.
 
 ## 4. Gameplay
 
