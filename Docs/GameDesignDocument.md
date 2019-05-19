@@ -110,7 +110,11 @@ Top titles in these categories are *Candy Crush Saga*, *Toon Blast*, *Matchingto
 App ranking and audience interest of these games show their tendency to stay in the top charts of mobile marketplaces; trending games may vary during time, but top-grossing and top-selling games hold their positions against minor titles and clones.
 
 ### 3.4. Feature Comparison
-Competitors do not feature PvP, while they usually include longer and more complex levels and puzzl-ish mechanics, and the slower pace that comes with them.
+Previous games share some common features: a background story to motivate players to play more games; balanced endgame rewards to incentivise replays and make backtracking less frustrating; optional in-app purchases and/or lack of in-app advertisement.
+
+The killer feature of *Sunday Knights: Magic & Mayhem* is multiplayer. Although competitors have a single player game mode as well, *SK: M&M* introduces a game mode that put two players one against each other, in a fast-paced puzzle game for getting the higher score.
+
+The only known game to merge puzzle games and multiplayer is *Tumblestone*, featuring up to 4v4 real-time games. The main difference is the core game, for *SK: M&M* is a *farming* tile game (the grid always fills up empty cells), while *Tumblestone* is an *elimination* tile game (a game is over when the grid is empty).
 
 ### 3.5. Target Platform
 Mobile Android devices, as the market for this kind of games flourishes on mobile platforms. That is where the potential audience of the game would look for it. Match-3 gameplay is experienced at its best on a touch screen.
@@ -347,7 +351,7 @@ Each star can be drag-and-dropped on a face, thus disappearing and changing that
 
 As in the card's description, upon activation and for the whole duration of the card, the faces will slightly shine in their colour, becoming brighter. After the effect ends, a big red "+X MOVES!" will appear in the center of the screen for one second, before flying towards the moves counter while becoming small and disappearing in it, as the counter is increased by X.
 
-![The "+X MOVES" animation. X is the number of combos achieved during the effect](animations_gogogo.png) 
+![The "+X MOVES" animation. X is the number of combos achieved during the effect](animations_gogogo.png)
 
 3. The Bath Bomb!
 
@@ -372,11 +376,11 @@ Once that is over, all faces will be dirty of juice in the top part for the dura
 5. Who wants pie?
 
 Upon activation, the opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner.
- 
+
 ![The pie flying](pictures/animations_whowantspie_1.png)
- 
+
 Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once.
- 
+
 ![The dirty screen](pictures/animations_whowantspie_2.png)
 
 The cream spots will simply disappeared once rubbed once.
@@ -391,7 +395,7 @@ The hour buttons will gently float in place, hovering untill they are tapped. On
 
 7. Did you say ice?
 
-The Did you say ice? card will cause the center of the enemy's screen to shatter. The enemy will see a circa-round portion of their screen start creaking like ice over 3 seconds, then the pieces will explode and fall down. 
+The Did you say ice? card will cause the center of the enemy's screen to shatter. The enemy will see a circa-round portion of their screen start creaking like ice over 3 seconds, then the pieces will explode and fall down.
 
 ![The Did you say ice? creaking animation](pictures/cards_didyousayice_1.png)
 
