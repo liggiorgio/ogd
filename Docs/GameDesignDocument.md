@@ -178,7 +178,7 @@ The Gimme that juice! card covers all the faces in sparkly raspberry juice, maki
 
 ![The Who wants pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie)
 
-The Who wants pie? card throws - surprisingly - a pie to the opponent. Upon activation, the user will see the pie fly to the opponent's screen, on the top right corner. The opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are. "Being moved" means they either get successfully swapped or they fall due to a match on a lower row.
+The Who wants pie? card throws - surprisingly - a pie to the opponent. Upon activation, the opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are. "Being moved" means they either get successfully swapped or they fall due to a match on a lower row.
 
 2. Isn't it time?
 
@@ -368,6 +368,24 @@ Upon activation, a whole lot of juice will be sprayed on the user's screen, cove
 Once that is over, all faces will be dirty of juice in the top part for the duration of the effect. When it depletes, the juice will simply fade away in 1 second and let the faces return to normal.
 
 ![A dirty face](pictures/animations_gimmethatjuice_2.png)
+
+5. Who wants pie?
+
+Upon activation, the opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner.
+ 
+![The pie flying](pictures/animations_whowantspie_1.png)
+ 
+Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once.
+ 
+![The dirty screen](pictures/animations_whowantspie_2.png)
+
+6. Isn't it time?
+
+As soon as the card is activated, the opponent's screen will be shadowed with a light blue filter. At the same time, 12 hour buttons will appear in random spots throughout the victim's screen.
+
+![The 12th hour button](pictures/hour.png)
+
+The hour buttons will gently float in place, hovering untill they are tapped. Once the last one is tapped, the screen filter will disappear and the game resume.
 
 *	Menu music
 *	In-game music
