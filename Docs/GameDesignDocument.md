@@ -103,7 +103,11 @@ The study shows how the public is diverse among some genres. Age is not a restri
 The intended audience for our game consists of adults aged 25-35 (spread ±5), with a part-time or full-time occupation (e.g. job, school). They are casual players and enjoy playing games in their spare time, to take a break from the daily routine, or while travelling. Our target has no specific gender identity; while the core game is suitable to anyone, additional content may be appealing to a particular gender group or subgroup.
 
 ### 3.3. Top Performers
-Candy Crush, Toon Blast, Matchington Mansion, Farm Heroes.
+Reference categories for this analysis are "Casual" and "Puzzle", as both are suitable for a puzzle game aimed to entertain the average casual gamer.
+
+Top titles in these categories are *Candy Crush Saga*, *Toon Blast*, *Matchington Mansion*, *Farm Heroes Saga*, *Homescapes*, *Gardenscapes*, *Merge Dragons*, only to mention some. They are a paragon of appeal and long-term user engagement; their game experience is addicting and backed by valuable social and monetisation features.
+
+App ranking and audience interest of these games show their tendency to stay in the top charts of mobile marketplaces; trending games may vary during time, but top-grossing and top-selling games hold their positions against minor titles and clones.
 
 ### 3.4. Feature Comparison
 Competitors do not feature PvP, while they usually include longer and more complex levels and puzzl-ish mechanics, and the slower pace that comes with them.
