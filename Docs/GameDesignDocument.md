@@ -161,9 +161,9 @@ Each level has a minimum score the player must reach in order to achieve victory
 ##### Cards
 Cards are items the player can use at the expense of moves, with the cost depending on the single card. The player can unlock them by playing the campaign or by buying packs with coins they gain through PvP matches. Cards are either blue, if they provide a bonus or help for the player, or red, if they damage the opponent. Cards are played by tapping on them.
 
-######Card List
+###### Card List
 
->Blue cards
+> Blue cards
 
 1. It's raining men!
 
@@ -279,7 +279,7 @@ The settings menu has the same look of the main menu. The background and X butto
 Music and Sound effects button, if tapped, will grey out and turn music or sound effects off. If tapped on again, the effect will be reverted.
 The Credits button, if tapped, will show our team's and respective names - yay!
 
-#####Score Screen
+##### Score Screen
 
 When the game ends, both players will see the score section of the screen move to the screen center in 1 second, while the rest of the screen gets shadowed. Once this is done, the highest of the 2 scores will start shining and be moved in the center of the screen, blue if it's the current player's, red if it's their opponent's.
 
