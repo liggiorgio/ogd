@@ -341,13 +341,29 @@ Each star can be drag-and-dropped on a face, thus disappearing and changing that
 
 2. Go go go!
 
+As in the card's description, upon activation and for the whole duration of the card, the faces will slightly shine in their colour, becoming brighter. After the effect ends, a big red "+X MOVES!" will appear in the center of the screen for one second, before flying towards the moves counter while becoming small and disappearing in it, as the counter is increased by X.
+
+![The "+X MOVES" animation. X is the number of combos achieved during the effect](animations_gogogo.png) 
+
+3. The Bath Bomb!
+
+Once tapped, the card will shadow the screen a bit and make a red arrow appear from itself, pointing outside the board on the left if the card's on the left, on the right otherwise.
+
+![The Bath Bomb!'s arrow](pictures/animations_thebathbomb_1.png)
+
+Upon a tapping on a face, the arrow will follow the finger and the effect will activate, "exploding" the face and the 8 faces in a square around it in foam, making them happy and hence making them disappear.
+
+![The foam explosion](pictures/animations_thebathbomb_2.png)
+
+4. Gimme that juice!
+
 Upon activation, a whole lot of juice will be sprayed on the user's screen, covering it for a second.
 
-![The spray animation](pictures/animations_gogogo_1.png)
+![The spray animation](pictures/animations_gimmethatjuice_1.png)
 
 Once that is over, all faces will be dirty of juice in the top part for the duration of the effect. When it depletes, the juice will simply fade away in 1 second and let the faces return to normal.
 
-![A dirty face](pictures/animations_gogogo_2.png)
+![A dirty face](pictures/animations_gimmethatjuice_2.png)
 
 *	Menu music
 *	In-game music
