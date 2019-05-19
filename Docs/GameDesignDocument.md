@@ -117,10 +117,23 @@ The killer feature of *Sunday Knights: Magic & Mayhem* is multiplayer. Although 
 The only known game to merge puzzle games and multiplayer is *Tumblestone*, featuring up to 4v4 real-time games. The main difference is the core game, for *SK: M&M* is a *farming* tile game (the grid always fills up empty cells), while *Tumblestone* is an *elimination* tile game (a game is over when the grid is empty).
 
 ### 3.5. Target Platform
-Mobile Android devices, as the market for this kind of games flourishes on mobile platforms. That is where the potential audience of the game would look for it. Match-3 gameplay is experienced at its best on a touch screen.
+The target platform for the game depends on different factors, the most important of which are the market addressed and the user share one wants to reach out.
+
+Given the game genre and the players' mindset, it's obvious mobile devices are the best option as a gaming platform: casual players want to enjoy a game at any time and in any place, and mobile devices satisfy such requirements. We focus on smartphones and tablet devices, the former of which are widespread.
+
+For *SK: M&M*, we chose the Google Play Store as the launch marketplace of interest; hence, development turns towards Android-powered mobile devices during its early phase. A late iOS port of the game may be considered further if feedback from the Android testing ground results positively.
 
 ### 3.6. System Requirements
-Android 5.0+, as Android 5 constitutes 89% of the Android market right now.
+Taking software constraints into consideration, such as the game engine used, graphical level of detail, or the device coverage, we can estimate the following recommended requirements:
+
+- CPU: **Intel Atom Z2560 Dual Core 1.6 GHz or equivalent**
+- GPU: **PowerVR SGX544MP2  or equivalent**
+- RAM: **512 MB**
+- Storage: **100 MB**
+- OS: **Android 4.4**
+- Phone: **Samsung Galaxy S3 or equivalent**
+
+It's clear this is a non-demanding app, designed to run on most Android devices. A device that has these or equivalent specs is capable of running the game smoothly.
 
 ### 3.7. Business Model
 
