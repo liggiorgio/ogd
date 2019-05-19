@@ -322,17 +322,33 @@ All the characters described above are NPC. They only appear to tell the player 
 
 Faces apppear in 5 different colours: red (E00201), green (rgb 10, 255, 60), yellow (FFFF33), violet (710193) and blue (0038a8). As seen in the example above, they have 2 stages, a sad one before being matched, and a happy one after being matched.
 
-*	Score screen
 *	Timers
 *	Loading screen
-*	Zeely
-*	Robin
 
 >Faces animation
 
 Faces have a specific animation when they get matched, turning their frown into a smile in 0.5 seconds and then popping away towards their center. This is accompanied by a "pop" sound.
 
-*	Cards animations
+>Cards animations
+
+1. It's raining men!
+
+Upon activation, from the very top of the screen, one star per second will start falling for 5 seconds. The horizontal coordinate of each star is random. Each star is of one of the faces' colours, and the colours order is random. The stars take 5 seconds to traverse the whole screen, disappearing by leaving it at the bottom.
+
+![The falling stars for It's raining men!](pictures/animations_it'srainingmen.png)
+
+Each star can be drag-and-dropped on a face, thus disappearing and changing that face's colour.
+
+2. Go go go!
+
+Upon activation, a whole lot of juice will be sprayed on the user's screen, covering it for a second.
+
+![The spray animation](pictures/animations_gogogo_1.png)
+
+Once that is over, all faces will be dirty of juice in the top part for the duration of the effect. When it depletes, the juice will simply fade away in 1 second and let the faces return to normal.
+
+![A dirty face](pictures/animations_gogogo_2.png)
+
 *	Menu music
 *	In-game music
 *	Match-3 sound effect
