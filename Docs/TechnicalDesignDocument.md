@@ -39,7 +39,7 @@ The closed beta phase will be rolled out by giving codes for the game via our so
 - Expected average number of simultaneous players: 200
 - Expected number of total players: 1,500
 
-The open beta phase will be rolled out through the Google Play Beta Test Management plan, same as the closed beta, to make our game readily available on the most trusted source for Android apps.
+The open beta phase will be rolled out through the Play Store Beta Test program, same as the closed beta, to make our game readily available on the most trusted source for Android apps.
 
 * Expected average number of daily players: 1,750
 * Expected average number of simultaneous players: 700
@@ -58,19 +58,23 @@ The game uses an authoritative client-server system for moves validation. The ga
 
 The following is a rough estimation of the player costs during the open beta period. This is the first period of the game being available to the world and also the moment when we begin using the Firebase services. Since some Firebase services are billed per-access (every time a user opens the game or a specific page) or per-operation (every time data is read or written from\to the database), the costs are estimated taking into account that each daily player will play 10 matches, opening the app twice, simulating an user going from home to work and then returning home. 
 
-| Category                    | Resources per unit       | Total units                      | Total resource usage             | Total cost       |
-| --------------------------- | ------------------------ | -------------------------------- | -------------------------------- | ---------------- |
-| Cloud Functions Invocations | 60 invocations per match | 8,750 matches per day            | 15,750,000 invocations per month | $ 5.60 (€ 5)     |
-| Outbound traffic            | 1 KB per invocation      | 15,750,000 invocations per month | 15.75 GB per month               | $ 1.20 (€ 1.10)  |
-| GB-seconds                  | 100ms per invocation     | 15,750,000 invocations per month | 1,575,000 GB-s per month         | $ 3 (€ 2.7)      |
-| CPU-seconds                 | 100ms per invocation     | 15,750,000 invocations per month | 1,575,000 CPU-s per month        | $ 14 (€ 12.6)    |
-|                             |                          |                                  | **Total**                        | € 21.4 per month |
+| Category                    | Resources per unit       | Total units                      | Total resource usage             | Total cost      |
+| --------------------------- | ------------------------ | -------------------------------- | -------------------------------- | --------------- |
+| Cloud Functions Invocations | 60 invocations per match | 8,750 matches per day            | 15,750,000 invocations per month | $ 5.60 (€ 5)    |
+| Outbound traffic            | 1 KB per invocation      | 15,750,000 invocations per month | 15.75 GB per month               | $ 1.20 (€ 1.10) |
+| GB-seconds                  | 100ms per invocation     | 15,750,000 invocations per month | 1,575,000 GB-s per month         | $ 3 (€ 2.7)     |
+| CPU-seconds                 | 100ms per invocation     | 15,750,000 invocations per month | 1,575,000 CPU-s per month        | $ 14 (€ 12.6)   |
+|                             |                          | **Total**                        | € 21.4 per month                 | **€ 64.2**      |
 
 [comment]: # "Target workload for your infrastructure in term of total users, peak users, and resources dedicated to each user. Starting from an initial system capacity and extend later is fine but then you must provide an extension plan. MOTIVATE THIS referencing the GDD"
 
 ##	5. Frontend
 
-The frontend receives all the players' interaction and sends them to the correct backend service to be handled. Players will access frontend services from the game itself, logging in with their Google account through the Google Play Games platform. The authentication service is provided by the Google Play Games services and provides us with information on the player's account ID, display name and profile image.
+The frontend receives all the players' interaction and sends them to the correct backend service to be handled. Since some of our services are provided through Google platforms like Google Play Games (from now on called GPG) and Google Play Store (for payments), our frontend services will collect user requests and forward them to the correct external services, handling the returned data.
+
+The Authentication service will handle the user request and receive the user ID from the GPG authentication API. This ID will then be used to send matchmaking requests (to the GPG matchmaking service) and to save user data.
+
+The Payments service will handle and forward the users' in-app purchases to the Google Play payments API. It will then send the transaction's result to the User data backend service to give the user the correct amount of coins.
 
 ###	5.1	Platforms
 Our solution of choice is a Platform-as-a-Service set of products, Firebase, provided by Google. Firebase lets us deploy our frontend services to their Functions product, that will be used for both the frontend and the backend.
@@ -79,24 +83,20 @@ Our solution of choice is a Platform-as-a-Service set of products, Firebase, pro
 Since our solution of choice is the Firebase cloud platform, the system automatically scales according to the needs of our userbase. In case of an increase in the number of players, Firebase automatically adjusts the provided compute time to suit our needs.
 
 ##	6.	Backend
-Our game uses three main backend services and two external components. The external components are used to handle user authentication and microtransaction and are both provided by Google, that lets us have information about the player and confirmation of successful transactions.  
+Our game uses two main backend services to handle the player data and the match themselves. 
 Our services are:
 
 * Game Service: this service receives player moves, validates them, makes changes to the game board according to the information received and sends the result back to the client. It is the core of the online game experience.
-* User Database: a database containing all the information regarding our players, like their achievements, their win\loss ratio and their collected cards. It also has a secondary database used as backup.
+* User Data Service: this service is used to read or update user data, like their friend list, the amount of coins they own and other information. Since we use the GPG Saved games capability to handle the player data, nothing is stored on our databases. Everything is received from GPG, updated as needed, and then uploaded to GPG. Since this service uses the players' own Google Drive storage space to save data, and since traffic between Google services is free, it comes at no cost to us.
 
-###	6.1	Platforms
+###	6.1	Platforms and software
 As said in the **Frontend** section, we use Firebase as our cloud platform of choice. The decision was made after considering what best suits our needs for an affordable, scalable and easily manageable backend platform. We chose Firebase because it has low initial costs (most of its products are free under a certain data threshold) and fine-grained billing plans, is very well integrated with the whole Google environment (since it is also owned by Google) and provides a specific SDK for game development in Unity.   
 Once this choice is done, we have no control over which software Firebase uses but we can access all of their products, many of which have, as previously stated, a monthly usage threshold under which they are provided for free.
 
-###	6.2	Software
+To upload our own game services, we will use Firebase's Function product. It is essentially a higher-level version of Google Cloud Functions that aims to provide the same service with a much lower configuration effort and mobile-optimized tools.
 
-| Service | Solution |   Reason   |
-| -- | -- | -- |
-| Game Service | Cloud Functions  | This service lets us host our game matches on Firebase's servers, reacting to actions like player moves or match timeouts.  |
-| User Database | Cloud Firestore | This service provides a robust cloud-hosted NoSQL database with efficient queries and offline availability, letting us store all player data while also making them accessible in a read-only fashion if the user is offline. |
+###	6.2	Workload capacity
 
-###	6.3	Workload capacity
 Since our backend is completely cloud-based, we can expect new computational power and storage space to be provided as needed. So, the system should be capable of handling a very large amount of simultaneous matches should the need arise.
 
 ##	7.	Development
@@ -106,9 +106,9 @@ All the monthly costs are relative to the period between the beginning of the pr
 ###	7.1	Hardware
 | Product                     | Quantity | Description                                                  | Cost per Unit | Total Cost |
 | --------------------------- | -------- | ------------------------------------------------------------ | ------------- | ---------- |
-| Dell Precision 3630 Tower   | 3        | High performance desktop workstation for the whole team. Windows license, mouse and keyboard included. | € 1.350       | € 4.050    |
-| Dell UltraHD 24 - P2415Q    | 3        | High resolution and colour accurate screen for the whole team. | € 465         | € 1.395    |
-| Synology DS918+             | 2        | 4-bay NAS enclosures, for storage and backup purposes.       | € 580         | € 1.160    |
+| Dell Precision 3630 Tower   | 3        | High performance desktop workstation for the whole team. Windows license, mouse and keyboard included. | € 1,350       | € 4,050    |
+| Dell UltraHD 24 - P2415Q    | 3        | High resolution and colour accurate screen for the whole team. | € 465         | € 1,395    |
+| Synology DS918+             | 2        | 4-bay NAS enclosures, for storage and backup purposes.       | € 580         | € 1,160    |
 | Western Digital Red 3TB     | 8        | NAS-specific HDDs for the Synology enclosures.               | € 119         | € 952      |
 | Netgear GS305E              | 2        | 5 port web managed ethernet switch.                          | € 34          | € 68       |
 | 5-pack Ethernet Cat6 cables | 2        | 3m long Ethernet cables to connect everything to the ISP-provided modem\router | € 14          | € 28       |
@@ -116,8 +116,8 @@ All the monthly costs are relative to the period between the beginning of the pr
 ###	7.2	Software
 | Product | Quantity | Cost | Total Cost |
 | -- | -- | -- | -- |
-| Unity Pro | 3 | € 115 per month per seat | € 2.070 |
-| Visual Studio Professional | 1 | € 1200 first year | € 1.200 |
+| Unity Pro | 3 | € 115 per month per seat | € 2,070 |
+| Visual Studio Professional | 1 | € 1200 first year | € 1,200 |
 | Git | 3 | € 0 | € 0 |
 | GIMP | 3 | € 0 | € 0 |
 
@@ -127,7 +127,7 @@ All the monthly costs are relative to the period between the beginning of the pr
 
 | Product                       | Unit cost                                          | Total cost |
 | ----------------------------- | -------------------------------------------------- | ---------- |
-| Office Rent (incl. utilities) | € 1000 per month                                   | € 6.000    |
+| Office Rent (incl. utilities) | € 1000 per month                                   | € 6,000    |
 | ISP - Gigabit connection      | € 20 per month (€ 30 per month after the 1st year) | € 120      |
 | Royalty-free music            | $ 69 per year (approx. € 62)                       | € 62       |
 
@@ -137,10 +137,10 @@ All the monthly costs are relative to the period between the beginning of the pr
 
 | Description | Cost         |
 | ----------- | ------------ |
-| Software    | € 3.270      |
-| Hardware    | € 7.653      |
-| Other       | € 6.182      |
-| **Total**   | **€ 17.105** |
+| Software    | € 3,270      |
+| Hardware    | € 7,653      |
+| Other       | € 6,182      |
+| **Total**   | **€ 17,105** |
 
 
 
@@ -213,12 +213,13 @@ Considering this a prototype campaign for the open beta phase and summing up 4 m
 
 ### 8.4	Cost estimation
 
-| Service                               | Total cost |
-| ------------------------------------- | ---------- |
-| Google Licensing                      | € 25       |
-| 2D art                                | € 800      |
-| Customer Support                      | € 1,608    |
-| Marketing and Social media management | € 27,000   |
+| Service                               | Total cost   |
+| ------------------------------------- | ------------ |
+| Google Licensing                      | € 25         |
+| 2D art                                | € 800        |
+| Customer Support                      | € 1,608      |
+| Marketing and Social media management | € 27,000     |
+| **Total**                             | **€ 29,433** |
 
 
 
@@ -226,16 +227,18 @@ Considering this a prototype campaign for the open beta phase and summing up 4 m
 
 ###	9.1	Global Infrastructure Outline
 
-TODO TODO TODO TODO TODO TODO MAKE PIC
-
-At this early stage of development, architecture design establishes a centralized server to which client applications connect to on app start. Since main services (account management, database storage...) are provided by the Firebase framework, this will be the main component installed on the proprietary server. Other third-party services (such as Google Play Games) are not the development team's concern.
+![Game network outline](D:\Code\ogd\Docs\pictures\network.png)
 [comment]: # "How servers are connected (hint: use a picture What is installed on each server"
 
 ###  9.2  Network Requirements
 
-TOREDO TOREDO TOREDO
+#### Client side:
 
-As a matter of early estimate, server-side network must satisfy minimal requirements for testing-purpose only during the development & testing phases. No more than a dozen devices are to connect simultaneously during prototypization, and a common 30 Mbps broadband connection will be enough for this purpose. As soon as the game enters beta testing phase, these requirements may change.
+A 3G connection is required to play the game.
+
+#### Server side: 
+
+Low-latency services with up to 500Mbps connection.
 
 ##	10.	Delivery
 
@@ -255,7 +258,14 @@ The game will be initially delivered through the Beta Tester program of Google P
 The in-house permanent staff is composed by a team of 3: 
 
 - Game Director and Lead Designer
+
 - Game and Level Designer
+
 - Game Programmer
 
-Since most of the non-permanent staff will be outsourced VI PREGO AIUTO NON SO COSA SCRIVERE
+### 11.2	Outsourced 
+
+Outsourced staff is called whenever needed or "rented" each month without being effectively part of the company.
+
+- Social Media Manager
+- 2D\Pixel Artist
