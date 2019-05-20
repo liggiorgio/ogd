@@ -22,31 +22,49 @@ In addition to the game, we aim to provide the following services to the player:
 
 ###	3.1	Hardware requirements
 The minimum hardware requirements are low-to-mid-range smartphones, with the following specifications:
-* At least 50MB of free internal storage
+* At least 100 MB of free internal storage
 * A 3G or Wi-Fi Internet connection
-* At least 1GB of RAM
+* At least 512 MB of RAM
 
 ###	3.2	Software requirements
-The game requires at least Android 5.0 (API level 21). More details on the decision can be found in the **Platform** and **System Requirements** section of the GDD.
+The game requires at least Android 4.4 (API level 19). More details on the decision can be found in the **Platform** and **System Requirements** section of the GDD.
 
 ##	4. Workload estimation
 
-TODO EXTEND TODO EXTEND TODO EXTEND
+The rollout plan consists of an initial closed beta, followed by an open beta phase, to test and improve the game based on user feedback, and a release phase, when the game will be fully available to anyone through the Google Play Store. The game in the closed beta phase will use a P2P system for the matches. From the open beta onwards, the online part of the game will be composed of a classic client-server system, with the server hosted on the Google Firebase platform.
 
-The online part of the game is composed of a classic client-server system, with the server hosted on the Google Firebase platform.
-The rollout plan consists of an open beta phase, to test and improve the game based on user feedback, and a release phase, when the game will be fully available to anyone through the Google Play Store.
+The closed beta phase will be rolled out by giving codes for the game via our social network pages. The codes will be redeemable on the Google Play Store and will give exclusive access to the game, thanks to the Play Store Beta Test program.
 
-The open beta phase will be rolled out through the Google Play Beta Test Management plan, to make our game readily available on the most trusted source for Android apps.
-* Expected average number of daily players: 1,000
-* Expected average number of simultaneous players: 500
-* Expected number of total players: 5,000
+- Expected average number of daily players: 500
+- Expected average number of simultaneous players: 200
+- Expected number of total players: 1,500
+
+The open beta phase will be rolled out through the Google Play Beta Test Management plan, same as the closed beta, to make our game readily available on the most trusted source for Android apps.
+
+* Expected average number of daily players: 1,750
+* Expected average number of simultaneous players: 700
+* Expected number of total players: 5,250
 
 On release, we expect an increase in the number of players
-* Expected average number of daily players: 15,000
-* Expected average number of simultaneous players: 4,500
-* Expected number of total players: 25,000
+* Expected average number of daily players: 3,750
+* Expected average number of simultaneous players: 1,500
+* Expected number of total players: 11,250
 
-Each match is played on the server. Each player sends the server their move, that is then verified and executed. The results are sent back to the client and then visualized on the player's screen. Since this must happen quasi-real-time, each user (or better, each match) has enough dedicated resources to be able to compute everything in the required time. Since everything is hosted on the Firebase platform, resources are allocated and paid as needed.
+[comment]: # "TODO: add post-release plan"
+
+The game uses an authoritative client-server system for moves validation. The game is essentially played on the server, with the users sending their moves and receiving the new state of the board from the server. Since everything is hosted on the Firebase platform, resources are allocated and paid as needed, without the need for a specific extension and scalability plan.
+
+### 4.1	Player costs
+
+The following is a rough estimation of the player costs during the open beta period. This is the first period of the game being available to the world and also the moment when we begin using the Firebase services. Since some Firebase services are billed per-access (every time a user opens the game or a specific page) or per-operation (every time data is read or written from\to the database), the costs are estimated taking into account that each daily player will play 10 matches, opening the app twice, simulating an user going from home to work and then returning home. 
+
+| Category                    | Resources per unit       | Total units                      | Total resource usage             | Total cost       |
+| --------------------------- | ------------------------ | -------------------------------- | -------------------------------- | ---------------- |
+| Cloud Functions Invocations | 60 invocations per match | 8,750 matches per day            | 15,750,000 invocations per month | $ 5.60 (€ 5)     |
+| Outbound traffic            | 1 KB per invocation      | 15,750,000 invocations per month | 15.75 GB per month               | $ 1.20 (€ 1.10)  |
+| GB-seconds                  | 100ms per invocation     | 15,750,000 invocations per month | 1,575,000 GB-s per month         | $ 3 (€ 2.7)      |
+| CPU-seconds                 | 100ms per invocation     | 15,750,000 invocations per month | 1,575,000 CPU-s per month        | $ 14 (€ 12.6)    |
+|                             |                          |                                  | **Total**                        | € 21.4 per month |
 
 [comment]: # "Target workload for your infrastructure in term of total users, peak users, and resources dedicated to each user. Starting from an initial system capacity and extend later is fine but then you must provide an extension plan. MOTIVATE THIS referencing the GDD"
 
@@ -100,7 +118,8 @@ All the monthly costs are relative to the period between the beginning of the pr
 | -- | -- | -- | -- |
 | Unity Pro | 3 | € 115 per month per seat | € 2.070 |
 | Visual Studio Professional | 1 | € 1200 first year | € 1.200 |
-| Git |  | € 0 | € 0 |
+| Git | 3 | € 0 | € 0 |
+| GIMP | 3 | € 0 | € 0 |
 
 [comment]: # "https://www.ibaudio.com"
 
@@ -109,7 +128,7 @@ All the monthly costs are relative to the period between the beginning of the pr
 | Product                       | Unit cost                                          | Total cost |
 | ----------------------------- | -------------------------------------------------- | ---------- |
 | Office Rent (incl. utilities) | € 1000 per month                                   | € 6.000    |
-| ISP                           | € 20 per month (€ 30 per month after the 1st year) | € 120      |
+| ISP - Gigabit connection      | € 20 per month (€ 30 per month after the 1st year) | € 120      |
 | Royalty-free music            | $ 69 per year (approx. € 62)                       | € 62       |
 |                               |                                                    |            |
 
@@ -126,7 +145,7 @@ All the monthly costs are relative to the period between the beginning of the pr
 
 
 
-### 7.4	Main software development tasks
+### 7.5	Main software development tasks
 
 #### Programming
 
@@ -146,31 +165,31 @@ All the monthly costs are relative to the period between the beginning of the pr
 - Network communication interface
 - Sound and GUI integration
 - Social networks integration
+- Friends management
 
 #### GUI Development
 
 - Login screen
 - Main menu and Options menu
-- Player profile screen
-- Card Collection screen
 - In-game UI
 - In-game shop
 - Lobby\Loading screen
+- Level selection screen
+- Friend list screen
 
 #### Art & Animations
 
-- HAPPY FACE THINGIES BETTER NAME PENDING
+- Faces design and animations
 - Card visual design
 - Character design
 - Game backgrounds
 - Card activation animations
 - Win\Loss screen
-- Player profile screen
 - Campaign dialogues
 
-###	7.5	Development Gantt
+###	7.6	Development Gantt
 
-![Gantt planning until open beta phase](pictures/gantt2.png)
+![Gantt planning until open beta phase](pictures/gantt.png)
 
 ##	8.	External Services
 To simplify our network and to avoid potential mismanagement of heavily sensitive data, we delegate the payment service to Google, the publisher of our game. This has no upfront cost (except for the € 25 license needed to publish the game) but Google takes 30% out of every transaction as management fees.
