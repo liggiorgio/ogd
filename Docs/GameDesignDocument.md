@@ -289,6 +289,8 @@ The card selection pop-up also features cards' brief descriptions. A small butto
 7. Did you say ice?: breaks your opponent board
 8. You jellous?: cover your opponent in jelly
 
+A big yellow "READY!" button allows the player to declare they are ready to go into the game.
+
 ##### In-Game UI
 The in-game interface looks as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
 
