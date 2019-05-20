@@ -293,7 +293,6 @@ Music and Sound effects button, if tapped, will grey out and turn music or sound
 The Credits button, if tapped, will show our team's and respective names - yay!
 
 ##### Score Screen
-
 When the game ends, both players will see the score section of the screen move to the screen center in 1 second, while the rest of the screen gets shadowed. Once this is done, the highest of the 2 scores will start shining and be moved in the center of the screen, blue if it's the current player's, red if it's their opponent's.
 
 ![End game's zoom on scores](pictures/end_game_zoom.png)
@@ -305,6 +304,11 @@ At that point, the sentence "You win!" or "You lose!" will appear, depending on 
 ##### Level Selection
 The campaign level selection screen features a "path" connecting the levels, which are represented with buttons with their numbers above them. The background shows the land of Ludenia.
 All completed levels will appear as blue, smiling faces, the next level to complete will appear as a sad, red face. Unlocked levels will appear as sad, stone-grey faces.
+
+##### Friend List
+The main menu, shop screen, setting menu and level selection interfaces also feature a Friends button. It is used to visualize the friend list, which is used to start a chat or a match with any user added to it, provided they are not in game.
+
+![An example of friend list](pictures/friend_list.png)
 
 #### 4.3.2. Rules
 The number of possible moves is set for each game. Time is set only in multiplayer games.
