@@ -130,7 +130,6 @@ All the monthly costs are relative to the period between the beginning of the pr
 | Office Rent (incl. utilities) | € 1000 per month                                   | € 6.000    |
 | ISP - Gigabit connection      | € 20 per month (€ 30 per month after the 1st year) | € 120      |
 | Royalty-free music            | $ 69 per year (approx. € 62)                       | € 62       |
-|                               |                                                    |            |
 
 [comment]: # "https://www.timbusiness.it/fisso/offerte-fibra-adsl-telefono/senza-limiti-fibra"
 
@@ -196,18 +195,30 @@ To simplify our network and to avoid potential mismanagement of heavily sensitiv
 
 We also decided to outsource some services, specifically customer support, 2D art and marketing, to lower their costs and to use them only when effectively needed.
 
--PART ABOUT CUSTOMER SUPPORT
+### 8.1	2D Art
 
--PART ABOUT PRELIMINARY MARKETING
+We got in touch with a bunch of freelance artists, asking them for quotes for the amount of work we requested. Most of the quotes were around € 40 per drawing, for 20 drawings. This gives us a total of approx. € 800.
+
+### 8.2	Customer Support
+
+We can't foresee or estimate how many users will need customer support for our product, so we opted for a pay-per-ticket service, that will scale accordingly if for some reason the amount of support needed rises unexpectedly. For budget reasons, we expect 4% of our player base to incur in problems each month. Since we expect around 5,250 total players during the open beta, there will be 210 players in need of support each month. 
+
+This, according to the quote given by the company we plan to outsource to, amounts to $ 599 (€ 536) each month. Estimating a 3 month long open beta, this totals to € 1,608.
+
+### 8.3	Marketing and Social media management
+
+We plan to begin advertising our game on the main social medias (Facebook, Instagram) from two weeks before the beginning of the closed beta, to reach a good number of potential players from before the release of the game. Expense for ads and duration of ad campaigns will be decided with our outsourced social media manager, whose cost according to the market is about € 3,000 each month. As a purely budgetary estimate, ads reaching an audience of about 200,000 users on Facebook and Instagram will cost € 500 a day. Running this campaign for a month sums up at approx. € 15,000.
+
+Considering this a prototype campaign for the open beta phase and summing up 4 months of social media managing gives a gross total of € 27,000 for preliminary marketing and social media management.
 
 ### 8.4	Cost estimation
 
-| Service          | Total cost |
-| ---------------- | ---------- |
-| Google Services  | € 25       |
-| 2D art           |            |
-| Customer Support |            |
-| Marketing        |            |
+| Service                               | Total cost |
+| ------------------------------------- | ---------- |
+| Google Licensing                      | € 25       |
+| 2D art                                | € 800      |
+| Customer Support                      | € 1,608    |
+| Marketing and Social media management | € 27,000   |
 
 
 
@@ -230,7 +241,7 @@ As a matter of early estimate, server-side network must satisfy minimal requirem
 
 ###  10.1  Estimated Delivery Time
 
-We estimate to be ready for an open beta phase after 6 months of work, as shown in the **Development Gantt** section, and to be ready to release the game after 9 to 10 months, 3 to 4 months after the beginning of the beta phase. This is an optimistic estimate, since the precise release dates for the beta and the final product should be carefully planned with marketing experts and there is always the risk of external events delaying the development process.
+We initially plan to roll out codes for a closed beta of our game, about 6 months after the beginning of development. We then estimate to be ready for an open beta phase after 1 or 2 months of work, as shown in the **Development Gantt** section, and to be ready to release the game after 10 to 12 months since the beginning of development, 3 to 4 months after the open beta phase. This is an optimistic estimate, since the precise release dates for the betas and the final product should be carefully planned with marketing experts and there is always the risk of external events delaying the development process.
 
 ###	10.2	Delivery Platform
 The game will be delivered through the Google Play Store.
