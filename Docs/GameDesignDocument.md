@@ -237,6 +237,14 @@ After every PvP match, the player will be granted coins: 15 if they win, 5 if th
 ##### Packs
 There are 2 card packs that can be bought in the Shop (see Interfaces for the Shop), one providing 1 card for 100 coins and one providing 3 cards for 250 coins. Cards are randomized based on their rarity: each card has 95% of being common and 5% of being rare.
 
+##### Friends
+Player can add friends to their Friend List. They can do so in 2 ways: by adding their last opponent or by searching for a user by nickname. Both these options can be found at the bottom of the Friend List Interface. There are 2 ways a player can interact with a friend:
+By chatting through a simple, transparent pop up at the bottom left of the screen
+By dueling.
+In case a player challenges another, the other player will see a "Challenge pop-up" appear, and they can decide if to accept or refuse. If they accept, both players will be sent to the "Card selection" interface and, once both have pressed the "READY!" button, the match will start. The first of the two players to press "READY!" - or both in case the game takes time to load - will see the button greyed out.
+
+![An example of the friendly challenge pop-up](pictures/friend_challenge.png)
+
 ### 4.3. Controls
 The game is controlled through the phone's touch screen.
 
