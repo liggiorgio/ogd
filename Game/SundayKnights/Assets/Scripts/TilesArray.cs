@@ -256,4 +256,18 @@ public class TilesArray
 
         return collapseInfo;
     }
+
+    // Return tile positions for a given column
+    public IEnumerable<TileInfo> GetEmptyItemsOnColumn(int column)
+    {
+        List<TileInfo> emptyItems = new List<TileInfo>();
+
+        for ( int row = 0; row < Const.Rows; row++ )
+        {
+            if ( tiles[row, column] == null )
+                emptyItems.Add(new TileInfo() { Row = row, Column = column });
+        }
+
+        return emptyItems;
+    }
 }
