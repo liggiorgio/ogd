@@ -242,7 +242,7 @@ At any time, only ONE red card can be active for each player. This means a playe
 
 >Red and Blue cards interactions
 
-The "Isn't it time?" card, "Did you say ice?" card and the first phase of the "Who wants pie?" card are TIME FREEZING effects. This means that they "pause" the effect of the enemy's blue cards, if any are in effect when the red card is played. As for the rest, pie jam and jelly do not stop time, and thus work alongside any enemy blue card, effectively slowing them down. They are meant to be good counters to big combos, by, for example, making the opponent waste their precious 5 seconds of score boost.
+The "Isn't it time?" card, "Did you say ice?" card and the first phase of the "Who wants pie?" card - the one when the opponent needs to swipe the cream away - are TIME FREEZING effects. This means that they "pause" the effect of the enemy's blue cards, if any are in effect when the red card is played. As for the rest, pie cream and jelly do not stop time, and thus work alongside any enemy blue card, effectively slowing them down. They are meant to be good counters to big combos, by, for example, making the opponent waste their precious 5 seconds of score boost.
 
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
