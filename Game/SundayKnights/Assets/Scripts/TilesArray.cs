@@ -100,4 +100,38 @@ public class TilesArray
 
         return matches.Distinct();
     }
+
+    // Check for matches in the current grid
+    private IEnumerable<GameObject> GetMatchesVertically(GameObject go)
+    {
+        List<GameObject> matches = new List<GameObject>();
+        matches.Add(go);
+        var tile = go.GetComponent<Tile>();
+
+        // check bottom
+        if ( tile.Row != 0 )
+            for ( int row = tile.Row - 1; row >=0; row-- )
+            {
+                if ( (tiles[row, tile.Column] != null) && (tiles[row, tile.Column].GetComponent<Tile>().IsSameType(tile)) )
+                    matches.Add(tiles[row, tile.Column]);
+                else
+                    break;
+            }
+
+        // check top
+        if ( tile.Row != Const.Rows )
+            for ( int row = tile.Row + 1; row < Const.Rows; row++ )
+            {
+                if ( (tiles[row, tile.Column] != null) && (tiles[row, tile.Column].GetComponent<Tile>().IsSameType(tile)) )
+                    matches.Add(tiles[row, tile.Column]);
+                else
+                    break;
+            }
+
+        // we want at least three matches
+        if ( matches.Count() < Const.MinimumMatches )
+            matches.Clear();
+
+        return matches.Distinct();
+    }
 }
