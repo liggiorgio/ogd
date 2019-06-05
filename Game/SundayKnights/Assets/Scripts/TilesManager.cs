@@ -70,4 +70,22 @@ public class TilesManager : MonoBehaviour
             item.GetComponent<Tile>().Type = TilePrefabs.
             Where(x => x.GetComponent<Tile>().Type.Contains(item.name.Split('_')[1].Trim())).Single().name;
     }
+
+    // Scoring
+    private void InitializeScore()
+    {
+        score = 0;
+        ShowScore();
+    }
+
+    private void IncreaseScore(int amount)
+    {
+        score += amount;
+        ShowScore();
+    }
+
+    private void ShowScore()
+    {
+        ScoreText.text = "Score: " + score.ToString();
+    }
 }
