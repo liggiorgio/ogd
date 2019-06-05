@@ -196,13 +196,17 @@ The Go Go Go! card allows the user to gain extra moves. Upon activation, all fac
 
 ![The Da Bath Bomb! card](pictures/cards_DaBathBomb!.png)
 
-The Da Bath Bomb! card requires the player to target a specific face cell. Upon targeting, the card will "demolish" the selected face (by making it happy, of course) and the 8 faces in the square around it, in an explosion of soap foam. This will grant the player 150 points.
+The Da Bath Bomb! card requires the player to target a specific face cell. Upon targeting, the card will "demolish" the selected face (by making it happy, of course) and the 8 faces in the square around it, in an explosion of soap foam. This will grant the player 150 points. The card is consumed upon resolving. If the opponent casts a red card during the "aiming" phase, the Bath Bomb effect doesn't take place and the card is not consumed. The player will have a chance to play it again after they get rid of any red card effects.
 
 4. Gimme that juice!
 
 ![The Gimme that juice! card](pictures/cards_GimmeThatJuice!.png)
 
 The Gimme that juice! card covers all the faces in sparkly raspberry juice, making it so they provide double points for 5 seconds.
+
+>Blue cards interactions
+
+Any number of different blue cards can be active at the same time. This means a player can, for example, activate a "Go Go Go!" card, set up a "Gimme that juice!" for extra points, then hit super hard with a "Bath Bomb" or a "It's reining men!" and gain a good number of extra moves and a huge score boost. No two same cards can be active at a time. This applies to all blue cards except Bath Bomb, that does not have any over time effect.
 
 >Red cards
 
@@ -231,6 +235,14 @@ The Did you say ice? card shatters the opponent's screen. Not for real, that is.
 ![The You jellous? card](pictures/cards_YouJellous.png)
 
 The You jellous? card makes the opponent really jellous. Upon activation, a big red jelly will cover the top 3 rows of the opponent's board. If a face is engulfed in jelly, it will move and swap at 1/5 of it's natural velocity. To make the jelly burst and disappear, the victim will have to perform 3 matches (combos count) inside it, with it meaning at least 1 face of the match needs to be in it.
+
+>Red cards interactions
+
+At any time, only ONE red card can be active for each player. This means a player cannot activate a red card as long as their opponent is still under the effect of the previous red card.
+
+>Red and Blue cards interactions
+
+The "Isn't it time?" card, "Did you say ice?" card and the first phase of the "Who wants pie?" card are TIME FREEZING effects. This means that they "pause" the effect of the enemy's blue cards, if any are in effect when the red card is played. As for the rest, pie jam and jelly do not stop time, and thus work alongside any enemy blue card, effectively slowing them down. They are meant to be good counters to big combos, by, for example, making the opponent waste their precious 5 seconds of score boost.
 
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
