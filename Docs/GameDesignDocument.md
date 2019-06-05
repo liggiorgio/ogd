@@ -288,7 +288,7 @@ The shop will feature Robin on the bottom left of the screen, filling the whole 
 The top left corner shows a little insertion with the player's money account, with a small "+" button on the side. Tapping on the money or the + will open the "buy coins with real money" pop-up. The exchange rate is €1 - 100 gold, with bigger bundles to be decided upon.
 
 ##### Card Selection
-The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen from Duel mode or to the Level Selection in Campaign mode.
+The card selection pop-up appears before queuing for a game or going into a campaign level, allowing the player to select four cards to play in their game. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen from Duel mode or to the Level Selection in Campaign mode.
 
 ![Card selection pop-up. In red, the portion of the screen that can be tapped to quit card selection and go back](pictures/card_selection.png)
 
