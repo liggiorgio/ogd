@@ -67,6 +67,44 @@ public class TilesArray
         Swap(backupG1, backupG2);
     }
 
+    // Get matches info for the current grid setup - SINGLE TILE
+    public MatchesInfo GetMatches(GameObject go)
+    {
+        MatchesInfo matchesInfo = new MatchesInfo();
+
+        // get horizontal matches info
+        var horizontalMatches = GetMatchesHorizontally(go);
+        if ( ContainsDestroyRowColumnBonus(horizontalMatches) )
+        {
+            horizontalMatches = GetEntireRow(go);
+            if ( !BonusTypeUtils.ContainsDestroyRowCol(matchesInfo.BonusesContained) )
+                matchesInfo.BonusesContained |= BonusType.DestroyRowCol;
+        }
+        matchesInfo.AddObjectRange(horizontalMatches);
+
+        // get vertical matches info
+        var verticalMatches = GetMatchesVertically(go);
+        if ( ContainsDestroyRowColumnBonus(verticalMatches) )
+        {
+            verticalMatches = GetEntireColumn(go);
+            if ( !BonusTypeUtils.ContainsDestroyRowCol(matchesInfo.BonusesContained) )
+                matchesInfo.BonusesContained |= BonusType.DestroyRowCol;
+        }
+        matchesInfo.AddObjectRange(verticalMatches);
+
+        return matchesInfo;
+    }
+
+    // Get matches info for the current grid setup - MULTIPLE TILES
+    public IEnumerable<GameObject> GetMatches(IEnumerable<GameObject> gos)
+    {
+        List<GameObject> matches = new List<GameObject>();
+        foreach (var go in gos)
+            matches.AddRange(GetMatches(go).MatchedTile);
+
+        return matches.Distinct();
+    }
+
     // Check for matches in the current grid
     private IEnumerable<GameObject> GetMatchesHorizontally(GameObject go)
     {
