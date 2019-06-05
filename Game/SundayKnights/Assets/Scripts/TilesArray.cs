@@ -134,4 +134,26 @@ public class TilesArray
 
         return matches.Distinct();
     }
+
+    // Special match involving the whole row
+    private IEnumerable<GameObject> GetEntireRow(GameObject go)
+    {
+        List<GameObject> matches = new List<GameObject>();
+        int row = go.GetComponent<Tile>().Row;
+
+        for ( int column = 0; column < Const.Columns; column++ )
+            matches.Add(tiles[row, column]);
+        return matches;
+    }
+
+    // Special match involving the whole column
+    private IEnumerable<GameObject> GetEntireColumn(GameObject go)
+    {
+        List<GameObject> matches = new List<GameObject>();
+        int column = go.GetComponent<Tile>().Column;
+
+        for ( int row = 0; row < Const.Rows; row++ )
+            matches.Add(tiles[row, column]);
+        return matches;
+    }
 }
