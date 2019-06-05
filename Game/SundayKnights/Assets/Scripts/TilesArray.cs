@@ -156,4 +156,18 @@ public class TilesArray
             matches.Add(tiles[row, column]);
         return matches;
     }
+
+    // Check for "Destroy row/column" bonus
+    private bool ContainsDestroyRowColumnBonus(IEnumerable<GameObject> matches)
+    {
+        if ( matches.Count() >= Const.MinimumMatches )
+        {
+            foreach (var go in matches)
+            {
+                if ( BonusTypeUtils.ContainsDestroyRowCol(go.GetComponent<Tile>().Bonus) )
+                    return true;
+            }
+        }
+        return false;
+    }
 }
