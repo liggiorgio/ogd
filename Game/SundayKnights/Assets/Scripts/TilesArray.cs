@@ -208,4 +208,10 @@ public class TilesArray
         }
         return false;
     }
+
+    // Remove matched tiles
+    public void Remove(GameObject item)
+    {
+        tiles[item.GetComponent<Tile>().Row, item.GetComponent<Tile>().Column] = null;
+    }
 }
