@@ -214,4 +214,46 @@ public class TilesArray
     {
         tiles[item.GetComponent<Tile>().Row, item.GetComponent<Tile>().Column] = null;
     }
+
+    // Collapse remaining tiles after removing matched ones
+    public AlteredTileInfo Collapse(IEnumerable<int> columns)
+    {
+        AlteredTileInfo collapseInfo = new AlteredTileInfo();
+
+        // search in every column
+        foreach (var column in columns)
+        {
+            // begin from bottom row
+            for ( int row = 0; row < Const.Rows - 1; row++ )
+            {
+                // if a cell is empty...
+                if ( tiles[row, column] == null )
+                {
+                    // ...start searching for the first non-empty
+                    for ( int row2 = row + 1; row2 < Const.Rows; row2++ )
+                    {
+                        // if found, bring it down
+                        if ( tiles[row, column] != null )
+                        {
+                            tiles[row, column] = tiles[row2, column];
+                            tiles[row2, column] = null;
+
+                            // calculate biggest distance
+                            if ( row2 - row > collapseInfo.MaxDistance )
+                            collapseInfo.MaxDistance = row2 - row;
+
+                            // assign new row and column (name does not change)
+                            tiles[row, column].GetComponent<Tile>().Row = row;
+                            tiles[row, column].GetComponent<Tile>().Column = column;
+
+                            collapseInfo.AddTile(tiles[row, column]);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return collapseInfo;
+    }
 }
