@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /*
@@ -64,5 +65,39 @@ public class TilesArray
             throw new System.Exception("BackupIsNullException");
 
         Swap(backupG1, backupG2);
+    }
+
+    // Check for matches in the current grid
+    private IEnumerable<GameObject> GetMatchesHorizontally(GameObject go)
+    {
+        List<GameObject> matches = new List<GameObject>();
+        matches.Add(go);
+        var tile = go.GetComponent<Tile>();
+
+        // check left
+        if ( tile.Column != 0 )
+            for ( int column = tile.Column - 1; column >= 0; column-- )
+            {
+                if ( (tiles[tile.Row, column] != null) && (tiles[tile.Row, column].GetComponent<Tile>().IsSameType(tile)) )
+                    matches.Add(tiles[tile.Row, column]);
+                else
+                    break;
+            }
+
+        // check right
+        if ( tile.Column != Const.Columns - 1 )
+            for ( int column = tile.Column + 1; column < Const.Columns; column++ )
+            {
+                if ( (tiles[tile.Row, column] != null) && (tiles[tile.Row, column].GetComponent<Tile>().IsSameType(tile)) )
+                    matches.Add(tiles[tile.Row, column]);
+                else
+                    break;
+            }
+
+        // we want at least three matches
+        if ( matches.Count() < Const.MinimumMatches )
+            matches.Clear();
+
+        return matches.Distinct();
     }
 }
