@@ -176,6 +176,8 @@ Cards are items the player can use at the expense of moves, with the cost depend
 
 ###### Card List
 
+This section only includes the cards that have been design for the prototype. The final version of the game will include many more. These cards all have the same level of rarity, meaning each card in a pack has a chance of 12.5% to be each of them.
+
 > Blue cards
 
 1. It's raining men!
@@ -442,9 +444,15 @@ The Did you say ice? card will cause the center of the enemy's screen to shatter
 
 Upon activation, the victim will see a jelly grow from the center of their second row, expanding in 1 second untill it's engulfed the first 3 rows of their board. If the victim touches the engulfed area, all that will happen is the jelly swaying and making a "blob" sound.
 
-![The enjellied 3 rows](!pictures/animations_youjellous.png)
+![The enjellied 3 rows](pictures/animations_youjellous.png)
 
 Once the right conditions are met, the jelly will shatter in little pieces that will swiftly shrink into nothingness.
+
+>Card packs
+
+Despite being of 3 different types, card packs all work in the same way. Once the player presses the "X GOLD" button in the dedicated shop section - with X being the price of the pack, see SHOP'S SCREEN - the pack will be move to the center of the screen, shadowing the rest of the shop. Robin's baloon will then change into "BRONZE/SILVER/GOLDEN PACK! GREAT CHOICE!" with the right selection between bronze, silver and colour. The pack will then burst open, with the explosion being the same colour as the pack's "level", so either bronze, silver or golden. After that, where the pack was untill a second earlier, a stack of card will be visible. By clicking on it, the player will be able to pop it from the pile and see the following one. From immediately after the burst, Robin's baloon will change again, into "Here are your new cards!". If the player does not tap on the screen for one second, the card's tooltip will appear as a balloon beside it. For tooltips' content, see cards description. As soon as all the cards have been popped away, Robin's baloon will return to the original shop one.
+
+![Unpacking animation](pictures/animations_purchase_storyboard.png)
 
 
 *	Menu music
