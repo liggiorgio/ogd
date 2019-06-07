@@ -163,4 +163,17 @@ public class TilesManager : MonoBehaviour
             for ( int column = 0; column < Const.Columns; column++)
                 Destroy(tiles[row, column]);
     }
+
+    // Make sure swapping tiles are always drawn on top of others
+    private void FixSortingLayer(GameObject hitGo, GameObject hitGo2)
+    {
+        SpriteRenderer sp1 = hitGo.GetComponent<SpriteRenderer>();
+        SpriteRenderer sp2 = hitGo2.GetComponent<SpriteRenderer>();
+
+        if ( sp1.sortingOrder <= sp2.sortingOrder )
+        {
+            sp1.sortingOrder = 1;
+            sp2.sortingOrder = 0;
+        }
+    }
 }
