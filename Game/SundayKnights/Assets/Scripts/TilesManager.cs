@@ -71,8 +71,49 @@ public class TilesManager : MonoBehaviour
             Where(x => x.GetComponent<Tile>().Type.Contains(item.name.Split('_')[1].Trim())).Single().name;
     }
 
+    // Setup objects on the grid for a new game
+    public void InitializeTileAndSpawnPositions()
+    {
+        InitializeVariables();
+
+        if (tiles != null)
+            DestroyAllTiles();
+
+        tiles = new TilesArray();
+        SpawnPositions = new Vector2[Const.Columns];
+
+        for ( int row = 0; row < Const.Rows; row++ )
+        {
+            for ( int column = 0; column < Const.Columns; column++ )
+            {
+                GameObject newTile = GetRandomTile();
+
+                // check if two previous horizontal are of the same type
+                while ( (column > 2) &&
+                    (tiles[row, column-1].GetComponent<Tile>().IsSameType(newTile.GetComponent<Tile>())) &&
+                    (tiles[row, column-2].GetComponent<Tile>().IsSameType(newTile.GetComponent<Tile>())) )
+                {
+                    newTile = GetRandomTile();
+                }
+
+                // check if two previous vertical are of the same type
+                while ( (row > 2) &&
+                    (tiles[row-1, column].GetComponent<Tile>().IsSameType(newTile.GetComponent<Tile>())) &&
+                    (tiles[row-2, column].GetComponent<Tile>().IsSameType(newTile.GetComponent<Tile>())) )
+                {
+                    newTile = GetRandomTile();
+                }
+
+                // it's safe to place such a tile
+                InstantiateAndPlaceNewTile(row, column, newTile);
+            }
+        }
+
+        SetupSpawnPositions();
+    }
+
     // Scoring
-    private void InitializeScore()
+    private void InitializeVariables()
     {
         score = 0;
         ShowScore();
