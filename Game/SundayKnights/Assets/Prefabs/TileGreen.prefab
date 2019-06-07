@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9152239891478511205}
   - component: {fileID: 6328937531611769694}
+  - component: {fileID: 9053819654483448915}
   m_Layer: 0
   m_Name: TileGreen
   m_TagString: Untagged
@@ -79,3 +80,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9053819654483448915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763148904392724332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a45b9a290e2e518bff0b604238d45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

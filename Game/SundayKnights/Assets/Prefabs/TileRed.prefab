@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5894031331826784513}
   - component: {fileID: 1086499539181733533}
+  - component: {fileID: 1338126380245972625}
   m_Layer: 0
   m_Name: TileRed
   m_TagString: Untagged
@@ -79,3 +80,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1338126380245972625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656147197128906225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a45b9a290e2e518bff0b604238d45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
