@@ -23,7 +23,7 @@ public class TilesManager : MonoBehaviour
 
     private GameState state = GameState.None;
     private GameObject hitGo = null;
-    private Vector2[] spawnPositions;
+    private Vector2[] SpawnPositions;
     public GameObject[] TilePrefabs;
     public GameObject[] ExplosionPrefabs;
     public GameObject[] BonusPrefabs;
@@ -87,5 +87,39 @@ public class TilesManager : MonoBehaviour
     private void ShowScore()
     {
         ScoreText.text = "Score: " + score.ToString();
+    }
+
+    // Return a random tile prefab
+    private GameObject GetRandomTile()
+    {
+        return TilePrefabs[Random.Range(0, TilePrefabs.Length)];
+    }
+
+    // Add a tile to the grid at a given position
+    private void InstantiateAndPlaceNewTile(int row, int column, GameObject newTile)
+    {
+        GameObject go = Instantiate(newTile,
+            BottomRight + new Vector2(column * TileSize.x, row * TileSize.y), Quaternion.identity)
+            as GameObject;
+
+        // assign specific properties
+        go.GetComponent<Tile>().Assign(newTile.GetComponent<Tile>().Type, row, column);
+        tiles[row, column] = go;
+    }
+
+    // Setup spawn positions (for new tiles after destroying old ones)
+    private void SetupSpawnPositions()
+    {
+        // create the spawn positions for the new tiles (will pop from above)
+        for ( int column = 0; column <  Const.Columns; column++)
+            SpawnPositions[column] = BottomRight + new Vector2(column * TileSize.x, Const.Rows * TileSize.y);
+    }
+
+    // Clear scene from all tiles
+    private void DestroyAllTiles()
+    {
+        for ( int row = 0; row < Const.Rows; row++)
+            for ( int column = 0; column < Const.Columns; column++)
+                Destroy(tiles[row, column]);
     }
 }
