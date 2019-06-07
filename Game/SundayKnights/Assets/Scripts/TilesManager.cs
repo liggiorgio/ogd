@@ -164,6 +164,16 @@ public class TilesManager : MonoBehaviour
                 Destroy(tiles[row, column]);
     }
 
+    // Animate swapping tiles
+    private void MoveAndAnimate(IEnumerable<GameObject> movedGameObjects, int distance)
+    {
+        foreach (var item in movedGameObjects)
+        {
+            item.transform.positionTo( Const.MoveAnimationMinDuration * distance, BottomRight +
+                new Vector2(item.GetComponent<Tile>().Column * TileSize.x, item.GetComponent<Tile>().Row * TileSize.y) );
+        }
+    }
+
     // Make sure swapping tiles are always drawn on top of others
     private void FixSortingLayer(GameObject hitGo, GameObject hitGo2)
     {
