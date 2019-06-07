@@ -46,7 +46,7 @@ public class TilesManager : MonoBehaviour
     {
         InitializeTypesOnPrefabTilesAndBonuses();
 
-        //InitializeTileAndSpawnPositions();
+        InitializeTileAndSpawnPositions();
 
         //StartCheckForPotentialMatches();
     }
@@ -154,6 +154,32 @@ public class TilesManager : MonoBehaviour
         // create the spawn positions for the new tiles (will pop from above)
         for ( int column = 0; column <  Const.Columns; column++)
             SpawnPositions[column] = BottomRight + new Vector2(column * TileSize.x, Const.Rows * TileSize.y);
+    }
+
+    // Find out empty columns and spawn new tiles in position
+    private AlteredTileInfo CreateNewTileInSpecificColumns(IEnumerable<int> columnsWithMissingTiles)
+    {
+        AlteredTileInfo newTileInfo = new AlteredTileInfo();
+
+        // find how many null values the column has
+        foreach (int column in columnsWithMissingTiles)
+        {
+            var emptyItems = tiles.GetEmptyItemsOnColumn(column);
+            foreach (var item in emptyItems)
+            {
+                var go = GetRandomTile();
+                GameObject newTile = Instantiate(go, SpawnPositions[column], Quaternion.identity) as GameObject;
+                newTile.GetComponent<Tile>().Assign( go.GetComponent<Tile>().Type, item.Row, item.Column );
+
+                if ( Const.Rows - item.Row > newTileInfo.MaxDistance )
+                    newTileInfo.MaxDistance = Const.Rows - item.Row;
+
+                tiles[item.Row, item.Column] = newTile;
+                newTileInfo.AddTile(newTile);
+            }
+        }
+
+        return newTileInfo;
     }
 
     // Clear scene from all tiles
