@@ -176,4 +176,19 @@ public class TilesManager : MonoBehaviour
             sp2.sortingOrder = 0;
         }
     }
+
+    // Return a random explosion prefab
+    private GameObject GetRandomExplosion()
+    {
+        return TilePrefabs[Random.Range(0, ExplosionPrefabs.Length)];
+    }
+
+    // Animate item explosion
+    private void RemoveFromScene(GameObject item)
+    {
+        GameObject explosion = GetRandomExplosion();
+        var newExplosion = Instantiate(explosion, item.transform.position, Quaternion.identity) as GameObject;
+        Destroy(newExplosion, Const.ExplosionDuration);
+        Destroy(item);
+    }
 }
