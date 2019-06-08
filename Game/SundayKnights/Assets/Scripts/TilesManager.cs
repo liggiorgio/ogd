@@ -280,7 +280,7 @@ public class TilesManager : MonoBehaviour
     // Return a random explosion prefab
     private GameObject GetRandomExplosion()
     {
-        return TilePrefabs[Random.Range(0, ExplosionPrefabs.Length)];
+        return ExplosionPrefabs[Random.Range(0, ExplosionPrefabs.Length)];
     }
 
     // Animate item explosion
