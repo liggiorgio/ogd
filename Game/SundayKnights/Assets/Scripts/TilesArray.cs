@@ -233,7 +233,7 @@ public class TilesArray
                     for ( int row2 = row + 1; row2 < Const.Rows; row2++ )
                     {
                         // if found, bring it down
-                        if ( tiles[row, column] != null )
+                        if ( tiles[row2, column] != null )
                         {
                             tiles[row, column] = tiles[row2, column];
                             tiles[row2, column] = null;
