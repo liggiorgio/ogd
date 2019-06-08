@@ -173,6 +173,47 @@ public class TilesManager : MonoBehaviour
             tiles.UndoSwap();
         }
 
+        // remove tiles until a rest configuration is reached
+        int timesRun = 1;
+        while (totalMatches.Count() >= Const.MinimumMatches)
+        {
+            // increase score
+            IncreaseScore( (totalMatches.Count() - 2) * Const.Match3Score );
+            if (timesRun > 1)
+                IncreaseScore(Const.SubsequentMatchScore);
+
+            // play sfx
+            // soundManager.PlayMatch();
+
+            // spawn explosions and remove tiles
+            foreach (var item in totalMatches)
+            {
+                RemoveFromScene(item);
+                tiles.Remove(item);
+            }
+
+            // get columns with tiles to collapse
+            var columns = totalMatches.Select(go => go.GetComponent<Tile>().Column).Distinct();
+            // collapse the ones gone
+            var collapsedTileInfo = tiles.Collapse(columns);
+            // create new ones
+            var newTileInfo = CreateNewTileInSpecificColumns(columns);
+
+            int maxDistance = Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance);
+
+            MoveAndAnimate(newTileInfo.AlteredTile, maxDistance);
+            MoveAndAnimate(collapsedTileInfo.AlteredTile, maxDistance);
+
+            // wait for the both of the above animations
+            yield return new WaitForSeconds(Const.MoveAnimationMinDuration * maxDistance);
+
+            // search if there are matches in the next tile configuration
+            totalMatches = tiles.GetMatches(collapsedTileInfo.AlteredTile).
+                Union(tiles.GetMatches(newTileInfo.AlteredTile)).Distinct();
+
+            timesRun++;
+        }
+
         state = GameState.None;
     }
 
