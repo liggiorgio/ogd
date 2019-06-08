@@ -160,7 +160,7 @@ The game is about matching groups of 3 or more faces on a grid by swapping coupl
 #### 4.2.1. Mechanics
 
 ##### Faces
-The game is about making faces disappear ("freeing" them from the evil curse) by matching groups of them. The main part of the in-match GUI consists of a grid of 6x7 faces of random colours (6 columns x 7 rows), as is described in further detail in the Interfaces section. The player can swap couples of adjacent faces by "spending" a move - meaning their move count diminishes by one for each swap they perform. A swap is EFFECTIVE only if it actually "groups" 3 or more faces of the same colour, meaning if a swap doesn't cause any face to disappear, it is automatically reverted by the game. In this case, the move is not spent.
+The game is about making faces disappear ("freeing" them from the evil curse) by matching groups of them. The main part of the in-match GUI consists of a grid of 6x6 faces of random colours (6 columns x 7 rows), as is described in further detail in the Interfaces section. The player can swap couples of adjacent faces by "spending" a move - meaning their move count diminishes by one for each swap they perform. A swap is EFFECTIVE only if it actually "groups" 3 or more faces of the same colour, meaning if a swap doesn't cause any face to disappear, it is automatically reverted by the game. In this case, the move is not spent.
 
 ##### Moves
 Every player starts the match with a set number of moves and cannot usually gain any (some cards cause exceptions to this rule). PvP matches grant 30 starting moves, campaign scenarios grant a different number of moves based on the single level.
@@ -466,12 +466,54 @@ Despite being of 3 different types, card packs all work in the same way. Once th
 
 ![Unpacking animation](pictures/animations_purchase_storyboard.png)
 
+## 7. Trailer storyboard
 
-*	Menu music
-*	In-game music
-*	Match-3 sound effect
-*	Victory fanfare
+A soft music plays, while the camera slowly moves over Ludenia. 
 
->Defeat riff
+![Caption: "IN THE BEAUTIFUL LAND OF LUDENIA..."](pictures/trailer_storyboard_1.jpg)
 
-This is what the player heards upon defeat. It's a riff of 4 notes, on descending demitones, from Bb (or Sib) to G (or Sol), with a long tremble on the last one.
+The camera dives in with a sudden, grim sound. Then a drum is hit, with a sudden, action-ish tune. 
+
+![Caption: "DANGER AWAITS!"](pictures/trailer_storyboard_2.jpg)
+
+The camera moves withe extreme rapidity sideways. 3 figures appear in the middle of the road.
+
+![3 shadowed figures. Caption: "JOIN GREAT HEROES..."](pictures/trailer_storyboard_3.jpg)
+
+The camera zooms on the first one, a high note accompanies the zoom. The figure reveals itself to be...
+
+![Caption: "ROBIN!"](pictures/trailer_storyboard_4.jpg)
+
+The same note again. Quick sideway transition over to...
+
+![Caption: "ZEELY!"](pictures/trailer_storyboard_5.jpg)
+
+The same note, one last time, but it lasts a longer moment for tension.
+
+![Caption: "AND YOU!". The YOU part is bold. Very bold.](pictures/trailer_storyboard_6.jpg)
+
+Some seconds of very explosive gameplay follow, the music goes faster and raises in volume.
+
+![Gameplay happening](pictures/trailer_storyboard_7.jpg)
+
+From this moment on, writings appear over the gameplaying screen.
+
+![Caption: "TRY MATCH-3..."](pictures/trailer_storyboard_8.jpg)
+
+A crescendo of 3 boom sounds, as approaching impacts, accompanies the appearance of the 3 letters, one by one.
+
+![Caption: "P."](pictures/trailer_storyboard_9.jpg)
+
+![Caption: "P.V."](pictures/trailer_storyboard_10.jpg)
+
+The strongest boom happens. Everything is complete. Nobody expected the second P. Boom.
+
+![Caption: "P.V.P."](pictures/trailer_storyboard_11.jpg)
+
+Suddenly, from the top right corner of the screen, the opponent's one, a cake flies at full speed towards the camera.
+
+![Oh no! A flying cake!](pictures/trailer_storyboard_12.jpg)
+
+The cake cover everything, leaving a black screen with the game's logo upon impact.
+
+![Sunday Knights - magic and mayhem, for you.](pictures/trailer_storyboard_13.jpg)
