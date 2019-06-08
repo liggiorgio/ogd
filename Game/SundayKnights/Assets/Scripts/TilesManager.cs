@@ -18,8 +18,8 @@ public class TilesManager : MonoBehaviour
 
     private int score;
 
-    public readonly Vector2 BottomRight = new Vector2(-2.37f, -4.27f);
-    public readonly Vector2 TileSize = new Vector2(0.7f, 0.7f);
+    public readonly Vector2 TileSize = new Vector2(.7f, .7f);
+    public readonly Vector2 BottomRight = new Vector2(-1.75f, -2f);
 
     private GameState state = GameState.None;
     private GameObject hitGo = null;
