@@ -54,7 +54,41 @@ public class TilesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // game state FSA
+        if (state == GameState.None)
+        {
+            // user has clicked or touched
+            if ( Input.GetMouseButton(0) )
+            {
+                // get the hit position
+                var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.collider != null)   // we have a hit
+                {
+                    hitGo = hit.collider.gameObject;
+                    state = GameState.Selecting;
+                }
+            }
+        }
+        else if (state == GameState.Selecting)
+        {
+            // user is selecting/dragging
+            if ( Input.GetMouseButton(0) )
+            {
+                // get the hit position
+                var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.collider != null)   // we have another hit
+                {
+                    if (hit.collider.gameObject != hitGo)   // check allowed move
+                    {
+                        state = GameState.Animating;
+                        FixSortingLayer(hitGo, hit.collider.gameObject);
+                        StartCoroutine(FindMatchesAndCollapse(hit));
+                    }
+                    //else
+                    //    state = GameState.None;
+                }
+            }
+        }
     }
 
     // Assign a type and a bonus type to tiles
@@ -110,6 +144,36 @@ public class TilesManager : MonoBehaviour
         }
 
         SetupSpawnPositions();
+    }
+
+    // Actuate game rules and mechanics: find matches, destroy tiles, spawn new ones, collapse others
+    private IEnumerator FindMatchesAndCollapse(RaycastHit2D hit2)
+    {
+        // get the second item that was part of the swipe
+        var hitGo2 = hit2.collider.gameObject;
+        tiles.Swap(hitGo, hitGo2);
+
+        // animate swap movement
+        hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
+        hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
+        yield return new WaitForSeconds(Const.AnimationDuration);
+
+        // get the matches via the helper methods
+        var hitGoMatchesInfo = tiles.GetMatches(hitGo);
+        var hitGo2MatchesInfo = tiles.GetMatches(hitGo2);
+        var totalMatches = hitGoMatchesInfo.MatchedTile.Union(hitGo2MatchesInfo.MatchedTile).Distinct();
+
+        // if swap didn't create at least a 3-match, undo their swap
+        if (totalMatches.Count() < Const.MinimumMatches)
+        {
+            hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
+            hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
+            yield return new WaitForSeconds(Const.AnimationDuration);
+
+            tiles.UndoSwap();
+        }
+
+        state = GameState.None;
     }
 
     // Scoring
