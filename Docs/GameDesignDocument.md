@@ -376,7 +376,57 @@ The shop-keeper is a short boy, wearing robes a bit too big for him, but not so 
 
 All the characters described above are NPC. They only appear to tell the player something, or to adobe the shop's screen. They have hence no A.I.
 
-## 6. Media List
+##### Enemies
+Generic enemies only appear in cinematics and in the trailer. The enemy soldiers are skeletons, cartoonish in style, armed with a stubby sword and some thick pieces of armor, specifically an helmet and epaulettes. The helmet has the shape of german ww2 helmets with a point on top. All the armor pieces are blue, with yellow edges, and the helmet's point is yellow as well.
+
+##### Evilor
+The evil lord of evil Evilor is the leader of the terrible army that threatens Ludenia. He is also the final boss of the game, but only his face appears, through cinematics. He has horns, long sharp teeth and a long, evil chin. He is devilishly red and always has an evil smile on his face. He is so evil.
+
+## 6. Campaign mode
+
+Single player mode wil not be present in the prototype. In this chapter we put everything related to it, from the game's story to the progressing level mechanics. The story opens with a cutscene, and, upon beating the game, another one is played.
+
+### 6.1 Story
+
+In cutscenes, characters are static images, and always speak with baloons that occupy the lower part of the screen.
+
+#### 6.1.1 First cutscene
+
+It is a most beautiful day in Ludenia, the Sun shines, birds sing, wind blows. The camera flies slowly over Ludenia, with birds chirps in the background. Zeely appears from the left side of the screen, shadowing the background that goes out of focus.
+"Hey there! Splendid day, isn't it? Welcome to Ludenia! I'm Zeely, and I'll be your guide through the place. Come, let's go explore!". Zeely leaves the screen to the left.
+
+The background changes to a square, without gaining focus or light. Enter Zeely again.
+"This is the main square! There are a..." loud chatters interrupt Zeely. "What is that?"
+A couple characterless baloons appear. "What do you mean there isn't any corn ice-cream left?" "Someone bought them all, I'm sorry." "This is a tragedy!"
+Enter Zeely again. "Uh-oh, this smells like problems. People in Ludenia really CAN'T go without their corn ice-cream."
+Zeely stays silent for a moment, then he assumes an embarassed expression. "...Yes, corn ice-cream. People has to make do sometimes."
+
+Zeely's expression goes back to smiling. "Anyway, I need your help. The people are getting sad, and we need to make them happy again! Here, take this!"
+A writing appears in the center of the screen. "YOU HAVE RECEIVED THE STAFF OF LUDUS!"
+
+The cinematic ends here, opening the first tutorial level. As soon as the prototype is done, the Levels Design Document will cover each and every one of them, and the middle part of the story.
+
+#### 6.1.2 Ending cutscene
+
+A ruined, flaming Ludenia acts as background.
+Evilor appears from the right side of the screen, with a very suffering expression. "AAAAAAAAH! THIS CAN'T BEEEEE! THE HAPPINESS IS MIIIIIINE!".
+He disappears with a "wooosh" sound effect, leaving the screen for good. Enter Zeely.
+"You did it! You saved Ludenia from Evilor!". Zeely leaves the screen, enter Robin.
+"I can't believe it! You made it! Come on, lift the staff of Ludus!"
+A big yellow button appears in the middle of the screen, with a "LIFT THE STAFF" writing on it.
+
+As the player presses the button, the Staff of Ludus appears in the center of the screen and moves a bit, making magic sparkles, then leaves the screen.
+Progressively and with a happy, high tune, from level 1 to 30, the whole map gets fixed, flames stop, colours become vibrant and cheerful voices can be heard throughout the process.
+Enter Robin. "You are the savior of Ludenia! Here, take this, it's the least we can do to thank you!". A set of red cards appears in the middle of the screen, alongside the "YOU RECEIVED NEW CARDS!" writing.
+The cards then disappear, leaving place for the "THE END" writing that signals that the campaign is over.
+
+Completing the story gives the player 3x of each of the eight cards.
+
+### 6.3 Progressive mechanics
+
+
+
+## 7. Media List
 
 >Faces
 
@@ -466,7 +516,7 @@ Despite being of 3 different types, card packs all work in the same way. Once th
 
 ![Unpacking animation](pictures/animations_purchase_storyboard.png)
 
-## 7. Trailer storyboard
+## 8. Trailer storyboard
 
 A soft music plays, while the camera slowly moves over Ludenia. 
 
