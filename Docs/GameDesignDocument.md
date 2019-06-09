@@ -357,6 +357,8 @@ PvP: the player who, having reached the threshold, reaches the highest score, wi
 
 **PvP:** the core of the game. This mode consists of 1v1 matches, not longer than 3 minutes. In this mode, all cards are allowed. This mode rewards coins as described above.
 
+PvP will feature a rank system in it, but before choosing the ranks span, matchmaking algorythm and rank rewards, open beta testing will be required to gain data on the number and average activity of players.
+
 ### 4.5. Levels
 Levels are generated through an Random Content Generation algorithm, with due restrictions (for example on the number of face colours present in the level) based on their "position" in the campaign.
 
