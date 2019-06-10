@@ -172,7 +172,7 @@ Each time faces disappear, they grant score based on the size of the group of fa
 Each level has a minimum score the player must reach in order to achieve victory. This number varies throughout the campaign, while in PvP matches it's a fixed 1200.
 
 ##### Cards
-Cards are items the player can use at the expense of moves, with the cost depending on the single card. The player can unlock them by playing the campaign or by buying packs with coins they gain through PvP matches. Cards are either blue, if they provide a bonus or help for the player, or red, if they damage the opponent. Cards are played by tapping on them.
+Cards are items the player can use at the expense of one move each. Using a card consumes it for good. The player can unlock them by playing the campaign or by buying packs with coins they gain through PvP matches. Cards are either blue, if they provide a bonus or help for the player, or red, if they damage the opponent. Cards are played by tapping on them. A player cannot have, in one game, two copies of the same card, and each card can only be played once.
 
 ###### Card List
 
@@ -289,6 +289,8 @@ The top left corner shows a little insertion with the player's money account, wi
 
 ##### Card Selection
 The card selection pop-up appears before queuing for a game or going into a campaign level, allowing the player to select four cards to play in their game. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen from Duel mode or to the Level Selection in Campaign mode.
+
+The card selection doesn't allow to pick 2 of the same cards. The 4 cards must be all different, and, of course, the player needs to own at least one copy of every card selected.
 
 ![Card selection pop-up. In red, the portion of the screen that can be tapped to quit card selection and go back](pictures/card_selection.png)
 
