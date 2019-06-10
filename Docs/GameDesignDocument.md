@@ -29,7 +29,7 @@
 | Liggio Giorgio | 2019-04-03 | Push first game design writing |
 
 ## 2. Vision Statement
-*Sunday Knights: Magic & Mayhem* is a marriage of *Candy Crush* + *Clash Royale*. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and exuberant. In each game, the player will face an AI opponent or a real-life user in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
+*Sunday Knights: Magic & Mayhem* is a marriage of *Candy Crush* + *Clash Royale*. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and partly exuberant. In each game, the player will face an AI opponent or a human player in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
 
 There's huge emphasis on the multiplayer game pacing, with head-to-head fast matches where anything can happen due to special actions. Many in-game rewards such as game cards, resources, and currency are designed to convey a sense of accomplishment and achievement.
 
@@ -56,16 +56,16 @@ Players face some constraints while playing, depending on the game mode. There m
 
 As non-exhaustive, non-final examples, we can estimate the following values:
 
-* Single player game, easy difficulty
-  * Move limit: **15 to 25 moves**
-  * Time limit: **no limit**
-  * Card limit: **4 cards**
-* Multiplayer game
-  * Move limit: **30 moves**
-  * Time limit: **2 minutes**
-  * Card limit: **4 cards**
+- Single player game, easy difficulty
+  - Move limit: **15 to 25 moves**
+  - Time limit: **no limit**
+  - Card limit: **4 cards**
+- Multiplayer game
+  - Move limit: **30 moves**
+  - Time limit: **2 minutes**
+  - Card limit: **4 cards**
 
-#### 2.2.3. Setting
+#### 2.2.3. Setting & Theme
 The game takes place in an archetypical medieval fantasy era, in the peaceful Kingdom of Ludenia. The first impression the player gets is one of peace and carefreeness since Ludenians are happy and cheery people. Ludenia has many views to offer; beautiful landscapes hold majestic castles and quiet villages, the woods are home to many animals, and the mountains contrast a sea stretching as far as the eye can see.
 
 Things change when the story antagonists show up. The Dreary Army is driven only by the need for stealing everyone's happiness, and this reflects in a duller mood in the environments. Wherever they go, life withers and joy disappears, nature recedes, and desolation overcomes everything.
@@ -126,19 +126,23 @@ For *SK: M&M*, we chose the Google Play Store as the launch marketplace of inter
 ### 3.6. System Requirements
 Taking software constraints into consideration, such as the game engine used, graphical level of detail, or the device coverage, we can estimate the following recommended requirements:
 
-- CPU: **Intel Atom Z2560 Dual Core 1.6 GHz or equivalent**
-- GPU: **PowerVR SGX544MP2  or equivalent**
-- RAM: **512 MB**
-- Storage: **100 MB**
-- OS: **Android 4.4**
-- Phone: **Samsung Galaxy S3 or equivalent**
+- **CPU:** Intel Atom Z2560 Dual Core 1.6 GHz or equivalent
+- **GPU:** PowerVR SGX544MP2  or equivalent
+- **RAM:** 512 MB
+- **Storage:** 100 MB
+- **OS:** Android 4.4
+- **Phone:** Samsung Galaxy S3 or equivalent
 
 It's clear this is a non-demanding app, designed to run on most Android devices. A device that has these or equivalent specs is capable of running the game smoothly.
 
 ### 3.7. Business Model
-The monetisation strategy adopted for *SK: M&M* focuses on in-app purchases: with 74% of spending in the Google Play Store coming from in-app purchases in previous years, it is no wonder IAPs are an effective mobile game business model. This monetisation strategy also lets developers manage their sales directly, influencing the users' behaviour within the game.
+The monetisation strategy adopted for *SK: M&M* focuses on in-app purchases: with 74% of spending in the Google Play Store coming from in-app purchases in previous years [1], it is no wonder IAPs are an effective mobile game business model. This monetisation strategy also lets developers manage their sales directly, influencing the users' behaviour within the game.
+
+[1] ["App Annie: Games made up 74% of consumer app store spending in 2018"](https://venturebeat.com/2019/01/16/app-annie-games-made-up-74-percent-of-consumer-app-store-spending-in-2018/)
 
 #### 3.7.1. IAPs and Gameplay
+> This section is intentionally descriptive. For further information about In-App Purchases and prices, please refer to Chapter X ("*Chapter X*") of this document.
+
 The game lets players harvest resources by playing, getting rewards, acquiring items with the in-game currency, or purchasing in-game articles with real money. Players are encouraged to purchase items thanks to their trial-and-error approach to the game: acquiring resources needs time, and this leads to a limited number of games per time unit. Since losing a game rewards the player less than winning, if they want to boost their activity, they can then get more resources instantaneously in the shop screen.
 
 #### 3.7.2. Release Strategy
@@ -551,11 +555,11 @@ Despite being of 3 different types, card packs all work in the same way. Once th
 
 ## 8. Trailer storyboard
 
-A soft music plays, while the camera slowly moves over Ludenia. 
+A soft music plays, while the camera slowly moves over Ludenia.
 
 ![Caption: "IN THE BEAUTIFUL LAND OF LUDENIA..."](pictures/trailer_storyboard_1.jpg)
 
-The camera dives in with a sudden, grim sound. Then a drum is hit, with a sudden, action-ish tune. 
+The camera dives in with a sudden, grim sound. Then a drum is hit, with a sudden, action-ish tune.
 
 ![Caption: "DANGER AWAITS!"](pictures/trailer_storyboard_2.jpg)
 
