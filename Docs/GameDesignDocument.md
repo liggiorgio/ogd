@@ -457,7 +457,7 @@ Mechanics are as wollows.
 
 Levels including any mechanic grant rewards among related cards for first level completion.
 
-
+![Level table](pictures/level_table.png)
 
 ## 7. Media List
 
