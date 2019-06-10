@@ -90,15 +90,21 @@ The open beta phase will be rolled out through the Play Store Beta Test program,
 * Expected number of total players: 5,250
 
 On release, we expect an increase in the number of players
-* Expected average number of daily players: 3,750
-* Expected average number of simultaneous players: 1,500
-* Expected number of total players: 11,250
+* Expected average number of daily players: 6,250
+* Expected average number of simultaneous players: 2,500
+* Expected number of total players: 18,750
 
-3 months after the release, given our extensive target audience (as specified in **Chapter 3** of the GDD), we expect to reach our peak playerbase before any future game expansion plan.
+3 months after the release, given our extensive target audience (as specified in **Section 3** of the GDD), we expect to considerably increase our playerbase.
 
-- Expected average number of daily players: 10,000
-- Expected average number of simultaneous players: 4,000
-- Expected number of total players: 30,000
+- Expected average number of daily players: 15,000
+- Expected average number of simultaneous players: 6,000
+- Expected number of total players: 45,000
+
+6 months after release we expect to reach our peak playerbase before any major content update. 
+
+- Expected average number of daily players: 25,000
+- Expected average number of simultaneous players: 10,000
+- Expected number of total players: 75,000
 
 The game uses an authoritative client-server system for moves validation. The game is essentially played on the server, with the users sending their moves and receiving the new state of the board from the server. Since everything is hosted on the Firebase platform, resources are allocated and paid for as needed, without the need for a specific extension and scalability plan.
 
@@ -116,7 +122,7 @@ Our internal tests are also not included, since they are not done on the same Fi
 | Outbound traffic            | 1 KB per invocation      | 14,400,000 invocations per month | 14.4 GB per month                | $ 1.20 (€ 1)  |
 | GB-seconds                  | 100ms per invocation     | 14,400,000 invocations per month | 1,440,000 GB-s per month         | $ 3 (€ 2.7)   |
 | CPU-seconds                 | 100ms per invocation     | 14,400,000 invocations per month | 1,440,000 CPU-s per month        | $ 14 (€ 12.4) |
-|                             |                          | **Total**                        | € 21.1 per month                 | **€ 63.3**    |
+|                             |                          | **Total**                        | € 21.1 per month                 | **€ 42.2**    |
 
 [comment]: # "Target workload for your infrastructure in term of total users, peak users, and resources dedicated to each user. Starting from an initial system capacity and extend later is fine but then you must provide an extension plan. MOTIVATE THIS referencing the GDD"
 
@@ -341,14 +347,28 @@ Outsourced staff is called whenever needed or "rented" each month without being 
 - 2D Artist
 - Customer Support agency
 
-## 12.	Total costs
+## 12.	Costs and revenue estimation
 
-### 12.1	Total costs
+### 12.1	Total costs estimation
+
+Given all the costs outlined in the previous sections of this document, we estimate that the cost of the project, from the beginning until the beginning of the Open Beta, will be the following:
 
 | **Description**                 | **Cost**     |
 | ------------------------------- | ------------ |
 | Development (section 8.5)       | € 25,041     |
-| Web Service (section 4.1)       | € 63         |
+| Web Service (section 4.1)       | € 42         |
 | External Services (section 9.4) | € 63,484     |
-| **Total**                       | **€ 88,588** |
+| **Total**                       | **€ 88,567** |
 
+### 12.2 Revenue estimation
+
+Our main source of revenue will be in-app purchases, as outlined in **Sections 3.7.1 **and **4.3.1** of the GDD. We expect an average of 10% of the total playerbase will make at least a purchase every month. We will push our € 8.99 purchase, expecting most players to be driven to it. This means that each IAP will give us approx. € 6.3, given the 30% Play Store fee.
+
+Based on this assumption, we give an estimation of how much players might spend on IAPs.
+
+| Phase          | # of players         | Monthly revenue |
+| -------------- | -------------------- | --------------- |
+| Open beta      | 5,250 total players  | € 3,307.5       |
+| Release        | 18,750 total players | € 11,812.5      |
+| After 3 months | 45,000 total players | € 28,350        |
+| After 6 months | 75,000 total players | € 47,250        |
