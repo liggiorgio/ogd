@@ -263,6 +263,32 @@ In case a player challenges another, the other player will see a "Challenge pop-
 
 ![An example of the friendly challenge pop-up](pictures/friend_challenge.png)
 
+#### 4.2.2. Rules
+The number of possible moves is set for each game. Time is set only in multiplayer games.
+
+It is not possible to swap 2 faces if this does not cause any match to happen. The swap will be reversed and the move will not be spent.
+
+A PvP match can result in a player's victory or a draw. A draw happens if both players hit the same score or if no player can reach the score threshold.
+
+The player has to make at least one move every 30 seconds. Otherwise, victory will be granted to the opponent due to inactivity. If this happens, it will not be possible for the inactive player to join a game for 3 minutes.
+
+The card the player can use are to be selected through an ad-hoc screen before entering the game (or level). The same card cannot be used again without making 10  9 other moves first.
+
+If a player disconnects from the game more than 30 seconds from the end, their time will deplete naturally and they will lose the game. If a player disconnects during the last 30 seconds, the will just result inactive for that last part of the match, with no mechanical consequences. The winner will be computed regularly.
+
+#### 4.2.3. Scoring/winning conditions
+During the match loop in the main game flow (see page X, Figure Y), points for every move are computed using the following closed formula:
+
+    total_points = tiles_no * tile_points + combos_no * combo_points + cascades_no * cascade_points;
+
+Points are cumulated during a playthrough, and when the game is over the final amount is compared with a reference score: if the player score is greater than such value, they win the game. Further rules apply in different game modes:
+
+- **Campaign:** the minimum score threshold depends on the level and its position in the story progression; a game is lost if no more moves are available to the player.
+
+- **PvP:** the player with the highest score at the end of a game wins. Out-of-moves condition doesn't apply, instead if a player has no more moves available they must wait for the other to run out of moves or time.
+
+Edge cases in multiplayer games are as follows: player inactivity for more than 30 seconds grants the victory to one's opponent; the same applies if a player leaves or any sort of connection loss is detected. More details about the network protocol and connectivity tolerance can be found in the Technical Design Document.
+
 ### 4.3. Controls
 The game is controlled through the phone's touch screen.
 
@@ -348,24 +374,6 @@ The main menu, shop screen, setting menu and level selection interfaces also fea
 
 ##### Album (Not in the prototype)
 When, with future patches, more cards will be implemented, a collection screen will be available from the Main Menu. The collection will be shown in a book-like album, much like the one which can be found in HearthStone - Heroes of Warcraft. Each page of the album will host 6 different cards, and on the bottom right corner of each card, the number of copies of the card owned by the player will be shown (e.g. "x3"). The album pages will look slightly yellowish, to give the idea of being made of old paper. Entering the interface will show the closed album, with it's brown and finely decorated leather cover, opening to the first page.
-
-#### 4.3.2. Rules
-The number of possible moves is set for each game. Time is set only in multiplayer games.
-
-It is not possible to swap 2 faces if this does not cause any match to happen. The swap will be reversed and the move will not be spent.
-
-A PvP match can result in a player's victory or a draw. A draw happens if both players hit the same score or if no player can reach the score threshold.
-
-The player has to make at least one move every 30 seconds. Otherwise, victory will be granted to the opponent due to inactivity. If this happens, it will not be possible for the inactive player to join a game for 3 minutes.
-
-The card the player can use are to be selected through an ad-hoc screen before entering the game (or level). The same card cannot be used again without making 10  9 other moves first.
-
-If a player disconnects from the game more than 30 seconds from the end, their time will deplete naturally and they will lose the game. If a player disconnects during the last 30 seconds, the will just result inactive for that last part of the match, with no mechanical consequences. The winner will be computed regularly.
-
-#### 4.3.3. Scoring/winning conditions
-Campaign: the level is won if the player can achieve a level-depending score withing the given number of moves.
-
-PvP: the player who, having reached the threshold, reaches the highest score, wins the game. Alternatively, if a player does not make a move for 30 seconds straight, their opponent wins the game.
 
 ### 4.4. Game Modes and Other Features
 **Campaign:** a series of levels to be played in a sequence. A level cannot be accessed if the previous one has not been defeated. The campaign is a single player mode of 30 different levels, with different mechanics emerging with higher levels. This mode awards coins and cards with the rules described above. In this mode, griefing cards (the ones that hinder the opponent's gameplay) are not usable.
