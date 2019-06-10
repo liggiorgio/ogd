@@ -94,7 +94,11 @@ On release, we expect an increase in the number of players
 * Expected average number of simultaneous players: 1,500
 * Expected number of total players: 11,250
 
-[comment]: # "TODO: add post-release plan"
+3 months after the release, given our extensive target audience (as specified in **Chapter 3** of the GDD), we expect to reach our peak playerbase before any future game expansion plan.
+
+- Expected average number of daily players: 10,000
+- Expected average number of simultaneous players: 4,000
+- Expected number of total players: 30,000
 
 The game uses an authoritative client-server system for moves validation. The game is essentially played on the server, with the users sending their moves and receiving the new state of the board from the server. Since everything is hosted on the Firebase platform, resources are allocated and paid for as needed, without the need for a specific extension and scalability plan.
 
@@ -104,7 +108,7 @@ The following is a rough estimation of the online service costs during the close
 
 The impact of other operations (like making purchases or accessing other services) is negligible and as such we expect it won't have a great impact on the service costs. 
 
-Our internal tests are also not included, since they are not done on the same Firebase project of the main application and are completely covered by the Firebase free usage threshold.
+Our internal tests are also not included, since they are not done on the same Firebase project of the main application and are completely covered by the Firebase free usage threshold and even in case we exceed the free quota, the payment is negligible.
 
 | Category                    | Resources per unit       | Total units                      | Total resource usage             | Total cost    |
 | --------------------------- | ------------------------ | -------------------------------- | -------------------------------- | ------------- |
@@ -153,6 +157,8 @@ Since our backend is completely cloud-based, we can expect new computational pow
 
 ![Game network outline](D:\Code\ogd\Docs\pictures\network.png)
 
+Connection between Firebase services in our infrastructure.
+
 [comment]: #	"How servers are connected (hint: use a picture What is installed on each server"
 
 ### 7.2  Network Requirements
@@ -181,15 +187,16 @@ All the monthly costs are relative to the period between the beginning of the pr
 
 ### 8.2 	Testing Hardware
 
-| **Product** | **OS Version** | **Screen Size** | **Cost** |
-| ----------- | -------------- | --------------- | -------- |
-|             | Android        |                 | € 1      |
-|             | Android        |                 | € 1      |
-|             | Android        |                 | € 1      |
-|             | Android        |                 | € 1      |
-|             | Android        |                 | € 1      |
-|             | Android        |                 | € 1      |
-|             | Android        |                 | € 1      |
+We chose devices low- and mid-range devices with various versions of Android, screen sizes and resolutions, to ensure the maximum compatibility with both our minimum requirements and more recent devices. The devices come from the most common brands., Samsung and Huawei.
+
+| **Product**            | **OS Version** | **Screen Size**   | **Cost** |
+| ---------------------- | -------------- | ----------------- | -------- |
+| Huawei P20 Lite        | Android 8.0    | 5.84" (1080*2280) | € 215    |
+| Huawei P9 Lite         | Android 7.0    | 5.2" (1080*1920)  | € 125    |
+| Huawei P8 Lite         | Android 5.0    | 5" (720*1280)     | € 125    |
+| Samsung Galaxy A40     | Android 9.0    | 5.9" (1080*2340)  | € 200    |
+| Samsung Galaxy A5 2017 | Android 6.0    | 5.2" (1080*1920)  | € 200    |
+| Samsung Galaxy J1 Ace  | Android  4.4   | 4.3" (480*800)    | € 110    |
 
 
 
@@ -197,20 +204,20 @@ All the monthly costs are relative to the period between the beginning of the pr
 
 | Product | Quantity | Cost | Total Cost |
 | -- | -- | -- | -- |
-| Unity Pro | 3 | € 115 per month per user | € 4,140 |
-| Visual Studio Professional | 1 | $ 499 per user           | € 442 |
+| Unity Pro | 3 | € 115 per month per user | € 3,450 |
+| Visual Studio Professional | 1 | $ 499 (approx. € 442) per user | € 442 |
 | Git | 3 | € 0 | € 0 |
 | GIMP | 3 | € 0 | € 0 |
 
 [comment]: # "https://www.ibaudio.com"
 
-### 8.4	Other
+### 8.4	Other expenses
 
-| Product                       | Unit cost                                          | Total cost |
-| ----------------------------- | -------------------------------------------------- | ---------- |
-| Office Rent (incl. utilities) | € 1,000 per month                                  | € 12,000   |
-| ISP - Gigabit connection      | € 20 per month (€ 30 per month after the 1st year) | € 240      |
-| Royalty-free music            | $ 69 per year (approx. € 62)                       | € 62       |
+| Product                       | Unit cost                                                    | Total cost |
+| ----------------------------- | ------------------------------------------------------------ | ---------- |
+| Office Rent (incl. utilities) | € 1,000 per month                                            | € 10,000   |
+| ISP - Gigabit connection      | € 20 per month (€ 30 per month after the 1st year, TIM Business) | € 240      |
+| Royalty-free music            | $ 69 per year (approx. € 62)                                 | € 62       |
 
 [comment]: # "https://www.timbusiness.it/fisso/offerte-fibra-adsl-telefono/senza-limiti-fibra"
 
@@ -220,9 +227,9 @@ All the monthly costs are relative to the period between the beginning of the pr
 | ---------------- | ------------ |
 | Software         | € 4,582      |
 | Hardware         | € 7,182      |
-| Testing Hardware |              |
-| Other            | € 12,302     |
-| **Total**        | **€ 27,546** |
+| Testing Hardware | € 975        |
+| Other            | € 10,302     |
+| **Total**        | **€ 23,041** |
 
 
 
@@ -289,7 +296,7 @@ This, according to the quote given by the company we plan to outsource to, amoun
 
 ### 9.3	Marketing and Social media management
 
-We plan to begin advertising our game on the main social medias (Facebook, Instagram, Twitter) starting 3 months prior to the beginning of the closed beta, for a total of 6 months before the beginning of the open beta, to reach a good number of potential players from before the release of the game. Looking at the rates of the SMM and PR agency we plan to outsource to, the costs amount to $ 4,000 per month for the social media managing service and $ 4,000 per month for the PR service, totalling $ 8,000 per month or $ 48,000 (approx. € 42,500) for the 6 month preceding the open beta.
+We plan to begin advertising our game on the main social medias (Facebook, Instagram, Twitter) starting 3 months prior to the beginning of the closed beta, for a total of 6 months before the beginning of the open beta, to reach a good number of potential players from before the release of the game. Looking at the rates of the SMM and PR agency we plan to outsource to, the costs amount to $ 4,000 per month for the social media managing service, $ 4,000 per month for the PR service and $3,500 per month for the SEO, competitive and social media analysis and planning, totalling $ 11,500 per month or $ 69,000 (approx. € 61,000) for the 6 month preceding the open beta.
 
 ### 9.4	Cost estimation
 
@@ -298,8 +305,8 @@ We plan to begin advertising our game on the main social medias (Facebook, Insta
 | Google Licensing                      | € 25         |
 | 2D art                                | € 1400       |
 | Customer Support                      | € 1,059      |
-| Marketing and Social media management | € 42,500     |
-| **Total**                             | **€ 44,984** |
+| Marketing and Social media management | € 61,000     |
+| **Total**                             | **€ 63,484** |
 
 
 
@@ -307,7 +314,7 @@ We plan to begin advertising our game on the main social medias (Facebook, Insta
 
 ###  10.1  Estimated Delivery Time
 
-We initially plan to roll out codes for a closed beta of our game about 7 months after the beginning of development. We then estimate to be ready for an open beta phase after 3 months of work, as shown in the **Development Gantt** section, and to be ready to release the game after 13 to 15 months since the beginning of development, 3 to 5 months after the open beta phase. This is an optimistic estimate, since the precise release dates for the betas and the final product should be carefully planned with marketing experts and there is always the risk of external events delaying the development process.
+We initially plan to roll out codes for a closed beta of our game about 8 months after the beginning of development. We then estimate to be ready for an open beta phase after 2 months of work, as shown in the **Development Gantt** section, and to be ready to release the game after 13 to 15 months since the beginning of development, 3 to 5 months after the open beta phase. This is an optimistic estimate, since the precise release dates for the betas and the final product should be carefully planned with marketing experts and there is always the risk of external events delaying the development process.
 
 ###	10.2	Delivery Platform
 The game will be delivered through the Google Play Store.
@@ -338,10 +345,10 @@ Outsourced staff is called whenever needed or "rented" each month without being 
 
 ### 12.1	Total costs
 
-| **Description**                 | **Cost** |
-| ------------------------------- | -------- |
-| Development (section 8.5)       |          |
-| Web Service (section 4.1)       | € 63.3   |
-| External Services (section 9.4) | € 44,984 |
-| **Total**                       | **€ 1**  |
+| **Description**                 | **Cost**     |
+| ------------------------------- | ------------ |
+| Development (section 8.5)       | € 25,041     |
+| Web Service (section 4.1)       | € 63         |
+| External Services (section 9.4) | € 63,484     |
+| **Total**                       | **€ 88,588** |
 
