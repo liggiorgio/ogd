@@ -280,12 +280,18 @@ The main screen features the necessary buttons, the details of which will be fur
 
 The main menu screen will also feature a red X button to quit the game on the top right side of the screen.
 
-##### Shop Screen
+##### Shop Screen (Not in the prototype)
 The shop will feature Robin on the bottom left of the screen, filling the whole bottom part with a conversazion balloon containing "Hey! Nothing better than some new gear to go into battle again!". Above him the screen will show 3 different kinds of card packs, with their pricing and the "buy" button with only the packs prices on it.
 
 ![The shop interface](pictures/shop_screen.png)
 
-The top left corner shows a little insertion with the player's money account, with a small "+" button on the side. Tapping on the money or the + will open the "buy coins with real money" pop-up. The exchange rate is €1 - 100 gold, with bigger bundles to be decided upon.
+The top left corner shows a little insertion with the player's money account, with a small "+" button on the side. Tapping on the money or the + will open the "buy coins with real money" pop-up. The exchange rates are:
+
+€2,79 - 200 gold
+€4,99 - 500 gold
+€8,99 - 1'000 gold
+€19,99 - 2'400 gold
+€49,99 - 7'000 gold
 
 ##### Card Selection
 The card selection pop-up appears before queuing for a game or going into a campaign level, allowing the player to select four cards to play in their game. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen from Duel mode or to the Level Selection in Campaign mode.
@@ -327,14 +333,17 @@ At that point, the sentence "You win!" or "You lose!" will appear, depending on 
 
 ![Victory screen. Upon defeat, the red "You lose!" will substitute the blue "You win!"](pictures/victory_screen.png)
 
-##### Level Selection
+##### Level Selection (Not in the prototype)
 The campaign level selection screen features a "path" connecting the levels, which are represented with buttons with their numbers above them. The background shows the land of Ludenia.
 All completed levels will appear as blue, smiling faces, the next level to complete will appear as a sad, red face. Unlocked levels will appear as sad, stone-grey faces.
 
-##### Friend List
+##### Friend List (Not in the prototype)
 The main menu, shop screen, setting menu and level selection interfaces also feature a Friends button. It is used to visualize the friend list, which is used to start a chat or a match with any user added to it, provided they are not in game.
 
 ![An example of friend list](pictures/friend_list.png)
+
+##### Album (Not in the prototype)
+When, with future patches, more cards will be implemented, a collection screen will be available from the Main Menu. The collection will be shown in a book-like album, much like the one which can be found in HearthStone - Heroes of Warcraft. Each page of the album will host 6 different cards, and on the bottom right corner of each card, the number of copies of the card owned by the player will be shown (e.g. "x3"). The album pages will look slightly yellowish, to give the idea of being made of old paper. Entering the interface will show the closed album, with it's brown and finely decorated leather cover, opening to the first page.
 
 #### 4.3.2. Rules
 The number of possible moves is set for each game. Time is set only in multiplayer games.
