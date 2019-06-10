@@ -12,21 +12,10 @@
 ## 1. Changelog
 | Author        | Date          | Description |
 | ------------- | ------------- | ----- |
-| Costella Alessandro | 2019-04-15 | Added logline |
-| Costella Alessandro | 2019-04-15 | Added last interfaces |
-| Costella Alessandro | 2019-04-15 | Added main menu, shop, cards and in-game interfaces |
-| Costella Alessandro | 2019-04-15 | Added game modes |
-| Costella Alessandro | 2019-04-15 | Added assets list |
-| Costella Alessandro | 2019-04-15 | Added card rules and level RCG |
-| Costella Alessandro | 2019-04-15 | Added rules, wincons, controls, flowchart |
-| Baratto Diego | 2019-04-15 | Updated project subdivision |
-| Costella Alessandro | 2019-04-12 | Added Gameplay 5.1 and 5.2 |
-| Costella Alessandro | 2019-04-12 | Added character design, removed Game World |
-| Baratto Diego | 2019-04-11 | Fixed image issue |
-| Baratto Diego | 2019-04-11 | Inserted image into document |
-| Costella Alessandro | 2019-04-03 | Audience chapter complete, removed Legal Analysis. |
-| Costella Alessandro | 2019-04-03 | Vision Statement  |
-| Liggio Giorgio | 2019-04-03 | Push first game design writing |
+| Alpha Commit | 2019-04-03 | GDD 0.1, early game concept |
+| Alpha Commit | 2019-04-15 | GDD 1.0, first revision |
+| Alpha Commit | 2019-05-20 | GDD 2.0, second revision |
+| Alpha Commit | 2019-06-10 | GDD 3.0, final revision, storyboard |
 
 ## 2. Vision Statement
 *Sunday Knights: Magic & Mayhem* is a marriage of *Candy Crush* + *Clash Royale*. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and partly exuberant. In each game, the player will face an AI opponent or a human player in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
@@ -186,7 +175,7 @@ This section only includes the cards that have been design for the prototype. Th
 
 1. It's raining men!
 
-![The It's raining men! card](pictures/cards_It'sRainingMen.png)
+![The It's raining men! card](pictures/cards_It'sRainingMen!.png)
 
 The It's raining men! card provides a way to change the colour of the user's board side faces. For 5 seconds after activation, small stars of random colours among the five faces' colours will fall, one per second. By dragging and dropping those stars on a face, the player will make that face's colour change into that of the star.
 
@@ -216,7 +205,7 @@ Any number of different blue cards can be active at the same time. This means a 
 
 1. Who wants pie?
 
-![The Who wants pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie)
+![The Who wants pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie.png)
 
 The Who wants pie? card throws - surprisingly - a pie to the opponent. Upon activation, the opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are. "Being moved" means they either get successfully swapped or they fall due to a match on a lower row.
 
@@ -497,7 +486,7 @@ Each star can be drag-and-dropped on a face, thus disappearing and changing that
 
 As in the card's description, upon activation and for the whole duration of the card, the faces will slightly shine in their colour, becoming brighter. After the effect ends, a big red "+X MOVES!" will appear in the center of the screen for one second, before flying towards the moves counter while becoming small and disappearing in it, as the counter is increased by X.
 
-![The "+X MOVES" animation. X is the number of combos achieved during the effect](animations_gogogo.png)
+![The "+X MOVES" animation. X is the number of combos achieved during the effect](pictures/animations_gogogo.png)
 
 3. The Bath Bomb!
 
@@ -543,9 +532,9 @@ The hour buttons will gently float in place, hovering untill they are tapped. On
 
 The Did you say ice? card will cause the center of the enemy's screen to shatter. The enemy will see a circa-round portion of their screen start creaking like ice over 3 seconds, then the pieces will explode and fall down.
 
-![The Did you say ice? creaking animation](pictures/cards_didyousayice_1.png)
+![The Did you say ice? creaking animation](pictures/animations_didyousayice_1.png)
 
-![The Did you say ice? shatter effect in action](pictures/cards_didyousayice_2.png)
+![The Did you say ice? shatter effect in action](pictures/animations_didyousayice_2.png)
 
 8. You jellous?
 
