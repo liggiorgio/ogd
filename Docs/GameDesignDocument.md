@@ -390,7 +390,7 @@ The shop-keeper is a short boy, wearing robes a bit too big for him, but not so 
 All the characters described above are NPC. They only appear to tell the player something, or to adobe the shop's screen. They have hence no A.I.
 
 ##### Enemies
-Generic enemies only appear in cinematics and in the trailer. The enemy soldiers are skeletons, cartoonish in style, armed with a stubby sword and some thick pieces of armor, specifically an helmet and epaulettes. The helmet has the shape of german ww2 helmets with a point on top. All the armor pieces are blue, with yellow edges, and the helmet's point is yellow as well.
+Generic enemies only appear in cinematics and in the trailer. The enemy soldiers are skeletons, cartoonish in style, armed with a stubby sword and some thick pieces of armor, specifically an helmet, epaulettes and boots. The helmet has the shape of german ww2 helmets with a point on top. All the armor pieces are blue, with yellow edges, and the helmet's point is yellow as well.
 
 ##### Evilor
 The evil lord of evil Evilor is the leader of the terrible army that threatens Ludenia. He is also the final boss of the game, but only his face appears, through cinematics. He has horns, long sharp teeth and a long, evil chin. He is devilishly red and always has an evil smile on his face. He is so evil.
@@ -436,6 +436,26 @@ The cards then disappear, leaving place for the "THE END" writing that signals t
 Completing the story gives the player 3x of each of the eight cards.
 
 ### 6.3 Progressive mechanics
+
+The campaign includes 30 levels, during which the games become more complex and challenging for the player. For this purpose, new colours and mechanics will enrich gameplay as the player progresses through the game.
+
+The first one is a total tutorial level. Ludenia hasn't been attacked yet, and the player needs to resolve some local problems that make people unhappy. After the first level, the actual attack comes, making it necessary to use magic to make people happy again.
+
+The 10, 20 and 30 levels are boss levels, and they always include all the mechanics the game has introduced that far.
+
+Mechanics are as wollows.
+
+1. Falling stars: an activation of the It's raining men! card. Related card: it's raining men.
+
+2. Jelly: Random tiles covered in jelly, as in the You jellous? card, but on random tiles. Related card: you jellous.
+
+3. Pies to the face: unbelievable as it sounds, Who wants pie? card activations. Some levels may have cream on starting faces, this will be decided with level design through testing, to avoid the mechanic being too monotonous. Related card: who wants pie.
+
+4. Times faces: faces with a moves counter on them. If the counter reaches 0 before they are matched, they become stone faces and can't be matched any more, even tho they can be moved. Related card: isn't it time.
+
+5. Cracking screen: Did you say ice? cards activation. As in with pies, level design may introduce variations to avoid it being too monotonous. Related card: did you say ice.
+
+Levels including any mechanic grant rewards among related cards for first level completion.
 
 
 
