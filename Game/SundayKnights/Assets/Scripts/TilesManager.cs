@@ -78,13 +78,17 @@ public class TilesManager : MonoBehaviour
                 if (hit.collider != null)   // we have another hit
                 {
                     if (hit.collider.gameObject != hitGo)   // check allowed move
-                    {
-                        state = GameState.Animating;
-                        FixSortingLayer(hitGo, hit.collider.gameObject);
-                        StartCoroutine(FindMatchesAndCollapse(hit));
-                    }
-                    //else
-                    //    state = GameState.None;
+                        if ( !Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Tile>(),
+                            hit.collider.gameObject.GetComponent<Tile>()) )
+                        {
+                            state = GameState.None;
+                        }
+                        else
+                        {
+                            state = GameState.Animating;
+                            FixSortingLayer(hitGo, hit.collider.gameObject);
+                            StartCoroutine(FindMatchesAndCollapse(hit));
+                        }
                 }
             }
         }
