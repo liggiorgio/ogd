@@ -11,8 +11,7 @@ using UnityEngine.UI;
 
 public class TilesManager : MonoBehaviour
 {
-    public Text DebugText, ScoreText;
-    public bool ShowDebugInfo = false;
+    public Text ScoreText;
 
     public TilesArray tiles;
 
@@ -38,7 +37,7 @@ public class TilesManager : MonoBehaviour
     // Enable/disable debug info
     void Awake()
     {
-        DebugText.enabled = ShowDebugInfo;
+
     }
 
     // Start is called before the first frame update
