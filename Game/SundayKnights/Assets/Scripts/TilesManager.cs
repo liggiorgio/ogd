@@ -43,10 +43,14 @@ public class TilesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set up prefabs
         InitializeTypesOnPrefabTilesAndBonuses();
 
+        // Clear score, fill grid
+        InitializeVariables();
         InitializeTileAndSpawnPositions();
 
+        // Start hints
         StartCheckForPotentialMatches();
     }
 
@@ -81,7 +85,7 @@ public class TilesManager : MonoBehaviour
                     {
                         //user did a hit, no need to show him hints
                         StopCheckForPotentialMatches();
-                        
+
                         if ( !Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Tile>(),
                             hit.collider.gameObject.GetComponent<Tile>()) )
                         {
@@ -116,8 +120,6 @@ public class TilesManager : MonoBehaviour
     // Setup objects on the grid for a new game
     public void InitializeTileAndSpawnPositions()
     {
-        InitializeVariables();
-
         if (tiles != null)
             DestroyAllTiles();
 
@@ -174,6 +176,11 @@ public class TilesManager : MonoBehaviour
                 StartCoroutine(AnimatePotentialMatchesCoroutine);
                 yield return new WaitForSeconds(Const.WaitBeforePotentialMatchesCheck);
             }
+        }
+        else
+        {
+            // no more moves available, shuffle grid
+            InitializeTileAndSpawnPositions();
         }
     }
 
