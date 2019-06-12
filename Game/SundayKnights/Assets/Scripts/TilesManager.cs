@@ -27,10 +27,10 @@ public class TilesManager : MonoBehaviour
     public GameObject[] ExplosionPrefabs;
     public GameObject[] BonusPrefabs;
 
-    // check potential matches
-    // animate potential matches
+    private IEnumerator CheckPotentialMatchesCoroutine;
+    private IEnumerator AnimatePotentialMatchesCoroutine;
 
-    // enumerable potential matches
+    IEnumerable<GameObject> potentialMatches;
 
     public SoundManager soundManager;
 
@@ -47,7 +47,7 @@ public class TilesManager : MonoBehaviour
 
         InitializeTileAndSpawnPositions();
 
-        //StartCheckForPotentialMatches();
+        StartCheckForPotentialMatches();
     }
 
     // Update is called once per frame
@@ -78,6 +78,10 @@ public class TilesManager : MonoBehaviour
                 if (hit.collider != null)   // we have another hit
                 {
                     if (hit.collider.gameObject != hitGo)   // check allowed move
+                    {
+                        //user did a hit, no need to show him hints
+                        StopCheckForPotentialMatches();
+                        
                         if ( !Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Tile>(),
                             hit.collider.gameObject.GetComponent<Tile>()) )
                         {
@@ -89,6 +93,7 @@ public class TilesManager : MonoBehaviour
                             FixSortingLayer(hitGo, hit.collider.gameObject);
                             StartCoroutine(FindMatchesAndCollapse(hit));
                         }
+                    }
                 }
             }
         }
@@ -147,6 +152,51 @@ public class TilesManager : MonoBehaviour
         }
 
         SetupSpawnPositions();
+    }
+
+    private void StartCheckForPotentialMatches()
+    {
+        StopCheckForPotentialMatches();
+        //get a reference to stop it later
+        CheckPotentialMatchesCoroutine = CheckPotentialMatches();
+        StartCoroutine(CheckPotentialMatchesCoroutine);
+    }
+
+    private IEnumerator CheckPotentialMatches()
+    {
+        yield return new WaitForSeconds(Const.WaitBeforePotentialMatchesCheck);
+        potentialMatches = Utilities.GetPotentialMatches(tiles);
+        if (potentialMatches != null)
+        {
+            while (true)
+            {
+                AnimatePotentialMatchesCoroutine = Utilities.AnimatePotentialMatches(potentialMatches);
+                StartCoroutine(AnimatePotentialMatchesCoroutine);
+                yield return new WaitForSeconds(Const.WaitBeforePotentialMatchesCheck);
+            }
+        }
+    }
+
+    private void ResetOpacityOnPotentialMatches()
+    {
+        if (potentialMatches != null)
+            foreach (var item in potentialMatches)
+            {
+                if (item == null) break;
+
+                Color c = item.GetComponent<SpriteRenderer>().color;
+                c.a = 1.0f;
+                item.GetComponent<SpriteRenderer>().color = c;
+            }
+    }
+
+    private void StopCheckForPotentialMatches()
+    {
+        if (AnimatePotentialMatchesCoroutine != null)
+            StopCoroutine(AnimatePotentialMatchesCoroutine);
+        if (CheckPotentialMatchesCoroutine != null)
+            StopCoroutine(CheckPotentialMatchesCoroutine);
+        ResetOpacityOnPotentialMatches();
     }
 
     // Actuate game rules and mechanics: find matches, destroy tiles, spawn new ones, collapse others
@@ -222,6 +272,7 @@ public class TilesManager : MonoBehaviour
         }
 
         state = GameState.None;
+        StartCheckForPotentialMatches();
     }
 
     // Scoring
