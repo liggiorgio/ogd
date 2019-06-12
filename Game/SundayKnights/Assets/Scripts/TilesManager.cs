@@ -187,7 +187,7 @@ public class TilesManager : MonoBehaviour
                 yield return new WaitForSeconds(Const.CollapseDelay);
 
             // play sfx
-            soundManager.PlayMatch();
+            soundManager.PlayMatch(timesRun - 1);
 
             // spawn explosions and remove tiles
             foreach (var item in totalMatches)

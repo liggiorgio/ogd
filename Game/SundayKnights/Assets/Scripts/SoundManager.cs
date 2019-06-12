@@ -9,26 +9,28 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioClip matchAudioClip;
+    public AudioClip[] matchAudioClip;
     AudioSource match;
 
     // Awake is called after creation
     void Awake()
     {
-        match = AddAudio(matchAudioClip);
+        match = AddAudio();
     }
 
-    AudioSource AddAudio(AudioClip audioClip)
+    AudioSource AddAudio()
     {
         AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        audioSource.clip = audioClip;
+        //audioSource.clip = audioClip;
         return audioSource;
     }
 
-    public void PlayMatch()
+    public void PlayMatch(int i)
     {
-        match.PlayOneShot(matchAudioClip, 1f);
+        if (i > 4)
+            i = 4;
+        match.PlayOneShot(matchAudioClip[i], 1f);
     }
 
     // Update is called once per frame
