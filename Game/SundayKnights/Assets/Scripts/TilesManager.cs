@@ -182,6 +182,10 @@ public class TilesManager : MonoBehaviour
             if (timesRun > 1)
                 IncreaseScore(Const.SubsequentMatchScore);
 
+            // small delay for combos
+            if (timesRun > 1)
+                yield return new WaitForSeconds(Const.CollapseDelay);
+
             // play sfx
             soundManager.PlayMatch();
 
