@@ -28,7 +28,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMatch()
     {
-        match.Play();
+        match.PlayOneShot(matchAudioClip, 1f);
     }
 
     // Update is called once per frame

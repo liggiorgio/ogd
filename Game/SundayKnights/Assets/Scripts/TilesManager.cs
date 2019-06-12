@@ -183,7 +183,7 @@ public class TilesManager : MonoBehaviour
                 IncreaseScore(Const.SubsequentMatchScore);
 
             // play sfx
-            // soundManager.PlayMatch();
+            soundManager.PlayMatch();
 
             // spawn explosions and remove tiles
             foreach (var item in totalMatches)
