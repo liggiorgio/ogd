@@ -18,7 +18,11 @@
 | Alpha Commit | 2019-06-10 | GDD 3.0, final revision, storyboard |
 
 ## 2. Vision Statement
+<<<<<<< HEAD
 *Sunday Knights: Magic & Mayhem* is a marriage of *Candy Crush* + *Clash Royale*. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and partly exuberant. In each game, the player will face an AI opponent or a human player in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
+=======
+*Sunday Knights: Magic & Mayhem* is a marriage of *Candy Crush* + *Clash Royale*. It's a fast puzzle game where two opponents play against each other. The game setting is a medieval fantasy world with various locations. The game will feel partly serious and exuberant. In each game, the player will face an AI opponent or a real-life user in multiplayer mode. There are game modifiers that come in the form of playing cards, to gain points more quickly or slow down the opponent.
+>>>>>>> master
 
 There's huge emphasis on the multiplayer game pacing, with head-to-head fast matches where anything can happen due to special actions. Many in-game rewards such as game cards, resources, and currency are designed to convey a sense of accomplishment and achievement.
 
@@ -45,6 +49,7 @@ Players face some constraints while playing, depending on the game mode. There m
 
 As non-exhaustive, non-final examples, we can estimate the following values:
 
+<<<<<<< HEAD
 - Single player game, easy difficulty
   - Move limit: **15 to 25 moves**
   - Time limit: **no limit**
@@ -55,6 +60,18 @@ As non-exhaustive, non-final examples, we can estimate the following values:
   - Card limit: **4 cards**
 
 #### 2.2.3. Setting & Theme
+=======
+* Single player game, easy difficulty
+  * Move limit: **15 to 25 moves**
+  * Time limit: **no limit**
+  * Card limit: **4 cards**
+* Multiplayer game
+  * Move limit: **30 moves**
+  * Time limit: **2 minutes**
+  * Card limit: **4 cards**
+
+#### 2.2.3. Setting
+>>>>>>> master
 The game takes place in an archetypical medieval fantasy era, in the peaceful Kingdom of Ludenia. The first impression the player gets is one of peace and carefreeness since Ludenians are happy and cheery people. Ludenia has many views to offer; beautiful landscapes hold majestic castles and quiet villages, the woods are home to many animals, and the mountains contrast a sea stretching as far as the eye can see.
 
 Things change when the story antagonists show up. The Dreary Army is driven only by the need for stealing everyone's happiness, and this reflects in a duller mood in the environments. Wherever they go, life withers and joy disappears, nature recedes, and desolation overcomes everything.
@@ -111,6 +128,7 @@ The target platform for the game depends on different factors, the most importan
 Given the game genre and the players' mindset, it's obvious mobile devices are the best option as a gaming platform: casual players want to enjoy a game at any time and in any place, and mobile devices satisfy such requirements. We focus on smartphones and tablet devices, the former of which are widespread.
 
 For *SK: M&M*, we chose the Google Play Store as the launch marketplace of interest; hence, development turns towards Android-powered mobile devices during its early phase. A late iOS port of the game may be considered further if feedback from the Android testing ground results positively.
+<<<<<<< HEAD
 
 ### 3.6. System Requirements
 Taking software constraints into consideration, such as the game engine used, graphical level of detail, or the device coverage, we can estimate the following recommended requirements:
@@ -145,6 +163,38 @@ This release strategy let developers improve the whole software system in a grad
 
 ## 4. Gameplay
 
+=======
+
+### 3.6. System Requirements
+Taking software constraints into consideration, such as the game engine used, graphical level of detail, or the device coverage, we can estimate the following recommended requirements:
+
+- CPU: **Intel Atom Z2560 Dual Core 1.6 GHz or equivalent**
+- GPU: **PowerVR SGX544MP2  or equivalent**
+- RAM: **512 MB**
+- Storage: **100 MB**
+- OS: **Android 4.4**
+- Phone: **Samsung Galaxy S3 or equivalent**
+
+It's clear this is a non-demanding app, designed to run on most Android devices. A device that has these or equivalent specs is capable of running the game smoothly.
+
+### 3.7. Business Model
+The monetisation strategy adopted for *SK: M&M* focuses on in-app purchases: with 74% of spending in the Google Play Store coming from in-app purchases in previous years, it is no wonder IAPs are an effective mobile game business model. This monetisation strategy also lets developers manage their sales directly, influencing the users' behaviour within the game.
+
+#### 3.7.1. IAPs and Gameplay
+The game lets players harvest resources by playing, getting rewards, acquiring items with the in-game currency, or purchasing in-game articles with real money. Players are encouraged to purchase items thanks to their trial-and-error approach to the game: acquiring resources needs time, and this leads to a limited number of games per time unit. Since losing a game rewards the player less than winning, if they want to boost their activity, they can then get more resources instantaneously in the shop screen.
+
+#### 3.7.2. Release Strategy
+The release plan for the game is a soft launch with two main phases: closed and open beta.
+
+Once the main features are defined, the closed beta rolls out for a chosen group of users. During this phase, data and feedback are gathered to fix current builds, balance gameplay, and evaluate design choices. Contents can be added, changed, or even removed during this phase, as this is the first test playground.
+
+The second phase is the open beta: the game is publicly downloadable by anyone but is still undergoing improvements and updates. Contents are more stable, yet they can further improve and change until the first stable version comes out.
+
+This release strategy let developers improve the whole software system in a gradual and controlled manner, and collect continuous feedback from the community about both application stability and game contents.
+
+## 4. Gameplay
+
+>>>>>>> master
 ### 4.1. Overview
 The game is about matching groups of 3 or more faces on a grid by swapping couples of them. Only adjacent faces can be swapped, vertically or horizontally. Furthermore, the game includes playable cards that can change the state of the game for the player or their opponent.
 
@@ -153,7 +203,11 @@ The game is about matching groups of 3 or more faces on a grid by swapping coupl
 #### 4.2.1. Mechanics
 
 ##### Faces
+<<<<<<< HEAD
 The game is about making faces disappear ("freeing" them from the evil curse) by matching groups of them. The main part of the in-match GUI consists of a grid of 6x6 faces of random colours (6 columns x 7 rows), as is described in further detail in the Interfaces section. The player can swap couples of adjacent faces by "spending" a move - meaning their move count diminishes by one for each swap they perform. A swap is EFFECTIVE only if it actually "groups" 3 or more faces of the same colour, meaning if a swap doesn't cause any face to disappear, it is automatically reverted by the game. In this case, the move is not spent.
+=======
+The game is about making faces disappear ("freeing" them from the evil curse) by matching groups of them. The main part of the in-match GUI consists of a grid of 6x7 faces of random colours (6 columns x 7 rows), as is described in further detail in the Interfaces section. The player can swap couples of adjacent faces by "spending" a move - meaning their move count diminishes by one for each swap they perform. A swap is EFFECTIVE only if it actually "groups" 3 or more faces of the same colour, meaning if a swap doesn't cause any face to disappear, it is automatically reverted by the game. In this case, the move is not spent.
+>>>>>>> master
 
 ##### Moves
 Every player starts the match with a set number of moves and cannot usually gain any (some cards cause exceptions to this rule). PvP matches grant 30 starting moves, campaign scenarios grant a different number of moves based on the single level.
@@ -165,6 +219,7 @@ Each time faces disappear, they grant score based on the size of the group of fa
 Each level has a minimum score the player must reach in order to achieve victory. This number varies throughout the campaign, while in PvP matches it's a fixed 1200.
 
 ##### Cards
+<<<<<<< HEAD
 Cards are items the player can use at the expense of one move each. Using a card consumes it for good. The player can unlock them by playing the campaign or by buying packs with coins they gain through PvP matches. Cards are either blue, if they provide a bonus or help for the player, or red, if they damage the opponent. Cards are played by tapping on them. A player cannot have, in one game, two copies of the same card, and each card can only be played once.
 
 ###### Card List
@@ -236,6 +291,65 @@ At any time, only ONE red card can be active for each player. This means a playe
 >Red and Blue cards interactions
 
 The "Isn't it time?" card, "Did you say ice?" card and the first phase of the "Who wants pie?" card - the one when the opponent needs to swipe the cream away - are TIME FREEZING effects. This means that they "pause" the effect of the enemy's blue cards, if any are in effect when the red card is played. As for the rest, pie cream and jelly do not stop time, and thus work alongside any enemy blue card, effectively slowing them down. They are meant to be good counters to big combos, by, for example, making the opponent waste their precious 5 seconds of score boost.
+=======
+Cards are items the player can use at the expense of moves, with the cost depending on the single card. The player can unlock them by playing the campaign or by buying packs with coins they gain through PvP matches. Cards are either blue, if they provide a bonus or help for the player, or red, if they damage the opponent. Cards are played by tapping on them.
+>>>>>>> master
+
+###### Card List
+
+> Blue cards
+
+1. It's raining men!
+
+![The It's raining men! card](pictures/cards_It'sRainingMen.png)
+
+The It's raining men! card provides a way to change the colour of the user's board side faces. For 5 seconds after activation, small stars of random colours among the five faces' colours will fall, one per second. By dragging and dropping those stars on a face, the player will make that face's colour change into that of the star.
+
+2. Go Go Go!
+
+![The Go Go Go! card](pictures/cards_GoGoGo!.png)
+
+The Go Go Go! card allows the user to gain extra moves. Upon activation, all faces will star shining slightly in their colour. The player will then have to perform a match. After the match and comboes caused by it end, the player will gain a number of extra moves equal to the combo counter they achieved.
+
+3. Da Bath Bomb!
+
+![The Da Bath Bomb! card](pictures/cards_DaBathBomb!.png)
+
+The Da Bath Bomb! card requires the player to target a specific face cell. Upon targeting, the card will "demolish" the selected face (by making it happy, of course) and the 8 faces in the square around it, in an explosion of soap foam. This will grant the player 150 points.
+
+4. Gimme that juice!
+
+![The Gimme that juice! card](pictures/cards_GimmeThatJuice!.png)
+
+The Gimme that juice! card covers all the faces in sparkly raspberry juice, making it so they provide double points for 5 seconds.
+
+>Red cards
+
+1. Who wants pie?
+
+![The Who wants pie? card pie visual reference. It needs to be surprised, and I'm not THAT skilled with MS Paint](pictures/cards_WhoWantsPie)
+
+The Who wants pie? card throws - surprisingly - a pie to the opponent. Upon activation, the opponent will see it come towards them - by becoming bigger and bigger - out of the user's screen, in their top right corner. Upon impact, the pie will cover the victim's screen in cream, leaving 4 pink spots around the screen that will need to be rubbed away, and leaving 15 faces - chosen at random - covered in pink cream untill they are moved once. Cream will cover those faces completely, making it impossible to see what colour they are. "Being moved" means they either get successfully swapped or they fall due to a match on a lower row.
+
+2. Isn't it time?
+
+![The Isn't it time? card](pictures/cards_Isn'tItTime.png)
+
+The Isn't it time? card "stop" the time for the user's opponent's board, without stopping the game timer. The opponent will see a series of 12 numbered buttons, representing hours, appear in sparse order around their screen. To remove the effect, the 12 numbers must be tapped in order. Every time the victim taps on the lowest number still present, that number will disappear. Once the 12 is gone, the victim's game will resume.
+
+![The 12 Isn't it time? card's button](pictures/hour.png)
+
+3. Did you say ice?
+
+![The Did you say ice? card. Quite the fresh guy](pictures/cards_DidYouSayIce.png)
+
+The Did you say ice? card shatters the opponent's screen. Not for real, that is. Upon use, the opponents screen will creak like ice under weight, then the center of it (a circlish portion as wide as the board) will shatter into 5 pieces. The victim will have to put the pieces back into place in order to resume their game. Each piece, after being placed in it's place, will stay there for 3 seconds, then will tremble for 2 seconds, then, if the puzzle hasn't been solved, will fall again.
+
+4. You jellous?
+
+![The You jellous? card](pictures/cards_YouJellous.png)
+
+The You jellous? card makes the opponent really jellous. Upon activation, a big red jelly will cover the top 3 rows of the opponent's board. If a face is engulfed in jelly, it will move and swap at 1/5 of it's natural velocity. To make the jelly burst and disappear, the victim will have to perform 3 matches (combos count) inside it, with it meaning at least 1 face of the match needs to be in it.
 
 ###### Coins
 After every PvP match, the player will be granted coins: 15 if they win, 5 if they lose. Coins can be gained either this way or through spending real money. They can only be "lost" by buying packs. Cards can be either common or rare.
@@ -252,6 +366,7 @@ In case a player challenges another, the other player will see a "Challenge pop-
 
 ![An example of the friendly challenge pop-up](pictures/friend_challenge.png)
 
+<<<<<<< HEAD
 #### 4.2.2. Rules
 The number of possible moves is set for each game. Time is set only in multiplayer games.
 
@@ -278,6 +393,8 @@ Points are cumulated during a playthrough, and when the game is over the final a
 
 Edge cases in multiplayer games are as follows: player inactivity for more than 30 seconds grants the victory to one's opponent; the same applies if a player leaves or any sort of connection loss is detected. More details about the network protocol and connectivity tolerance can be found in the Technical Design Document.
 
+=======
+>>>>>>> master
 ### 4.3. Controls
 The game is controlled through the phone's touch screen.
 
@@ -299,6 +416,7 @@ The main screen features the necessary buttons, the details of which will be fur
 
 The main menu screen will also feature a red X button to quit the game on the top right side of the screen.
 
+<<<<<<< HEAD
 ##### Shop Screen (Not in the prototype)
 The shop will feature Robin on the bottom left of the screen, filling the whole bottom part with a conversazion balloon containing "Hey! Nothing better than some new gear to go into battle again!". Above him the screen will show 3 different kinds of card packs, with their pricing and the "buy" button with only the packs prices on it.
 
@@ -311,10 +429,17 @@ The top left corner shows a little insertion with the player's money account, wi
 €8,99 - 1'000 gold
 €19,99 - 2'400 gold
 €49,99 - 7'000 gold
+=======
+##### Shop Screen
+The shop will feature Robin on the bottom left of the screen, filling the whole bottom part with a conversazion balloon containing "Hey! Nothing better than some new gear to go into battle again!". Above him the screen will show 3 different kinds of card packs, with their pricing and the "buy" button with only the packs prices on it.
+
+![The shop interface](pictures/shop_screen.png)
+>>>>>>> master
 
 ##### Card Selection
 The card selection pop-up appears before queuing for a game or going into a campaign level, allowing the player to select four cards to play in their game. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen from Duel mode or to the Level Selection in Campaign mode.
 
+<<<<<<< HEAD
 The card selection doesn't allow to pick 2 of the same cards. The 4 cards must be all different, and, of course, the player needs to own at least one copy of every card selected.
 
 ![Card selection pop-up. In red, the portion of the screen that can be tapped to quit card selection and go back](pictures/card_selection.png)
@@ -335,6 +460,29 @@ A big yellow "READY!" button allows the player to declare they are ready to go i
 ##### In-Game UI
 The in-game interface looks as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
 
+=======
+##### Card Selection
+The card selection pop-up appears before queuing for a game or going into a campaign level. It holds a square grid of all the cards the player owns on the top, the square's side being half of the screen's height, and a bottom section of 4 slots to see what cards have been chosen so far. This screen can be quit by tapping anywhere outside the card selection pop-up, going thus back to the main menu screen from Duel mode or to the Level Selection in Campaign mode.
+
+![Card selection pop-up. In red, the portion of the screen that can be tapped to quit card selection and go back](pictures/card_selection.png)
+
+The card selection pop-up also features cards' brief descriptions. A small button in the shape of a question mark is placed on the top-right corner of the pop-up, to visualize those tooltips. The tips will appear in the form of comic baloons coming out of the cards' icons. The tooltips are as follows.
+
+1. It's raining men!: mix colours at will
+2. Go Go Go!: perform combos to gain moves
+3. Da Bath Bomb!: bursting happiness!
+4. Gimme that juice!: moves grants more points
+5. Who wants pie?: throw a cake at your opponent
+6. Isn't it time?: time out your opponent
+7. Did you say ice?: breaks your opponent board
+8. You jellous?: cover your opponent in jelly
+
+A big yellow "READY!" button allows the player to declare they are ready to go into the game.
+
+##### In-Game UI
+The in-game interface looks as the look-and-feel section shows. In addition to those elements, the "ME" and "OPPO" sections feature a small bar on the bottom of their respective squares that empties to the left in 30 seconds, resetting everytime the assigned player makes a move. That bar is the inactivity bar, that makes the player lose the game if it empties completely. There is also a main time bar, showing how much time is left, below the 2 squares, just as broad as the 2 squares together.
+
+>>>>>>> master
 ##### Settings Menu
 The settings menu has the same look of the main menu. The background and X button stay the same, while the menu button change into:
 
@@ -345,8 +493,29 @@ The Credits button, if tapped, will show our team's and respective names - yay!
 
 ##### Score Screen
 When the game ends, both players will see the score section of the screen move to the screen center in 1 second, while the rest of the screen gets shadowed. Once this is done, the highest of the 2 scores will start shining and be moved in the center of the screen, blue if it's the current player's, red if it's their opponent's.
+<<<<<<< HEAD
 
 ![End game's zoom on scores](pictures/end_game_zoom.png)
+=======
+
+![End game's zoom on scores](pictures/end_game_zoom.png)
+
+At that point, the sentence "You win!" or "You lose!" will appear, depending on the situation, and the Victory Fanfare or the Defeat Riff will sound. A button with the word "continue" will appear just under "You Win/Lose" to return to the main menu.
+
+![Victory screen. Upon defeat, the red "You lose!" will substitute the blue "You win!"](pictures/victory_screen.png)
+
+##### Level Selection
+The campaign level selection screen features a "path" connecting the levels, which are represented with buttons with their numbers above them. The background shows the land of Ludenia.
+All completed levels will appear as blue, smiling faces, the next level to complete will appear as a sad, red face. Unlocked levels will appear as sad, stone-grey faces.
+
+##### Friend List
+The main menu, shop screen, setting menu and level selection interfaces also feature a Friends button. It is used to visualize the friend list, which is used to start a chat or a match with any user added to it, provided they are not in game.
+
+![An example of friend list](pictures/friend_list.png)
+
+#### 4.3.2. Rules
+The number of possible moves is set for each game. Time is set only in multiplayer games.
+>>>>>>> master
 
 At that point, the sentence "You win!" or "You lose!" will appear, depending on the situation, and the Victory Fanfare or the Defeat Riff will sound. A button with the word "continue" will appear just under "You Win/Lose" to return to the main menu.
 
@@ -359,7 +528,14 @@ All completed levels will appear as blue, smiling faces, the next level to compl
 ##### Friend List (Not in the prototype)
 The main menu, shop screen, setting menu and level selection interfaces also feature a Friends button. It is used to visualize the friend list, which is used to start a chat or a match with any user added to it, provided they are not in game.
 
+<<<<<<< HEAD
 ![An example of friend list](pictures/friend_list.png)
+=======
+If a player disconnects from the game more than 30 seconds from the end, their time will deplete naturally and they will lose the game. If a player disconnects during the last 30 seconds, the will just result inactive for that last part of the match, with no mechanical consequences. The winner will be computed regularly.
+
+#### 4.3.3. Scoring/winning conditions
+Campaign: the level is won if the player can achieve a level-depending score withing the given number of moves.
+>>>>>>> master
 
 ##### Album (Not in the prototype)
 When, with future patches, more cards will be implemented, a collection screen will be available from the Main Menu. The collection will be shown in a book-like album, much like the one which can be found in HearthStone - Heroes of Warcraft. Each page of the album will host 6 different cards, and on the bottom right corner of each card, the number of copies of the card owned by the player will be shown (e.g. "x3"). The album pages will look slightly yellowish, to give the idea of being made of old paper. Entering the interface will show the closed album, with it's brown and finely decorated leather cover, opening to the first page.
@@ -369,8 +545,11 @@ When, with future patches, more cards will be implemented, a collection screen w
 
 **PvP:** the core of the game. This mode consists of 1v1 matches, not longer than 3 minutes. In this mode, all cards are allowed. This mode rewards coins as described above.
 
+<<<<<<< HEAD
 PvP will feature a rank system in it, but before choosing the ranks span, matchmaking algorythm and rank rewards, open beta testing will be required to gain data on the number and average activity of players.
 
+=======
+>>>>>>> master
 ### 4.5. Levels
 Levels are generated through an Random Content Generation algorithm, with due restrictions (for example on the number of face colours present in the level) based on their "position" in the campaign.
 
@@ -390,6 +569,7 @@ The shop-keeper is a short boy, wearing robes a bit too big for him, but not so 
 
 All the characters described above are NPC. They only appear to tell the player something, or to adobe the shop's screen. They have hence no A.I.
 
+<<<<<<< HEAD
 ##### Enemies
 Generic enemies only appear in cinematics and in the trailer. The enemy soldiers are skeletons, cartoonish in style, armed with a stubby sword and some thick pieces of armor, specifically an helmet, epaulettes and boots. The helmet has the shape of german ww2 helmets with a point on top. All the armor pieces are blue, with yellow edges, and the helmet's point is yellow as well.
 
@@ -461,6 +641,9 @@ Levels including any mechanic grant rewards among related cards for first level 
 ![Level table](pictures/level_table.png)
 
 ## 7. Media List
+=======
+## 6. Media List
+>>>>>>> master
 
 >Faces
 
@@ -486,7 +669,11 @@ Each star can be drag-and-dropped on a face, thus disappearing and changing that
 
 As in the card's description, upon activation and for the whole duration of the card, the faces will slightly shine in their colour, becoming brighter. After the effect ends, a big red "+X MOVES!" will appear in the center of the screen for one second, before flying towards the moves counter while becoming small and disappearing in it, as the counter is increased by X.
 
+<<<<<<< HEAD
 ![The "+X MOVES" animation. X is the number of combos achieved during the effect](pictures/animations_gogogo.png)
+=======
+![The "+X MOVES" animation. X is the number of combos achieved during the effect](animations_gogogo.png)
+>>>>>>> master
 
 3. The Bath Bomb!
 
@@ -532,14 +719,21 @@ The hour buttons will gently float in place, hovering untill they are tapped. On
 
 The Did you say ice? card will cause the center of the enemy's screen to shatter. The enemy will see a circa-round portion of their screen start creaking like ice over 3 seconds, then the pieces will explode and fall down.
 
+<<<<<<< HEAD
 ![The Did you say ice? creaking animation](pictures/animations_didyousayice_1.png)
 
 ![The Did you say ice? shatter effect in action](pictures/animations_didyousayice_2.png)
+=======
+![The Did you say ice? creaking animation](pictures/cards_didyousayice_1.png)
+
+![The Did you say ice? shatter effect in action](pictures/cards_didyousayice_2.png)
+>>>>>>> master
 
 8. You jellous?
 
 Upon activation, the victim will see a jelly grow from the center of their second row, expanding in 1 second untill it's engulfed the first 3 rows of their board. If the victim touches the engulfed area, all that will happen is the jelly swaying and making a "blob" sound.
 
+<<<<<<< HEAD
 ![The enjellied 3 rows](pictures/animations_youjellous.png)
 
 Once the right conditions are met, the jelly will shatter in little pieces that will swiftly shrink into nothingness.
@@ -601,3 +795,18 @@ Suddenly, from the top right corner of the screen, the opponent's one, a cake fl
 The cake cover everything, leaving a black screen with the game's logo upon impact.
 
 ![Sunday Knights - magic and mayhem, for you.](pictures/trailer_storyboard_13.jpg)
+=======
+![The enjellied 3 rows](!pictures/animations_youjellous.png)
+
+Once the right conditions are met, the jelly will shatter in little pieces that will swiftly shrink into nothingness.
+
+
+*	Menu music
+*	In-game music
+*	Match-3 sound effect
+*	Victory fanfare
+
+>Defeat riff
+
+This is what the player heards upon defeat. It's a riff of 4 notes, on descending demitones, from Bb (or Sib) to G (or Sol), with a long tremble on the last one.
+>>>>>>> master
