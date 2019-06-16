@@ -26,6 +26,7 @@ public class TilesManager : MonoBehaviour
     public GameObject[] TilePrefabs;
     public GameObject[] ExplosionPrefabs;
     public GameObject[] BonusPrefabs;
+    public GameObject[] Cards;
 
     private IEnumerator CheckPotentialMatchesCoroutine;
     private IEnumerator AnimatePotentialMatchesCoroutine;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CardTime : MonoBehaviour
 {
+    // Simplified version: input counter counting down 12 -> 0
+
     // Start is called before the first frame update
     void Start()
     {
