@@ -103,7 +103,8 @@ public class TilesManager : MonoBehaviour
                         {
                             state = GameState.Animating;
                             FixSortingLayer(hitGo, hit.collider.gameObject);
-                            StartCoroutine(FindMatchesAndCollapse(hit));
+                            GameObject hitGo2 = hit.collider.gameObject;
+                            StartCoroutine(FindMatchesAndCollapse(hitGo2));
                         }
                     }
                     else
@@ -242,10 +243,10 @@ public class TilesManager : MonoBehaviour
     }
 
     // Actuate game rules and mechanics: find matches, destroy tiles, spawn new ones, collapse others
-    private IEnumerator FindMatchesAndCollapse(RaycastHit2D hit2)
+    private IEnumerator FindMatchesAndCollapse(GameObject hitGo2)
     {
         // get the second item that was part of the swipe
-        var hitGo2 = hit2.collider.gameObject;
+        //var hitGo2 = hit2.collider.gameObject;
         tiles.Swap(hitGo, hitGo2);
 
         // animate swap movement
@@ -321,28 +322,51 @@ public class TilesManager : MonoBehaviour
     private IEnumerator Bomb(RaycastHit2D center)
     {
         StopCheckForPotentialMatches();
+
         GameObject epicenter = center.collider.gameObject;
         var mid = epicenter.GetComponent<Tile>();
+        List<int> columns = new List<int>();
+        hitGo = FindFirstFree(epicenter);
+
+        // Delete the 3x3 square around the epicenter
         for (int i = Mathf.Max(0, mid.Row - 1); i < Mathf.Min(Const.Rows, mid.Row + 2); i++)
             for (int j = Mathf.Max(0, mid.Column - 1); j < Mathf.Min(Const.Columns, mid.Column + 2); j++)
+            {
                 RemoveFromScene(tiles[i, j]);
-        StartCoroutine(FillBombCrater(epicenter));
+                tiles.Remove(tiles[i, j]);
+                if (!columns.Contains(j))
+                    columns.Add(j);
+            }
+        IncreaseScore(150);
+
+        var collapsedTileInfo = tiles.Collapse(columns);
+        // create new ones
+        var newTileInfo = CreateNewTileInSpecificColumns(columns);
+
+        int maxDistance = Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance);
+
+        MoveAndAnimate(newTileInfo.AlteredTile, maxDistance);
+        MoveAndAnimate(collapsedTileInfo.AlteredTile, maxDistance);
+
+        // wait for the both of the above animations
+        yield return new WaitForSeconds(Const.MoveAnimationMinDuration * maxDistance);
+
+        // Pass to the coroutine the tile left or right of hitGo 
+        //StartCoroutine(FindMatchesAndCollapse((hitGo.GetComponent<Tile>().Column + 1) < Const.Columns ? tiles[hitGo.GetComponent<Tile>().Row, hitGo.GetComponent<Tile>().Column + 1] : tiles[hitGo.GetComponent<Tile>().Row, hitGo.GetComponent<Tile>().Column - 1]));
+
+        // Make the game ready for the next move
         state = GameState.None;
         yield return null;
     }
 
-    private IEnumerator FillBombCrater(GameObject center)
+    // Find the first free tile over or under the center of the explosion
+    private GameObject FindFirstFree(GameObject obj)
     {
-        var mid = center.GetComponent<Tile>();
-        var cols = new List<int>();
-        cols.Add(mid.Column);
-        cols.Add(Mathf.Max(0, mid.Column - 1));
-        cols.Add(Mathf.Min(Const.Columns, mid.Column + 2));
-        var collapsed = tiles.Collapse(cols);
-        var newTiles = CreateNewTileInSpecificColumns(cols);
-        hitGo = center;
-
-        yield return null;
+        var pos = obj.GetComponent<Tile>();
+        if (pos.Row + 2 < Const.Rows)
+            return tiles[pos.Row + 2, pos.Column];
+        else
+            return tiles[pos.Row - 2, pos.Column];
     }
 
     // Scoring
