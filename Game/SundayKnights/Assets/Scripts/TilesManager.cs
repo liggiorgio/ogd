@@ -257,7 +257,7 @@ public class TilesManager : MonoBehaviour
         // get the matches via the helper methods
         var hitGoMatchesInfo = tiles.GetMatches(hitGo);
         var hitGo2MatchesInfo = tiles.GetMatches(hitGo2);
-        var totalMatches = hitGoMatchesInfo.MatchedTile.Union(hitGo2MatchesInfo.MatchedTile).Distinct();
+        var totalMatches = hitGoMatchesInfo.MatchedTile.Union(hitGo2MatchesInfo.MatchedTile).Distinct().ToList();
 
         // if swap didn't create at least a 3-match, undo their swap
         if (totalMatches.Count() < Const.MinimumMatches)
@@ -269,53 +269,7 @@ public class TilesManager : MonoBehaviour
             tiles.UndoSwap();
         }
 
-        // remove tiles until a rest configuration is reached
-        int timesRun = 1;
-        while (totalMatches.Count() >= Const.MinimumMatches)
-        {
-            // increase score
-            IncreaseScore( (totalMatches.Count() - 2) * Const.Match3Score );
-            if (timesRun > 1)
-                IncreaseScore(Const.SubsequentMatchScore);
-
-            // small delay for combos
-            if (timesRun > 1)
-                yield return new WaitForSeconds(Const.CollapseDelay);
-
-            // play sfx
-            soundManager.PlayMatch(timesRun - 1);
-
-            // spawn explosions and remove tiles
-            foreach (var item in totalMatches)
-            {
-                RemoveFromScene(item);
-                tiles.Remove(item);
-            }
-
-            // get columns with tiles to collapse
-            var columns = totalMatches.Select(go => go.GetComponent<Tile>().Column).Distinct();
-            // collapse the ones gone
-            var collapsedTileInfo = tiles.Collapse(columns);
-            // create new ones
-            var newTileInfo = CreateNewTileInSpecificColumns(columns);
-
-            int maxDistance = Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance);
-
-            MoveAndAnimate(newTileInfo.AlteredTile, maxDistance);
-            MoveAndAnimate(collapsedTileInfo.AlteredTile, maxDistance);
-
-            // wait for the both of the above animations
-            yield return new WaitForSeconds(Const.MoveAnimationMinDuration * maxDistance);
-
-            // search if there are matches in the next tile configuration
-            totalMatches = tiles.GetMatches(collapsedTileInfo.AlteredTile).
-                Union(tiles.GetMatches(newTileInfo.AlteredTile)).Distinct();
-
-            timesRun++;
-        }
-
-        state = GameState.None;
-        StartCheckForPotentialMatches();
+        StartCoroutine(StabilizeBoard(totalMatches));
     }
 
     // Game rules for the Bath Bomb card
@@ -337,26 +291,11 @@ public class TilesManager : MonoBehaviour
                 if (!columns.Contains(j))
                     columns.Add(j);
             }
+        yield return new WaitForSeconds(Const.ExplosionDuration);
         IncreaseScore(150);
 
-        var collapsedTileInfo = tiles.Collapse(columns);
-        // create new ones
-        var newTileInfo = CreateNewTileInSpecificColumns(columns);
-
-        int maxDistance = Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance);
-
-        MoveAndAnimate(newTileInfo.AlteredTile, maxDistance);
-        MoveAndAnimate(collapsedTileInfo.AlteredTile, maxDistance);
-
-        // wait for the both of the above animations
-        yield return new WaitForSeconds(Const.MoveAnimationMinDuration * maxDistance);
-
-        // Pass to the coroutine the tile left or right of hitGo 
-        //StartCoroutine(FindMatchesAndCollapse((hitGo.GetComponent<Tile>().Column + 1) < Const.Columns ? tiles[hitGo.GetComponent<Tile>().Row, hitGo.GetComponent<Tile>().Column + 1] : tiles[hitGo.GetComponent<Tile>().Row, hitGo.GetComponent<Tile>().Column - 1]));
-
-        // Make the game ready for the next move
-        state = GameState.None;
-        yield return null;
+        // Start the coroutine that stabilizes the board 
+        StartCoroutine(StabilizeBoard(new List<GameObject> {hitGo}, columns));
     }
 
     // Find the first free tile over or under the center of the explosion
@@ -367,6 +306,64 @@ public class TilesManager : MonoBehaviour
             return tiles[pos.Row + 2, pos.Column];
         else
             return tiles[pos.Row - 2, pos.Column];
+    }
+
+    private IEnumerator StabilizeBoard(List<GameObject> totalMatches, List<int> columns = null)
+    {
+        // remove tiles until a rest configuration is reached
+        int timesRun = 1;
+        while (totalMatches.Count() >= Const.MinimumMatches || state == GameState.Bombing)
+        {
+            // If bombing, exit "Bombing" state
+            if (state == GameState.Bombing)
+                state = GameState.Animating;
+
+            // increase score
+            IncreaseScore((totalMatches.Count() - 2) * Const.Match3Score);
+            if (timesRun > 1)
+                IncreaseScore(Const.SubsequentMatchScore);
+
+            // small delay for combos
+            if (timesRun > 1)
+                yield return new WaitForSeconds(Const.CollapseDelay);
+
+            // play sfx
+            soundManager.PlayMatch(timesRun - 1);
+
+            // spawn explosions and remove tiles
+            foreach (var item in totalMatches)
+            {
+                RemoveFromScene(item);
+                tiles.Remove(item);
+            }
+
+            // get columns with tiles to collapse
+            if(columns == null)
+                columns = totalMatches.Select(go => go.GetComponent<Tile>().Column).Distinct().ToList();
+            // collapse the ones gone
+            var collapsedTileInfo = tiles.Collapse(columns);
+            // create new ones
+            var newTileInfo = CreateNewTileInSpecificColumns(columns);
+
+            columns = null;
+
+            int maxDistance = Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance);
+
+            MoveAndAnimate(newTileInfo.AlteredTile, maxDistance);
+            MoveAndAnimate(collapsedTileInfo.AlteredTile, maxDistance);
+
+            // wait for the both of the above animations
+            yield return new WaitForSeconds(Const.MoveAnimationMinDuration * maxDistance);
+
+            // search if there are matches in the next tile configuration
+            totalMatches = tiles.GetMatches(collapsedTileInfo.AlteredTile).
+                Union(tiles.GetMatches(newTileInfo.AlteredTile)).Distinct().ToList();
+
+            timesRun++;
+        }
+
+        state = GameState.None;
+        StartCheckForPotentialMatches();
     }
 
     // Scoring
