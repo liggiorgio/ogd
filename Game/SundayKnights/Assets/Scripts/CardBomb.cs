@@ -18,19 +18,6 @@ public class CardBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == GameState.None)
-        {
-            // user has clicked or touched
-            if (Input.GetMouseButton(0))
-            {
-                // get the hit position
-                var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-                if (hit.collider != null)   // we have a hit
-                {
-                    GameObject hitGo = hit.collider.gameObject;
-                    Debug.Log(hitGo.name);
-                }
-            }
-        }
+       
     }
 }

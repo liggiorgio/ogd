@@ -270,4 +270,16 @@ public class TilesArray
 
         return emptyItems;
     }
+
+    // Return if the passed GameObject is a valid tile
+    public bool Has(GameObject gameObject)
+    {
+        for (int i = 0; i < Const.Columns; i++)
+        {
+            for (int j = 0; j < Const.Rows; j++)
+                if (tiles[j, i].Equals(gameObject))
+                    return true;
+        }
+        return false;
+    }
 }

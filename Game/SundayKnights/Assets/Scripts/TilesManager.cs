@@ -51,6 +51,8 @@ public class TilesManager : MonoBehaviour
         InitializeVariables();
         InitializeTileAndSpawnPositions();
 
+        InitializeCards();
+
         // Start hints
         StartCheckForPotentialMatches();
     }
@@ -62,33 +64,38 @@ public class TilesManager : MonoBehaviour
         if (state == GameState.None)
         {
             // user has clicked or touched
-            if ( Input.GetMouseButton(0) )
+            if (Input.GetMouseButton(0))
             {
                 // get the hit position
                 var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.collider != null)   // we have a hit
                 {
                     hitGo = hit.collider.gameObject;
-                    state = GameState.Selecting;
+                    if (hitGo.Equals(Cards[0]))
+                        state = GameState.Bombing; // First card is the bath bomb
+                    else if (hitGo.Equals(Cards[1]))
+                        state = GameState.Comboing; // Second card is the GoGoGo
+                    else
+                        state = GameState.Selecting;
                 }
             }
         }
         else if (state == GameState.Selecting)
         {
             // user is selecting/dragging
-            if ( Input.GetMouseButton(0) )
+            if (Input.GetMouseButton(0))
             {
                 // get the hit position
                 var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.collider != null)   // we have another hit
                 {
-                    if (hit.collider.gameObject != hitGo)   // check allowed move
+                    if (hit.collider.gameObject != hitGo && tiles.Has(hit.collider.gameObject))   // check allowed move
                     {
                         //user did a hit, no need to show him hints
                         StopCheckForPotentialMatches();
 
-                        if ( !Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Tile>(),
-                            hit.collider.gameObject.GetComponent<Tile>()) )
+                        if (!Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Tile>(),
+                            hit.collider.gameObject.GetComponent<Tile>()))
                         {
                             state = GameState.None;
                         }
@@ -99,8 +106,27 @@ public class TilesManager : MonoBehaviour
                             StartCoroutine(FindMatchesAndCollapse(hit));
                         }
                     }
+                    else
+                        state = GameState.None;
                 }
             }
+        }
+        else if(state == GameState.Bombing)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.collider != null)
+                {
+                    if (hit.collider.gameObject != hitGo && tiles.Has(hit.collider.gameObject)) // check if hit object is a valid tile
+                        StartCoroutine(Bomb(hit));
+                    else
+                        state = GameState.None; // if hit object is not a tile, abort
+                }
+            }
+        }
+        else if (state == GameState.Comboing)
+        {
         }
     }
 
@@ -155,6 +181,14 @@ public class TilesManager : MonoBehaviour
         }
 
         SetupSpawnPositions();
+    }
+
+    public void InitializeCards()
+    {
+        Cards[0] = GameObject.Find("CardBomb");
+        Cards[1] = GameObject.Find("CardGoGoGo");
+        Cards[2] = GameObject.Find("CardJelly");
+        Cards[3] = GameObject.Find("CardTime");
     }
 
     private void StartCheckForPotentialMatches()
@@ -281,6 +315,34 @@ public class TilesManager : MonoBehaviour
 
         state = GameState.None;
         StartCheckForPotentialMatches();
+    }
+
+    // Game rules for the Bath Bomb card
+    private IEnumerator Bomb(RaycastHit2D center)
+    {
+        StopCheckForPotentialMatches();
+        GameObject epicenter = center.collider.gameObject;
+        var mid = epicenter.GetComponent<Tile>();
+        for (int i = Mathf.Max(0, mid.Row - 1); i < Mathf.Min(Const.Rows, mid.Row + 2); i++)
+            for (int j = Mathf.Max(0, mid.Column - 1); j < Mathf.Min(Const.Columns, mid.Column + 2); j++)
+                RemoveFromScene(tiles[i, j]);
+        StartCoroutine(FillBombCrater(epicenter));
+        state = GameState.None;
+        yield return null;
+    }
+
+    private IEnumerator FillBombCrater(GameObject center)
+    {
+        var mid = center.GetComponent<Tile>();
+        var cols = new List<int>();
+        cols.Add(mid.Column);
+        cols.Add(Mathf.Max(0, mid.Column - 1));
+        cols.Add(Mathf.Min(Const.Columns, mid.Column + 2));
+        var collapsed = tiles.Collapse(cols);
+        var newTiles = CreateNewTileInSpecificColumns(cols);
+        hitGo = center;
+
+        yield return null;
     }
 
     // Scoring
