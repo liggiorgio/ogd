@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
     void ShowMoves()
     {
         MovesText.text = moves.ToString();
+
+        if (moves <= 5)
+            MovesText.color = Color.red;
     }
 
     public void AddMoves(int i)
