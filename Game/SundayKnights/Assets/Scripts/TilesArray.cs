@@ -173,6 +173,26 @@ public class TilesArray
         return matches.Distinct();
     }
 
+    // Get current tile and neighbours for bomb card effect
+    public IEnumerable<GameObject> GetMatchesBomb(GameObject go)
+    {
+        List<GameObject> matches = new List<GameObject>();
+
+        int row = go.GetComponent<Tile>().Row;
+        int column = go.GetComponent<Tile>().Column;
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if ( (row+i-1 > 0) && (row+i-1 < Const.Rows) && (column+j-1 > 0) && (column+j-1 < Const.Columns) )
+                    matches.Add(tiles[row + i - 1, column + j - 1]);
+            }
+        }
+
+        return matches;
+    }
+
     // Special match involving the whole row
     private IEnumerable<GameObject> GetEntireRow(GameObject go)
     {
@@ -269,17 +289,5 @@ public class TilesArray
         }
 
         return emptyItems;
-    }
-
-    // Return if the passed GameObject is a valid tile
-    public bool Has(GameObject gameObject)
-    {
-        for (int i = 0; i < Const.Columns; i++)
-        {
-            for (int j = 0; j < Const.Rows; j++)
-                if (tiles[j, i].Equals(gameObject))
-                    return true;
-        }
-        return false;
     }
 }

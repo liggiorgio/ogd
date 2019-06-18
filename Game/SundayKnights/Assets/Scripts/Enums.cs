@@ -28,9 +28,5 @@ public enum GameState
 {
     None,
     Selecting,
-    Animating,
-    Comboing,
-    Bombing,
-    Jello,
-    Timestopped
+    Animating
 }

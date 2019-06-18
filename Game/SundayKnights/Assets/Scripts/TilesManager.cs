@@ -20,8 +20,8 @@ public class TilesManager : MonoBehaviour
     public readonly Vector2 TileSize = new Vector2(.71f, .71f);
     public readonly Vector2 BottomRight = new Vector2(-1.775f, -1.775f);
 
-    private GameState state = GameState.None;
-    private GameObject hitGo = null;
+    [HideInInspector] public GameState state = GameState.None;
+    [HideInInspector] public GameObject hitGo = null;
     private Vector2[] SpawnPositions;
     public GameObject[] TilePrefabs;
     public GameObject[] ExplosionPrefabs;
@@ -51,8 +51,6 @@ public class TilesManager : MonoBehaviour
         InitializeVariables();
         InitializeTileAndSpawnPositions();
 
-        InitializeCards();
-
         // Start hints
         StartCheckForPotentialMatches();
     }
@@ -64,38 +62,33 @@ public class TilesManager : MonoBehaviour
         if (state == GameState.None)
         {
             // user has clicked or touched
-            if (Input.GetMouseButton(0))
+            if ( Input.GetMouseButton(0) )
             {
                 // get the hit position
                 var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.collider != null)   // we have a hit
                 {
                     hitGo = hit.collider.gameObject;
-                    if (hitGo.Equals(Cards[0]))
-                        state = GameState.Bombing; // First card is the bath bomb
-                    else if (hitGo.Equals(Cards[1]))
-                        state = GameState.Comboing; // Second card is the GoGoGo
-                    else
-                        state = GameState.Selecting;
+                    state = GameState.Selecting;
                 }
             }
         }
         else if (state == GameState.Selecting)
         {
             // user is selecting/dragging
-            if (Input.GetMouseButton(0))
+            if ( Input.GetMouseButton(0) )
             {
                 // get the hit position
                 var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.collider != null)   // we have another hit
                 {
-                    if (hit.collider.gameObject != hitGo && tiles.Has(hit.collider.gameObject))   // check allowed move
+                    if (hit.collider.gameObject != hitGo)   // check allowed move
                     {
                         //user did a hit, no need to show him hints
                         StopCheckForPotentialMatches();
 
-                        if (!Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Tile>(),
-                            hit.collider.gameObject.GetComponent<Tile>()))
+                        if ( !Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Tile>(),
+                            hit.collider.gameObject.GetComponent<Tile>()) )
                         {
                             state = GameState.None;
                         }
@@ -103,31 +96,11 @@ public class TilesManager : MonoBehaviour
                         {
                             state = GameState.Animating;
                             FixSortingLayer(hitGo, hit.collider.gameObject);
-                            GameObject hitGo2 = hit.collider.gameObject;
-                            StartCoroutine(FindMatchesAndCollapse(hitGo2));
+                            StartCoroutine(FindMatchesAndCollapse(hit));
                         }
                     }
-                    else
-                        state = GameState.None;
                 }
             }
-        }
-        else if(state == GameState.Bombing)
-        {
-            if (Input.GetMouseButton(0))
-            {
-                var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-                if (hit.collider != null)
-                {
-                    if (hit.collider.gameObject != hitGo && tiles.Has(hit.collider.gameObject)) // check if hit object is a valid tile
-                        StartCoroutine(Bomb(hit));
-                    else
-                        state = GameState.None; // if hit object is not a tile, abort
-                }
-            }
-        }
-        else if (state == GameState.Comboing)
-        {
         }
     }
 
@@ -184,14 +157,6 @@ public class TilesManager : MonoBehaviour
         SetupSpawnPositions();
     }
 
-    public void InitializeCards()
-    {
-        Cards[0] = GameObject.Find("CardBomb");
-        Cards[1] = GameObject.Find("CardGoGoGo");
-        Cards[2] = GameObject.Find("CardJelly");
-        Cards[3] = GameObject.Find("CardTime");
-    }
-
     private void StartCheckForPotentialMatches()
     {
         StopCheckForPotentialMatches();
@@ -243,83 +208,49 @@ public class TilesManager : MonoBehaviour
     }
 
     // Actuate game rules and mechanics: find matches, destroy tiles, spawn new ones, collapse others
-    private IEnumerator FindMatchesAndCollapse(GameObject hitGo2)
+    public IEnumerator FindMatchesAndCollapse(RaycastHit2D hit2)
     {
-        // get the second item that was part of the swipe
-        //var hitGo2 = hit2.collider.gameObject;
-        tiles.Swap(hitGo, hitGo2);
+        IEnumerable<GameObject> totalMatches;
 
-        // animate swap movement
-        hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
-        hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
-        yield return new WaitForSeconds(Const.AnimationDuration);
+        StopCheckForPotentialMatches();
 
-        // get the matches via the helper methods
-        var hitGoMatchesInfo = tiles.GetMatches(hitGo);
-        var hitGo2MatchesInfo = tiles.GetMatches(hitGo2);
-        var totalMatches = hitGoMatchesInfo.MatchedTile.Union(hitGo2MatchesInfo.MatchedTile).Distinct().ToList();
-
-        // if swap didn't create at least a 3-match, undo their swap
-        if (totalMatches.Count() < Const.MinimumMatches)
+        if (hit2.collider != null)
         {
+            // get the second item that was part of the swipe
+            var hitGo2 = hit2.collider.gameObject;
+            tiles.Swap(hitGo, hitGo2);
+
+            // animate swap movement
             hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
             hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
             yield return new WaitForSeconds(Const.AnimationDuration);
 
-            tiles.UndoSwap();
+            // get the matches via the helper methods
+            var hitGoMatchesInfo = tiles.GetMatches(hitGo);
+            var hitGo2MatchesInfo = tiles.GetMatches(hitGo2);
+            totalMatches = hitGoMatchesInfo.MatchedTile.Union(hitGo2MatchesInfo.MatchedTile).Distinct();
+
+            // if swap didn't create at least a 3-match, undo their swap
+            if (totalMatches.Count() < Const.MinimumMatches)
+            {
+                hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
+                hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
+                yield return new WaitForSeconds(Const.AnimationDuration);
+
+                tiles.UndoSwap();
+            }
+        }
+        else
+        {
+            totalMatches = tiles.GetMatchesBomb(tiles[3, 3]);
         }
 
-        StartCoroutine(StabilizeBoard(totalMatches));
-    }
-
-    // Game rules for the Bath Bomb card
-    private IEnumerator Bomb(RaycastHit2D center)
-    {
-        StopCheckForPotentialMatches();
-
-        GameObject epicenter = center.collider.gameObject;
-        var mid = epicenter.GetComponent<Tile>();
-        List<int> columns = new List<int>();
-        hitGo = FindFirstFree(epicenter);
-
-        // Delete the 3x3 square around the epicenter
-        for (int i = Mathf.Max(0, mid.Row - 1); i < Mathf.Min(Const.Rows, mid.Row + 2); i++)
-            for (int j = Mathf.Max(0, mid.Column - 1); j < Mathf.Min(Const.Columns, mid.Column + 2); j++)
-            {
-                RemoveFromScene(tiles[i, j]);
-                tiles.Remove(tiles[i, j]);
-                if (!columns.Contains(j))
-                    columns.Add(j);
-            }
-        yield return new WaitForSeconds(Const.ExplosionDuration);
-        IncreaseScore(150);
-
-        // Start the coroutine that stabilizes the board 
-        StartCoroutine(StabilizeBoard(new List<GameObject> {hitGo}, columns));
-    }
-
-    // Find the first free tile over or under the center of the explosion
-    private GameObject FindFirstFree(GameObject obj)
-    {
-        var pos = obj.GetComponent<Tile>();
-        if (pos.Row + 2 < Const.Rows)
-            return tiles[pos.Row + 2, pos.Column];
-        else
-            return tiles[pos.Row - 2, pos.Column];
-    }
-
-    private IEnumerator StabilizeBoard(List<GameObject> totalMatches, List<int> columns = null)
-    {
         // remove tiles until a rest configuration is reached
         int timesRun = 1;
-        while (totalMatches.Count() >= Const.MinimumMatches || state == GameState.Bombing)
+        while (totalMatches.Count() >= Const.MinimumMatches)
         {
-            // If bombing, exit "Bombing" state
-            if (state == GameState.Bombing)
-                state = GameState.Animating;
-
             // increase score
-            IncreaseScore((totalMatches.Count() - 2) * Const.Match3Score);
+            IncreaseScore( (totalMatches.Count() - 2) * Const.Match3Score );
             if (timesRun > 1)
                 IncreaseScore(Const.SubsequentMatchScore);
 
@@ -338,14 +269,11 @@ public class TilesManager : MonoBehaviour
             }
 
             // get columns with tiles to collapse
-            if(columns == null)
-                columns = totalMatches.Select(go => go.GetComponent<Tile>().Column).Distinct().ToList();
+            var columns = totalMatches.Select(go => go.GetComponent<Tile>().Column).Distinct();
             // collapse the ones gone
             var collapsedTileInfo = tiles.Collapse(columns);
             // create new ones
             var newTileInfo = CreateNewTileInSpecificColumns(columns);
-
-            columns = null;
 
             int maxDistance = Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance);
 
@@ -357,7 +285,7 @@ public class TilesManager : MonoBehaviour
 
             // search if there are matches in the next tile configuration
             totalMatches = tiles.GetMatches(collapsedTileInfo.AlteredTile).
-                Union(tiles.GetMatches(newTileInfo.AlteredTile)).Distinct().ToList();
+                Union(tiles.GetMatches(newTileInfo.AlteredTile)).Distinct();
 
             timesRun++;
         }
