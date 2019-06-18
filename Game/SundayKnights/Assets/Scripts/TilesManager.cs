@@ -309,7 +309,7 @@ public class TilesManager : MonoBehaviour
 
     private void ShowScore()
     {
-        ScoreText.text = "Score: " + score.ToString();
+        ScoreText.text = score.ToString();
     }
 
     // Return a random tile prefab
