@@ -215,7 +215,7 @@ public class TilesManager : MonoBehaviour
         IEnumerable<GameObject> totalMatches;
 
         StopCheckForPotentialMatches();
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().moves > 0)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().moves > 0 && GameObject.Find("GameManager").GetComponent<GameManager>().timer > 0)
         {
             if (hit2.collider != null)
             {

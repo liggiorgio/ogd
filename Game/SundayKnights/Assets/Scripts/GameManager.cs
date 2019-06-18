@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public int MaxMoves;
     public Text TimeText;
     public Text MovesText;
-    private int timer;
+    public int timer;
     public int moves;
 
     // Start is called before the first frame update
