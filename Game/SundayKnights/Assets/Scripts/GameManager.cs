@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CountDown()
     {
-        while (timer > 0)
+        while (timer >= 0)
         {
             ShowTime();
             yield return new WaitForSeconds(1f);
@@ -34,7 +34,13 @@ public class GameManager : MonoBehaviour
 
     void ShowTime()
     {
-        TimeText.text = timer.ToString();
+        string minutes = Mathf.Floor(timer / 60).ToString("0");
+        string seconds = (timer % 60).ToString("00");
+
+        TimeText.text = string.Format("{0}:{1}", minutes, seconds);
+
+        if (timer <= 10)
+            TimeText.color = Color.red;
     }
 
     void ShowMoves()
