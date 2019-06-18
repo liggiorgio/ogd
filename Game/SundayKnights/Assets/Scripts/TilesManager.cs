@@ -215,40 +215,47 @@ public class TilesManager : MonoBehaviour
         IEnumerable<GameObject> totalMatches;
 
         StopCheckForPotentialMatches();
-
-        if (hit2.collider != null)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().moves > 0)
         {
-            // get the second item that was part of the swipe
-            var hitGo2 = hit2.collider.gameObject;
-            tiles.Swap(hitGo, hitGo2);
-
-            // animate swap movement
-            hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
-            hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
-            yield return new WaitForSeconds(Const.AnimationDuration);
-
-            // get the matches via the helper methods
-            var hitGoMatchesInfo = tiles.GetMatches(hitGo);
-            var hitGo2MatchesInfo = tiles.GetMatches(hitGo2);
-            totalMatches = hitGoMatchesInfo.MatchedTile.Union(hitGo2MatchesInfo.MatchedTile).Distinct();
-
-            // if swap didn't create at least a 3-match, undo their swap
-            if (totalMatches.Count() < Const.MinimumMatches)
+            if (hit2.collider != null)
             {
+                // get the second item that was part of the swipe
+                var hitGo2 = hit2.collider.gameObject;
+                tiles.Swap(hitGo, hitGo2);
+
+                // animate swap movement
                 hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
                 hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
                 yield return new WaitForSeconds(Const.AnimationDuration);
 
-                tiles.UndoSwap();
+                // get the matches via the helper methods
+                var hitGoMatchesInfo = tiles.GetMatches(hitGo);
+                var hitGo2MatchesInfo = tiles.GetMatches(hitGo2);
+                totalMatches = hitGoMatchesInfo.MatchedTile.Union(hitGo2MatchesInfo.MatchedTile).Distinct();
+
+                // if swap didn't create at least a 3-match, undo their swap
+                if (totalMatches.Count() < Const.MinimumMatches)
+                {
+                    hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
+                    hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
+                    yield return new WaitForSeconds(Const.AnimationDuration);
+
+                    tiles.UndoSwap();
+                }
+                else
+                {
+                    GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(-1);
+                }
             }
             else
             {
+                totalMatches = tiles.GetMatchesBomb(tiles[3, 3]);
                 GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(-1);
             }
         }
         else
         {
-            totalMatches = tiles.GetMatchesBomb(tiles[3, 3]);
+            yield break;
         }
 
         // remove tiles until a rest configuration is reached
