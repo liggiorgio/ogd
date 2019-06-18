@@ -241,6 +241,10 @@ public class TilesManager : MonoBehaviour
 
                 tiles.UndoSwap();
             }
+            else
+            {
+                GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(-1);
+            }
         }
         else
         {

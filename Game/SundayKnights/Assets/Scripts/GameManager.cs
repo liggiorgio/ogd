@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour
     public Text TimeText;
     public Text MovesText;
     private int timer;
+    public int moves;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = MaxTime;
+        moves = MaxMoves;
+        MovesText.text = moves.ToString();
         StartCoroutine("CountDown");
         Time.timeScale = 1;
     }
@@ -32,5 +35,16 @@ public class GameManager : MonoBehaviour
     void ShowTime()
     {
         TimeText.text = timer.ToString();
+    }
+
+    void ShowMoves()
+    {
+        MovesText.text = moves.ToString();
+    }
+
+    public void AddMoves(int i)
+    {
+        this.moves += i;
+        ShowMoves();
     }
 }
