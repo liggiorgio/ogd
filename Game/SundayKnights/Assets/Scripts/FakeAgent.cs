@@ -25,7 +25,7 @@ public class FakeAgent : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(1, 3));
+            yield return new WaitForSeconds(Random.Range(2, 4) * Random.value);
             score += scoreList[Random.Range(0, scoreList.Length)];
             ShowScore();
         }
