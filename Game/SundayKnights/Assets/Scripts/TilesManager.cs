@@ -15,7 +15,7 @@ public class TilesManager : MonoBehaviour
 
     public TilesArray tiles;
 
-    private int score;
+    [HideInInspector] public int score;
 
     public readonly Vector2 TileSize = new Vector2(.71f, .71f);
     public readonly Vector2 BottomRight = new Vector2(-1.775f, -1.775f);
@@ -34,6 +34,7 @@ public class TilesManager : MonoBehaviour
     IEnumerable<GameObject> potentialMatches;
 
     public SoundManager soundManager;
+    private FakeAgent agent;
 
     // Enable/disable debug info
     void Awake()
@@ -44,6 +45,7 @@ public class TilesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        agent = GameObject.Find("FakeAgent").GetComponent<FakeAgent>();
         // Set up prefabs
         InitializeTypesOnPrefabTilesAndBonuses();
 
@@ -310,6 +312,16 @@ public class TilesManager : MonoBehaviour
     private void ShowScore()
     {
         ScoreText.text = score.ToString();
+        if (agent.score < score)
+        {
+            agent.ScoreText.color = Color.white;
+            ScoreText.color = Color.yellow;
+        }
+        else
+        {
+            agent.ScoreText.color = Color.yellow;
+            ScoreText.color = Color.white;
+        }
     }
 
     // Return a random tile prefab
