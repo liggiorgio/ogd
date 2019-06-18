@@ -6,17 +6,31 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int MaxTime;
+    public int MaxMoves;
     public Text TimeText;
+    public Text MovesText;
+    private int timer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = MaxTime;
+        StartCoroutine("CountDown");
+        Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CountDown()
     {
+        while (timer > 0)
+        {
+            ShowTime();
+            yield return new WaitForSeconds(1f);
+            timer--;
+        }
+    }
 
+    void ShowTime()
+    {
+        TimeText.text = timer.ToString();
     }
 }

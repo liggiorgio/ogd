@@ -1483,7 +1483,7 @@ PrefabInstance:
         type: 3}
       propertyPath: matchAudioClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: f61fbbe8a8d15b4eb8ab7c4a3600d00d, type: 3}
+      objectReference: {fileID: 8300000, guid: a7f576f46fe72f329b9d9ed5acda5233, type: 3}
     - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
         type: 3}
       propertyPath: matchAudioClip.Array.data[1]
@@ -1973,6 +1973,21 @@ PrefabInstance:
     - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
         type: 3}
       propertyPath: TimeText
+      value: 
+      objectReference: {fileID: 2068508152}
+    - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
+        type: 3}
+      propertyPath: MaxMoves
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
+        type: 3}
+      propertyPath: MoveText
+      value: 
+      objectReference: {fileID: 159697279}
+    - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
+        type: 3}
+      propertyPath: MovesText
       value: 
       objectReference: {fileID: 159697279}
     m_RemovedComponents: []
