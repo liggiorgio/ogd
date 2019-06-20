@@ -36,6 +36,8 @@ public class TilesManager : MonoBehaviour
     public SoundManager soundManager;
     private FakeAgent agent;
 
+    [HideInInspector]public bool comboCount = false;
+
     // Enable/disable debug info
     void Awake()
     {
@@ -212,6 +214,8 @@ public class TilesManager : MonoBehaviour
     // Actuate game rules and mechanics: find matches, destroy tiles, spawn new ones, collapse others
     public IEnumerator FindMatchesAndCollapse(RaycastHit2D hit2)
     {
+        if (state != GameState.Animating)
+            yield break;
         IEnumerable<GameObject> totalMatches;
 
         StopCheckForPotentialMatches();
@@ -301,6 +305,12 @@ public class TilesManager : MonoBehaviour
                 Union(tiles.GetMatches(newTileInfo.AlteredTile)).Distinct();
 
             timesRun++;
+        }
+
+        if (comboCount)
+        {
+            comboCount = false;
+            GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(timesRun - 1);
         }
 
         state = GameState.None;

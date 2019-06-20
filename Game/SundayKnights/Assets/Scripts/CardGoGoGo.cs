@@ -4,17 +4,35 @@ using UnityEngine;
 
 public class CardGoGoGo : MonoBehaviour
 {
-    // Enter Comboing GameState for 1 switch, count combos, add to MoveCounter
+    // Count combos, add to MoveCounter
+
+    private TilesManager tilesManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        tilesManager = GameObject.Find("TilesManager").GetComponent<TilesManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // LateUpdate is called once per frame, after all other Updates
+    void LateUpdate()
     {
-        
+        if ((tilesManager.state == GameState.None) || (tilesManager.state == GameState.Selecting))
+        {
+            // user has clicked or touched
+            if (Input.GetMouseButton(0))
+            {
+                // get the hit position
+                var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.collider != null)   // we have a hit
+                {
+                    if (hit.collider.gameObject == this.gameObject)
+                    {
+                        tilesManager.state = GameState.None;
+                        tilesManager.comboCount = true;
+                    }
+                }
+            }
+        }
     }
 }
