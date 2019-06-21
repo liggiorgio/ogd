@@ -277,14 +277,14 @@ public class TilesManager : MonoBehaviour
         int timesRun = 1;
         while (totalMatches.Count() >= Const.MinimumMatches)
         {
+            // small delay for combos
+            if (timesRun > 1)
+                yield return new WaitForSeconds(Const.CollapseDelay);
+
             // increase score
             IncreaseScore( (totalMatches.Count() - 2) * Const.Match3Score );
             if (timesRun > 1)
                 IncreaseScore(Const.SubsequentMatchScore);
-
-            // small delay for combos
-            if (timesRun > 1)
-                yield return new WaitForSeconds(Const.CollapseDelay);
 
             // play sfx
             soundManager.PlayMatch(timesRun - 1);
