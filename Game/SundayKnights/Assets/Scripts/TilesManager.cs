@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class TilesManager : MonoBehaviour
 {
-    public Text ScoreText;
+    public Text ScoreText, ComboText;
 
     public TilesArray tiles;
 
@@ -35,6 +35,7 @@ public class TilesManager : MonoBehaviour
 
     public SoundManager soundManager;
     private FakeAgent agent;
+    private float alpha;
 
     [HideInInspector]public bool comboCount = false;
 
@@ -48,6 +49,7 @@ public class TilesManager : MonoBehaviour
     void Start()
     {
         agent = GameObject.Find("FakeAgent").GetComponent<FakeAgent>();
+        ComboText.color = new Color(255f, 255f, 0f, alpha);
         // Set up prefabs
         InitializeTypesOnPrefabTilesAndBonuses();
 
@@ -105,6 +107,13 @@ public class TilesManager : MonoBehaviour
                     }
                 }
             }
+        }
+
+        // vfx
+        if (alpha > 0)
+        {
+            alpha -= .025f;
+            ComboText.color = new Color(1f, 1f, 0f, alpha);
         }
     }
 
@@ -298,6 +307,15 @@ public class TilesManager : MonoBehaviour
 
             MoveAndAnimate(newTileInfo.AlteredTile, maxDistance);
             MoveAndAnimate(collapsedTileInfo.AlteredTile, maxDistance);
+
+            if (timesRun > 1)
+            {
+                // combo message
+                ComboText.text = "Combo " + timesRun.ToString();
+                for ( int i = 0; i < (timesRun-2); i++ )
+                    ComboText.text += "!";
+                alpha = 1.5f;
+            }
 
             // wait for the both of the above animations
             yield return new WaitForSeconds(Const.MoveAnimationMinDuration * maxDistance);
