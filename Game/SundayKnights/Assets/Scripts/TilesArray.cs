@@ -185,7 +185,7 @@ public class TilesArray
         {
             for (int j = 0; j < 3; j++)
             {
-                if ( (row+i-1 > 0) && (row+i-1 < Const.Rows) && (column+j-1 > 0) && (column+j-1 < Const.Columns) )
+                if ( (row+i-1 >= 0) && (row+i-1 < Const.Rows) && (column+j-1 >= 0) && (column+j-1 < Const.Columns) )
                     matches.Add(tiles[row + i - 1, column + j - 1]);
             }
         }

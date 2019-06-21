@@ -253,7 +253,8 @@ public class TilesManager : MonoBehaviour
             }
             else
             {
-                totalMatches = tiles.GetMatchesBomb(tiles[3, 3]);
+                var card = GameObject.Find("CardBomb").GetComponent<CardBomb>();
+                totalMatches = tiles.GetMatchesBomb(tiles[card.GetRow(), card.GetColumn()]);
                 GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(-1);
             }
         }
