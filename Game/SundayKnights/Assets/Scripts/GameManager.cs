@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             timer--;
         }
+        GameObject.Find("FakeAgent").GetComponent<FakeAgent>().StopFakePlay();
     }
 
     void ShowTime()

@@ -31,6 +31,11 @@ public class FakeAgent : MonoBehaviour
         }
     }
 
+    public void StopFakePlay()
+    {
+        StopCoroutine(FakePlayCoroutine);
+    }
+
     private void ShowScore()
     {
         ScoreText.text = score.ToString();
