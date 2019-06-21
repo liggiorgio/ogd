@@ -8,7 +8,7 @@ public class FakeAgent : MonoBehaviour
     public Text ScoreText;
     private TilesManager tilesManager;
     [HideInInspector] public int score;
-    private readonly int[] scoreList = { 60, 60, 60, 120, 180, 60, 60, 1120, 420 };
+    private readonly int[] scoreList = { 30, 30, 30, 60, 90, 30, 30, 120, 150 };
     private IEnumerator FakePlayCoroutine;
 
     // Start is called before the first frame update

@@ -23,6 +23,8 @@ public class CardBomb : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (consumed)
+            return;
         if ( (tilesManager.state == GameState.None) || (tilesManager.state == GameState.Selecting) )
         {
             // user has clicked or touched
@@ -88,13 +90,13 @@ public class CardBomb : MonoBehaviour
         row = hit.collider.gameObject.GetComponent<Tile>().Row;
         column = hit.collider.gameObject.GetComponent<Tile>().Column;
         StartCoroutine(tilesManager.FindMatchesAndCollapse(new RaycastHit2D()));
-        transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -2f, 0f));
+        transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
         GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardTime").GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(Const.AnimationDuration);
-        tilesManager.state = GameState.None;
-        GameObject.Destroy(gameObject);
+        selecting = false;
+        consumed = true;
     }
 
     public int GetRow()
