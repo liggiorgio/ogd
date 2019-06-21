@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43027d50451f1a34cb1c29a7b5d6d4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jelly: {fileID: 0}
+  jelly: {fileID: 1388317536}
 --- !u!61 &1179007221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1136,7 +1136,7 @@ PrefabInstance:
     - target: {fileID: 3510171105977311696, guid: 45196ddeaffc3af4cb280013781efe1e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3510171105977311696, guid: 45196ddeaffc3af4cb280013781efe1e,
         type: 3}
@@ -1188,6 +1188,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 12.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3510171105977311696, guid: 45196ddeaffc3af4cb280013781efe1e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45196ddeaffc3af4cb280013781efe1e, type: 3}
 --- !u!4 &1388317535 stripped
@@ -1238,7 +1243,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 8d04966e87582fb41ab56e8fc2bf7b15, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.49019608}
   m_FlipX: 0

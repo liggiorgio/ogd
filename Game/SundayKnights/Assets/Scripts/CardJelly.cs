@@ -8,12 +8,14 @@ public class CardJelly : MonoBehaviour
 
 	public GameObject jelly;
 	private TilesManager tilesManager;
+	[HideInInspector] public float slowFactor;
 
     // Start is called before the first frame update
     void Start()
     {
         tilesManager = GameObject.Find("TilesManager").GetComponent<TilesManager>();
 		jelly.active = false;
+		slowFactor = 0;
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class CardJelly : MonoBehaviour
             if ( Input.GetMouseButton(0) )
             {
 				jelly.active = true;
-				
+				slowFactor = 4f;
 			}
 		}
     }
