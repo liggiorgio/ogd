@@ -25,4 +25,10 @@ public class Const
     public static readonly int SubsequentMatchScore = 100;
     public static readonly int BombScore = 150;
     public static readonly int ScoreThreshold = 1200;
+
+    // Fonts
+    public static readonly int TimeTextSize = 100;
+    public static readonly int ScoreTextSize = 70;
+    public static readonly int MovesTextSize = 65;
+    public static readonly int ComboTextSize = 135;
 }

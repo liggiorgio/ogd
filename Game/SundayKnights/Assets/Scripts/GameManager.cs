@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     public int MaxMoves;
     public Text TimeText;
     public Text MovesText;
-    public int timer;
-    public int moves;
+    [HideInInspector] public int timer;
+    [HideInInspector] public int moves;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         while (timer >= 0)
         {
             ShowTime();
+            if ( (timer == 60) || (timer == 30) || (timer == 10) || (timer <= 5) )
+                StartCoroutine(FlashText(TimeText, Const.TimeTextSize));
             yield return new WaitForSeconds(1f);
             timer--;
         }
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         MovesText.text = moves.ToString();
 
-        if (moves <= 5)
+        if (moves <= 10)
             MovesText.color = Color.red;
     }
 
@@ -56,5 +58,21 @@ public class GameManager : MonoBehaviour
     {
         this.moves += i;
         ShowMoves();
+        if (moves <= 5)
+            StartCoroutine(FlashText(MovesText, Const.MovesTextSize));
+    }
+
+    private IEnumerator FlashText(Text t, int size)
+    {
+        for ( int i = 0; i < 10; i++ )
+        {
+            t.fontSize = size + (int) Mathf.Round(size * ((float) i) / 15);
+            yield return new WaitForSeconds(.01f);
+        }
+        for ( int i = 0; i < 10; i++ )
+        {
+            t.fontSize = size + (int) Mathf.Round(size * ((float) (9 - i)) / 15);
+            yield return new WaitForSeconds(.01f);
+        }
     }
 }

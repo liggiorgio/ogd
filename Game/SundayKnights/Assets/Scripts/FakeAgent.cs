@@ -26,8 +26,9 @@ public class FakeAgent : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(2, 4) * Random.value);
-            score += scoreList[Random.Range(0, scoreList.Length)];
-            ShowScore();
+            int amount = scoreList[Random.Range(0, scoreList.Length)];
+            score += amount;
+            ShowScore(amount);
         }
     }
 
@@ -36,19 +37,35 @@ public class FakeAgent : MonoBehaviour
         StopCoroutine(FakePlayCoroutine);
     }
 
-    private void ShowScore()
+    private void ShowScore(int diff)
     {
+        bool wasLeader = (score - diff > tilesManager.score);
         ScoreText.text = score.ToString();
-
         if (tilesManager.score < score)
         {
             tilesManager.ScoreText.color = Color.white;
             ScoreText.color = Color.yellow;
+            if (!wasLeader)
+                StartCoroutine(FlashText(ScoreText, Const.ScoreTextSize));
         }
         else
         {
             tilesManager.ScoreText.color = Color.yellow;
             ScoreText.color = Color.white;
+        }
+    }
+
+    private IEnumerator FlashText(Text t, int size)
+    {
+        for ( int i = 0; i < 10; i++ )
+        {
+            t.fontSize = size + (int) Mathf.Round(size * ((float) i) / 15);
+            yield return new WaitForSeconds(.01f);
+        }
+        for ( int i = 0; i < 10; i++ )
+        {
+            t.fontSize = size + (int) Mathf.Round(size * ((float) (9 - i)) / 15);
+            yield return new WaitForSeconds(.01f);
         }
     }
 }

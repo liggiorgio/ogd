@@ -312,6 +312,7 @@ public class TilesManager : MonoBehaviour
             {
                 // combo message
                 ComboText.text = "Combo " + timesRun.ToString();
+                StartCoroutine(FlashText(ComboText, Const.ComboTextSize));
                 for ( int i = 0; i < (timesRun-2); i++ )
                     ComboText.text += "!";
                 alpha = 1.5f;
@@ -341,22 +342,25 @@ public class TilesManager : MonoBehaviour
     private void InitializeVariables()
     {
         score = 0;
-        ShowScore();
+        ShowScore(0);
     }
 
     private void IncreaseScore(int amount)
     {
         score += amount;
-        ShowScore();
+        ShowScore(amount);
     }
 
-    private void ShowScore()
+    private void ShowScore(int diff)
     {
+        bool wasLeader = (score - diff > agent.score);
         ScoreText.text = score.ToString();
         if (agent.score < score)
         {
             agent.ScoreText.color = Color.white;
             ScoreText.color = Color.yellow;
+            if (!wasLeader)
+                StartCoroutine(FlashText(ScoreText, Const.ScoreTextSize));
         }
         else
         {
@@ -461,5 +465,19 @@ public class TilesManager : MonoBehaviour
         var newExplosion = Instantiate(explosion, item.transform.position, Quaternion.identity) as GameObject;
         Destroy(newExplosion, Const.ExplosionDuration);
         Destroy(item);
+    }
+
+    private IEnumerator FlashText(Text t, int size)
+    {
+        for ( int i = 0; i < 10; i++ )
+        {
+            t.fontSize = size + (int) Mathf.Round(size * ((float) i) / 15);
+            yield return new WaitForSeconds(.01f);
+        }
+        for ( int i = 0; i < 10; i++ )
+        {
+            t.fontSize = size + (int) Mathf.Round(size * ((float) (9 - i)) / 15);
+            yield return new WaitForSeconds(.01f);
+        }
     }
 }
