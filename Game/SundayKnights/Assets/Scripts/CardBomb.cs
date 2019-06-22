@@ -94,6 +94,7 @@ public class CardBomb : MonoBehaviour
         GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardTime").GetComponent<SpriteRenderer>().color = Color.white;
+        GameObject.Find("GameManager").GetComponent<GameManager>().PutBuff("Da Bath Bomb!");
         yield return new WaitForSeconds(Const.AnimationDuration);
         selecting = false;
         consumed = true;

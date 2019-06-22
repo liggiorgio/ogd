@@ -23,6 +23,7 @@ public class FakeAgent : MonoBehaviour
     // Simulate an opponent
     private IEnumerator StartFakePlay()
     {
+        yield return new WaitForSeconds(5f);
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(2, 4) * Random.value);

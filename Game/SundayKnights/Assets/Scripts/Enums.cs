@@ -26,6 +26,7 @@ public static class BonusTypeUtils
 
 public enum GameState
 {
+    Stopped,
     None,
     Selecting,
     Animating

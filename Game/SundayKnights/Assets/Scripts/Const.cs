@@ -31,4 +31,5 @@ public class Const
     public static readonly int ScoreTextSize = 70;
     public static readonly int MovesTextSize = 65;
     public static readonly int ComboTextSize = 135;
+    public static readonly int CountdownTextSize = 220;
 }

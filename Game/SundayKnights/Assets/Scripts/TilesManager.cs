@@ -20,7 +20,7 @@ public class TilesManager : MonoBehaviour
     public readonly Vector2 TileSize = new Vector2(.71f, .71f);
     public readonly Vector2 BottomRight = new Vector2(-1.775f, -1.775f);
 
-    [HideInInspector] public GameState state = GameState.None;
+    [HideInInspector] public GameState state = GameState.Stopped;
     [HideInInspector] public GameObject hitGo = null;
     private Vector2[] SpawnPositions;
     public GameObject[] TilePrefabs;
@@ -50,15 +50,10 @@ public class TilesManager : MonoBehaviour
     {
         agent = GameObject.Find("FakeAgent").GetComponent<FakeAgent>();
         ComboText.color = new Color(255f, 255f, 0f, alpha);
-        // Set up prefabs
-        InitializeTypesOnPrefabTilesAndBonuses();
+        ScoreText.text = "0";
 
-        // Clear score, fill grid
-        InitializeVariables();
-        InitializeTileAndSpawnPositions();
-
-        // Start hints
-        StartCheckForPotentialMatches();
+        // Setup game
+        StartCoroutine(StartGame());
     }
 
     // Update is called once per frame
@@ -479,5 +474,23 @@ public class TilesManager : MonoBehaviour
             t.fontSize = size + (int) Mathf.Round(size * ((float) (9 - i)) / 15);
             yield return new WaitForSeconds(.01f);
         }
+    }
+
+    private IEnumerator StartGame()
+    {
+        // Wait for countdown before start
+        yield return new WaitForSeconds(5f);
+
+        // Set up prefabs
+        InitializeTypesOnPrefabTilesAndBonuses();
+
+        // Clear score, fill grid
+        InitializeVariables();
+        InitializeTileAndSpawnPositions();
+
+        // Start hints
+        StartCheckForPotentialMatches();
+
+        state = GameState.None;
     }
 }
