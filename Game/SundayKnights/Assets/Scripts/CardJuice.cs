@@ -54,6 +54,7 @@ public class CardJuice : MonoBehaviour
         }
         transform.positionTo(Const.AnimationDuration, startPos + new Vector3(0f, .3f, 0f));
         GameObject.Find("GameManager").GetComponent<GameManager>().PutBuff("Double Score!");
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayJuice();
         yield return new WaitForSeconds(Const.AnimationDuration);
         tilesManager.state = GameState.None;
         for ( int i = 0; i < Const.JuiceTimer; i++ )

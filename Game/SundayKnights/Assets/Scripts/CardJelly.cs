@@ -40,6 +40,7 @@ public class CardJelly : MonoBehaviour
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
+		GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayJelly();
         yield return new WaitForSeconds(Const.AnimationDuration);
         tilesManager.state = GameState.None;
         consumed = true;

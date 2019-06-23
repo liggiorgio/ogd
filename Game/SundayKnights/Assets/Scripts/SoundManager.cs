@@ -10,19 +10,37 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioClip[] matchAudioClip;
-    AudioSource match;
+    public AudioClip effectBomb, effectJuice, effectJelly, effectCake;
+    public AudioClip tickTock;
+    public AudioClip musicBackground, musicStart, musicWin, musicLose;
+    AudioSource source, time;
 
     // Awake is called after creation
     void Awake()
     {
-        match = AddAudio();
+        source = AddAudio();
+        time = AddLoop(tickTock);
+    }
+
+    void Start()
+    {
+        source.PlayOneShot(musicStart, .5f);
+        source.PlayOneShot(musicBackground, .5f);
     }
 
     AudioSource AddAudio()
     {
         AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        //audioSource.clip = audioClip;
+        return audioSource;
+    }
+
+    AudioSource AddLoop(AudioClip audioClip)
+    {
+        AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = audioClip;
+        audioSource.loop = true;
         return audioSource;
     }
 
@@ -30,12 +48,44 @@ public class SoundManager : MonoBehaviour
     {
         if (i > 4)
             i = 4;
-        match.PlayOneShot(matchAudioClip[i], 1f);
+        source.PlayOneShot(matchAudioClip[i], 1f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayEndMusic(bool won)
     {
+        if (won)
+            source.PlayOneShot(musicWin, 1f);
+        else
+            source.PlayOneShot(musicLose, 1f);
+    }
 
+    public void PlayTime()
+    {
+        time.Play();
+    }
+
+    public void StopTime()
+    {
+        time.Stop();
+    }
+
+    public void PlayBomb()
+    {
+        source.PlayOneShot(effectBomb, 1f);
+    }
+
+    public void PlayJuice()
+    {
+        source.PlayOneShot(effectJuice, 1f);
+    }
+
+    public void PlayJelly()
+    {
+        source.PlayOneShot(effectJelly, 1f);
+    }
+
+    public void PlayCake()
+    {
+        source.PlayOneShot(effectCake, 1f);
     }
 }

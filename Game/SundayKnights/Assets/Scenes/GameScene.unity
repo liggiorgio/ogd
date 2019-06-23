@@ -2017,6 +2017,56 @@ PrefabInstance:
       propertyPath: matchAudioClip.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: be20a9c0a557c41a79db2351a445ae24, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: effectBomb
+      value: 
+      objectReference: {fileID: 8300000, guid: fbafdf9dbec20cb0db62603afbe5a660, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: effectCake
+      value: 
+      objectReference: {fileID: 8300000, guid: b0915c00bb31354c296c92326e73488d, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: effectJelly
+      value: 
+      objectReference: {fileID: 8300000, guid: cb061a0f8db733caa912741c3d505883, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: effectJuice
+      value: 
+      objectReference: {fileID: 8300000, guid: fb74de1a19b7f9d1d99df50315cc218d, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: tickTock
+      value: 
+      objectReference: {fileID: 8300000, guid: 02e05189989c16b24855d3e03837cfd1, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: fe107c485ebd974289a4a827459b7ed1, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: musicBackground
+      value: 
+      objectReference: {fileID: 8300000, guid: fe107c485ebd974289a4a827459b7ed1, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: musicStart
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e0bf3e35ae867c4ead0342859b706b0, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: musicLose
+      value: 
+      objectReference: {fileID: 8300000, guid: a949e7a10820f2a04b1d0784f343b00d, type: 3}
+    - target: {fileID: 4908279012209247621, guid: 9ee0d1be84781e9448e2ddff251eceb9,
+        type: 3}
+      propertyPath: musicWin
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a27b18c9aec0e036af905aaae5e4e2a, type: 3}
     - target: {fileID: 4908279012209247618, guid: 9ee0d1be84781e9448e2ddff251eceb9,
         type: 3}
       propertyPath: m_LocalPosition.x

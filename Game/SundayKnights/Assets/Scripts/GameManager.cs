@@ -56,17 +56,22 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(FlashText(TimeText, Const.TimeTextSize));
             yield return new WaitForSeconds(1f);
             timer--;
+            if (timer == 10)
+                GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayTime();
         }
+
         GameObject.Find("FakeAgent").GetComponent<FakeAgent>().StopFakePlay();
-        // combo message
         CountdownText.text = "Time out!";
         StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().StopTime();
         yield return new WaitForSeconds(2f);
+        
         if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().score > GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score)
         {
             CountdownText.text = "You win!";
             CountdownText.color = new Color(.145098f, .5254902f, .827451f);
             StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayEndMusic(true);
             yield return new WaitForSeconds(2f);
         }
         else if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().score < GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score )
@@ -74,6 +79,7 @@ public class GameManager : MonoBehaviour
             CountdownText.text = "You lose!";
             CountdownText.color = new Color(.8039216f, .1607843f, .254902f);
             StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
+            GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayEndMusic(false);
             yield return new WaitForSeconds(2f);
         }
         else
