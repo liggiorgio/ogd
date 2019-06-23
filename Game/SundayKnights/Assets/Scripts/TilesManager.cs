@@ -332,6 +332,13 @@ public class TilesManager : MonoBehaviour
         {
             comboCount = false;
             GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(timesRun - 1);
+            for ( int row = 0; row < Const.Rows; row++ )
+            {
+                for ( int column = 0; column < Const.Columns; column++ )
+                {
+                    tiles[row, column].GetComponent<Tile>().StopShine();
+                }
+            }
         }
 
         state = GameState.None;

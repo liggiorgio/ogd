@@ -13,6 +13,7 @@ public class Tile : MonoBehaviour
     public BonusType Bonus { get; set; }
     public int Row { get; set; }
     public int Column { get; set; }
+    public IEnumerator ShineEffect;
 
     // Init tile
     public Tile() {
@@ -61,5 +62,43 @@ public class Tile : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void Shine(float delay)
+    {
+        ShineEffect = DoShine(delay);
+        StartCoroutine(ShineEffect);
+    }
+
+    public void StopShine()
+    {
+        if (ShineEffect != null)
+            StopCoroutine(ShineEffect);
+        transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+    }
+
+    private IEnumerator DoShine(float delay)
+    {
+        while (true)
+        {
+            float alpha = 0f;
+            yield return new WaitForSeconds(delay);
+            for ( int i = 0; i < 10; i++ )
+            {
+                alpha += .05f;
+                Color c = new Color(1f, 1f, 1f, alpha);
+                transform.GetChild(0).GetComponent<SpriteRenderer>().color = c;
+                yield return new WaitForSeconds(.025f);
+            }
+
+            for ( int i = 0; i < 10; i++ )
+            {
+                alpha -= .05f;
+                Color c = new Color(1f, 1f, 1f, alpha);
+                transform.GetChild(0).GetComponent<SpriteRenderer>().color = c;
+                yield return new WaitForSeconds(.025f);
+            }
+            yield return new WaitForSeconds(.25f);
+        }
     }
 }
