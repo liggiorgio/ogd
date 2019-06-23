@@ -124,12 +124,12 @@ public class GameManager : MonoBehaviour
     public void PutBuff(string text)
     {
         BuffText.text = text;
-        buffAlpha = 1.5f;
+        buffAlpha = 2f;
     }
 
     public void PutDebuff(string text)
     {
         DebuffText.text = text;
-        debuffAlpha = 1.5f;
+        debuffAlpha = 2f;
     }
 }
