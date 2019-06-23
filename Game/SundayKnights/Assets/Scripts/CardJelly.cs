@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardJelly : MonoBehaviour
 {
     // Change backgound colour of tiles, make animation slower, remove after 3 matches in area (if easy to implement, combos count)
+	public GameObject jellyBox;
 	private TilesManager tilesManager;
 	private bool consumed;
 
@@ -39,6 +40,8 @@ public class CardJelly : MonoBehaviour
     {
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
+		tilesManager.speedMultiplier = .2f;
+		jellyBox.transform.position = new Vector3(0f, 0f, 1f);
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
 		GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayJelly();
         yield return new WaitForSeconds(Const.AnimationDuration);

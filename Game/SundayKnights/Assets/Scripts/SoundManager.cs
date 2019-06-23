@@ -24,8 +24,8 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        source.PlayOneShot(musicStart, .5f);
-        source.PlayOneShot(musicBackground, .5f);
+        source.PlayOneShot(musicStart, .75f);
+        source.PlayOneShot(musicBackground, .75f);
     }
 
     AudioSource AddAudio()

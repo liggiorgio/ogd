@@ -37,7 +37,9 @@ public class TilesManager : MonoBehaviour
     private FakeAgent agent;
     private float alpha;
 
-    [HideInInspector]public int scoreMultiplier = 1;
+    [HideInInspector] public int scoreMultiplier = 1;
+    [HideInInspector] public float speedMultiplier = 1;
+    [HideInInspector] public int jellyMatches = 0;
 
     // Enable/disable debug info
     void Awake()
@@ -232,9 +234,9 @@ public class TilesManager : MonoBehaviour
                 tiles.Swap(hitGo, hitGo2);
 
                 // animate swap movement
-                hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
-                hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
-                yield return new WaitForSeconds(Const.AnimationDuration);
+                hitGo.transform.positionTo(Const.AnimationDuration / speedMultiplier, hitGo2.transform.position);
+                hitGo2.transform.positionTo(Const.AnimationDuration / speedMultiplier, hitGo.transform.position);
+                yield return new WaitForSeconds(Const.AnimationDuration / speedMultiplier);
 
                 // get the matches via the helper methods
                 var hitGoMatchesInfo = tiles.GetMatches(hitGo);
@@ -244,9 +246,9 @@ public class TilesManager : MonoBehaviour
                 // if swap didn't create at least a 3-match, undo their swap
                 if (totalMatches.Count() < Const.MinimumMatches)
                 {
-                    hitGo.transform.positionTo(Const.AnimationDuration, hitGo2.transform.position);
-                    hitGo2.transform.positionTo(Const.AnimationDuration, hitGo.transform.position);
-                    yield return new WaitForSeconds(Const.AnimationDuration);
+                    hitGo.transform.positionTo(Const.AnimationDuration / speedMultiplier, hitGo2.transform.position);
+                    hitGo2.transform.positionTo(Const.AnimationDuration / speedMultiplier, hitGo.transform.position);
+                    yield return new WaitForSeconds(Const.AnimationDuration / speedMultiplier);
 
                     tiles.UndoSwap();
                 }
@@ -291,6 +293,17 @@ public class TilesManager : MonoBehaviour
                 tiles.Remove(item);
             }
 
+            // Jelly effect
+            if (speedMultiplier < 1)
+            {
+                jellyMatches++;
+                if (jellyMatches >= 3)
+                {
+                    speedMultiplier = 1;
+                    GameObject.Find("Jelly").transform.position = new Vector3(-5f, 0f, 0f);
+                }
+            }
+
             // get columns with tiles to collapse
             var columns = totalMatches.Select(go => go.GetComponent<Tile>().Column).Distinct();
             // collapse the ones gone
@@ -298,7 +311,7 @@ public class TilesManager : MonoBehaviour
             // create new ones
             var newTileInfo = CreateNewTileInSpecificColumns(columns);
 
-            int maxDistance = Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance);
+            int maxDistance = (int) (Mathf.Max(collapsedTileInfo.MaxDistance, newTileInfo.MaxDistance) / speedMultiplier);
 
             MoveAndAnimate(newTileInfo.AlteredTile, maxDistance);
             MoveAndAnimate(collapsedTileInfo.AlteredTile, maxDistance);
@@ -322,19 +335,6 @@ public class TilesManager : MonoBehaviour
 
             timesRun++;
         }
-
-        /*if (comboCount)
-        {
-            comboCount = false;
-            GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(timesRun - 1);
-            for ( int row = 0; row < Const.Rows; row++ )
-            {
-                for ( int column = 0; column < Const.Columns; column++ )
-                {
-                    tiles[row, column].GetComponent<Tile>().StopShine();
-                }
-            }
-        }*/
 
         state = GameState.None;
         StartCheckForPotentialMatches();
