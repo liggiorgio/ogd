@@ -37,7 +37,7 @@ public class TilesManager : MonoBehaviour
     private FakeAgent agent;
     private float alpha;
 
-    [HideInInspector]public bool comboCount = false;
+    [HideInInspector]public int scoreMultiplier = 1;
 
     // Enable/disable debug info
     void Awake()
@@ -260,7 +260,7 @@ public class TilesManager : MonoBehaviour
                 var card = GameObject.Find("CardBomb").GetComponent<CardBomb>();
                 totalMatches = tiles.GetMatchesBomb(tiles[card.GetRow(), card.GetColumn()]);
                 GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(-1);
-                IncreaseScore(Const.BombScore);
+                IncreaseScore(Const.BombScore * scoreMultiplier);
             }
         }
         else
@@ -282,9 +282,9 @@ public class TilesManager : MonoBehaviour
                 yield return new WaitForSeconds(Const.CollapseDelay);
 
             // increase score
-            IncreaseScore( (totalMatches.Count() - 2) * Const.Match3Score );
+            IncreaseScore( (totalMatches.Count() - 2) * Const.Match3Score * scoreMultiplier );
             if (timesRun > 1)
-                IncreaseScore(Const.SubsequentMatchScore);
+                IncreaseScore(Const.SubsequentMatchScore * scoreMultiplier);
 
             // play sfx
             soundManager.PlayMatch(timesRun - 1);
@@ -328,7 +328,7 @@ public class TilesManager : MonoBehaviour
             timesRun++;
         }
 
-        if (comboCount)
+        /*if (comboCount)
         {
             comboCount = false;
             GameObject.Find("GameManager").GetComponent<GameManager>().AddMoves(timesRun - 1);
@@ -339,7 +339,7 @@ public class TilesManager : MonoBehaviour
                     tiles[row, column].GetComponent<Tile>().StopShine();
                 }
             }
-        }
+        }*/
 
         state = GameState.None;
         StartCheckForPotentialMatches();

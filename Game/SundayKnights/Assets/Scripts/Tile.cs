@@ -55,7 +55,8 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().scoreMultiplier == 2 )
+            Shine(Random.value);
     }
 
     // Update is called once per frame
@@ -66,8 +67,11 @@ public class Tile : MonoBehaviour
 
     public void Shine(float delay)
     {
-        ShineEffect = DoShine(delay);
-        StartCoroutine(ShineEffect);
+        if (ShineEffect == null)
+        {
+            ShineEffect = DoShine(delay);
+            StartCoroutine(ShineEffect);
+        }
     }
 
     public void StopShine()

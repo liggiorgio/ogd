@@ -41,8 +41,8 @@ public class CardJuice : MonoBehaviour
     private IEnumerator CardActivate()
     {
         tilesManager.hitGo = null;
-        tilesManager.state = GameState.Animating;
-        tilesManager.comboCount = true;
+        //tilesManager.state = GameState.Animating;
+        tilesManager.scoreMultiplier = 2;
         for ( int row = 0; row < Const.Rows; row++ )
         {
             for ( int column = 0; column < Const.Columns; column++ )
@@ -51,9 +51,18 @@ public class CardJuice : MonoBehaviour
             }
         }
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
-        GameObject.Find("GameManager").GetComponent<GameManager>().PutBuff("Gimme that juice!");
+        GameObject.Find("GameManager").GetComponent<GameManager>().PutBuff("Double Score!");
         yield return new WaitForSeconds(Const.AnimationDuration);
         tilesManager.state = GameState.None;
+        yield return new WaitForSeconds(5f);
+        tilesManager.scoreMultiplier = 1;
+        for ( int row = 0; row < Const.Rows; row++ )
+        {
+            for ( int column = 0; column < Const.Columns; column++ )
+            {
+                tilesManager.tiles[row, column].GetComponent<Tile>().StopShine();
+            }
+        }
         consumed = true;
     }
 }
