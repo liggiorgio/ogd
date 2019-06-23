@@ -65,7 +65,7 @@ public class CardBomb : MonoBehaviour
         transform.positionTo(Const.AnimationDuration, startPos + new Vector3(0f, .3f, 0f));
         GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
-        GameObject.Find("CardTime").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
+        GameObject.Find("CardCake").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
         yield return new WaitForSeconds(Const.AnimationDuration);
         selecting = true;
     }
@@ -78,7 +78,7 @@ public class CardBomb : MonoBehaviour
         transform.positionTo(Const.AnimationDuration, startPos);
         GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = Color.white;
-        GameObject.Find("CardTime").GetComponent<SpriteRenderer>().color = Color.white;
+        GameObject.Find("CardCake").GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(Const.AnimationDuration);
         tilesManager.state = GameState.None;
         selecting = false;
@@ -93,7 +93,7 @@ public class CardBomb : MonoBehaviour
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
         GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = Color.white;
-        GameObject.Find("CardTime").GetComponent<SpriteRenderer>().color = Color.white;
+        GameObject.Find("CardCake").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("GameManager").GetComponent<GameManager>().PutBuff("Da Bath Bomb!");
         yield return new WaitForSeconds(Const.AnimationDuration);
         selecting = false;
