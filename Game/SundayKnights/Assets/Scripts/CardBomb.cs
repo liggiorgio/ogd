@@ -63,7 +63,7 @@ public class CardBomb : MonoBehaviour
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
         transform.positionTo(Const.AnimationDuration, startPos + new Vector3(0f, .3f, 0f));
-        GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
+        GameObject.Find("CardJuice").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
         GameObject.Find("CardCake").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .3f);
         yield return new WaitForSeconds(Const.AnimationDuration);
@@ -76,7 +76,7 @@ public class CardBomb : MonoBehaviour
         row = -1;
         column = -1;
         transform.positionTo(Const.AnimationDuration, startPos);
-        GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = Color.white;
+        GameObject.Find("CardJuice").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardCake").GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(Const.AnimationDuration);
@@ -91,7 +91,7 @@ public class CardBomb : MonoBehaviour
         column = hit.collider.gameObject.GetComponent<Tile>().Column;
         StartCoroutine(tilesManager.FindMatchesAndCollapse(new RaycastHit2D()));
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
-        GameObject.Find("CardGoGoGo").GetComponent<SpriteRenderer>().color = Color.white;
+        GameObject.Find("CardJuice").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardJelly").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("CardCake").GetComponent<SpriteRenderer>().color = Color.white;
         GameObject.Find("GameManager").GetComponent<GameManager>().PutBuff("Da Bath Bomb!");
