@@ -40,9 +40,9 @@ public class FakeAgent : MonoBehaviour
 
     private void ShowScore(int diff)
     {
-        bool wasLeader = (score - diff > tilesManager.score);
+        bool wasLeader = (score - diff > tilesManager.player.score);
         ScoreText.text = score.ToString();
-        if (tilesManager.score < score)
+        if (tilesManager.player.score < score)
         {
             tilesManager.ScoreText.color = Color.white;
             ScoreText.color = Color.yellow;

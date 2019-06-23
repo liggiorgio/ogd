@@ -15,7 +15,8 @@ public class TilesManager : MonoBehaviour
 
     public TilesArray tiles;
 
-    [HideInInspector] public int score;
+    //[HideInInspector] public int score;
+    public PlayerObject player;
 
     public readonly Vector2 TileSize = new Vector2(.71f, .71f);
     public readonly Vector2 BottomRight = new Vector2(-1.775f, -1.775f);
@@ -50,9 +51,9 @@ public class TilesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GameObject.Find("FakeAgent").GetComponent<FakeAgent>();
+        //agent = GameObject.Find("FakeAgent").GetComponent<FakeAgent>();
         ComboText.color = new Color(255f, 255f, 0f, alpha);
-        ScoreText.text = "0";
+        //ScoreText.text = "0";
 
         // Setup game
         StartCoroutine(StartGame());
@@ -340,20 +341,20 @@ public class TilesManager : MonoBehaviour
         StartCheckForPotentialMatches();
     }
 
-    // Scoring
+    /*// Scoring
     private void InitializeVariables()
     {
-        score = 0;
+        player.score = 0;
         ShowScore(0);
-    }
+    }*/
 
     private void IncreaseScore(int amount)
     {
-        score += amount;
-        ShowScore(amount);
+        player.score += amount;
+        //ShowScore(amount);
     }
 
-    private void ShowScore(int diff)
+    /*private void ShowScore(int diff)
     {
         bool wasLeader = (score - diff > agent.score);
         ScoreText.text = score.ToString();
@@ -369,7 +370,7 @@ public class TilesManager : MonoBehaviour
             agent.ScoreText.color = Color.yellow;
             ScoreText.color = Color.white;
         }
-    }
+    }*/
 
     // Return a random tile prefab
     private GameObject GetRandomTile()
@@ -488,11 +489,13 @@ public class TilesManager : MonoBehaviour
         // Wait for countdown before start
         yield return new WaitForSeconds(5f);
 
+        player = GameObject.Find("local").GetComponent<PlayerObject>();
+
         // Set up prefabs
         InitializeTypesOnPrefabTilesAndBonuses();
 
         // Clear score, fill grid
-        InitializeVariables();
+        //InitializeVariables();
         InitializeTileAndSpawnPositions();
 
         // Start hints

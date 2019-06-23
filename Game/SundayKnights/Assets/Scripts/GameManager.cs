@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("SoundManager").GetComponent<SoundManager>().StopTime();
         yield return new WaitForSeconds(2f);
         
-        if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().score > GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score)
+        if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().player.score > GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score)
         {
             CountdownText.text = "You win!";
             CountdownText.color = new Color(.145098f, .5254902f, .827451f);
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
             GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayEndMusic(true);
             yield return new WaitForSeconds(2f);
         }
-        else if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().score < GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score )
+        else if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().player.score < GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score )
         {
             CountdownText.text = "You lose!";
             CountdownText.color = new Color(.8039216f, .1607843f, .254902f);
