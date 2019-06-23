@@ -55,8 +55,7 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().scoreMultiplier == 2 )
-            Shine(Random.value);
+
     }
 
     // Update is called once per frame
@@ -83,26 +82,22 @@ public class Tile : MonoBehaviour
 
     private IEnumerator DoShine(float delay)
     {
-        while (true)
+        float alpha = 0f;
+        yield return new WaitForSeconds(delay);
+        for ( int i = 0; i < 10; i++ )
         {
-            float alpha = 0f;
-            yield return new WaitForSeconds(delay);
-            for ( int i = 0; i < 10; i++ )
-            {
-                alpha += .05f;
-                Color c = new Color(1f, 1f, 1f, alpha);
-                transform.GetChild(0).GetComponent<SpriteRenderer>().color = c;
-                yield return new WaitForSeconds(.025f);
-            }
+            alpha += .1f;
+            Color c = new Color(1f, 1f, 1f, alpha);
+            transform.GetChild(0).GetComponent<SpriteRenderer>().color = c;
+            yield return new WaitForSeconds(.0125f);
+        }
 
-            for ( int i = 0; i < 10; i++ )
-            {
-                alpha -= .05f;
-                Color c = new Color(1f, 1f, 1f, alpha);
-                transform.GetChild(0).GetComponent<SpriteRenderer>().color = c;
-                yield return new WaitForSeconds(.025f);
-            }
-            yield return new WaitForSeconds(.25f);
+        for ( int i = 0; i < 10; i++ )
+        {
+            alpha -= .1f;
+            Color c = new Color(1f, 1f, 1f, alpha);
+            transform.GetChild(0).GetComponent<SpriteRenderer>().color = c;
+            yield return new WaitForSeconds(.0125f);
         }
     }
 }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardJuice : MonoBehaviour
 {
     // Count combos, add to MoveCounter
-
+    public Text TimerText;
     private TilesManager tilesManager;
     private Vector3 startPos;
     private bool consumed;
@@ -15,6 +16,7 @@ public class CardJuice : MonoBehaviour
     {
         tilesManager = GameObject.Find("TilesManager").GetComponent<TilesManager>();
         startPos = transform.position;
+        TimerText.text = "";
     }
 
     // LateUpdate is called once per frame, after all other Updates
@@ -47,15 +49,21 @@ public class CardJuice : MonoBehaviour
         {
             for ( int column = 0; column < Const.Columns; column++ )
             {
-                tilesManager.tiles[row, column].GetComponent<Tile>().Shine(Random.value);
+                tilesManager.tiles[row, column].GetComponent<Tile>().Shine(((float) (row + column))/50);
             }
         }
-        transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
+        transform.positionTo(Const.AnimationDuration, startPos + new Vector3(0f, .3f, 0f));
         GameObject.Find("GameManager").GetComponent<GameManager>().PutBuff("Double Score!");
         yield return new WaitForSeconds(Const.AnimationDuration);
         tilesManager.state = GameState.None;
-        yield return new WaitForSeconds(5f);
+        for ( int i = 0; i < Const.JuiceTimer; i++ )
+        {
+            TimerText.text = (Const.JuiceTimer - i).ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
         tilesManager.scoreMultiplier = 1;
+        TimerText.text = "";
         for ( int row = 0; row < Const.Rows; row++ )
         {
             for ( int column = 0; column < Const.Columns; column++ )

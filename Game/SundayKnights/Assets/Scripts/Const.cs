@@ -19,6 +19,7 @@ public class Const
     // Logic
     public static readonly int MinimumMatches = 3;
     public static readonly int MinimumMatchesForBonus = 4;
+    public static readonly int JuiceTimer = 7;
 
     // Scoring
     public static readonly int Match3Score = 30;
