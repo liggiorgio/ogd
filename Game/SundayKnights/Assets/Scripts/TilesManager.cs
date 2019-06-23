@@ -265,11 +265,6 @@ public class TilesManager : MonoBehaviour
         }
         else
         {
-            // combo message
-            GameObject.Find("GameManager").GetComponent<GameManager>().CountdownText.text = "No more\nmoves!";
-            StartCoroutine(FlashText(GameObject.Find("GameManager").GetComponent<GameManager>().CountdownText, Const.ComboTextSize));
-            yield return new WaitForSeconds(2f);
-            GameObject.Find("GameManager").GetComponent<GameManager>().CountdownText.text = "";
             yield break;
         }
 

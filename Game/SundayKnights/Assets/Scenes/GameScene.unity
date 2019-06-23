@@ -147,7 +147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -3.5, y: -313}
+  m_AnchoredPosition: {x: 795, y: -313}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159697279
@@ -1329,8 +1329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43027d50451f1a34cb1c29a7b5d6d4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jelly: {fileID: 1388317536}
-  slowFactor: 0
 --- !u!61 &1179007221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2699,7 +2697,7 @@ PrefabInstance:
     - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
         type: 3}
       propertyPath: MaxTime
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
         type: 3}
@@ -2709,7 +2707,7 @@ PrefabInstance:
     - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
         type: 3}
       propertyPath: MaxMoves
-      value: 30
+      value: 9999
       objectReference: {fileID: 0}
     - target: {fileID: 8579674510601260995, guid: 6b8de828bb2217daf8aaf9813178651e,
         type: 3}
