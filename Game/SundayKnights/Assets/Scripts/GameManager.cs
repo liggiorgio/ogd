@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
         moves = MaxMoves;
         MovesText.text = moves.ToString();
         CountdownText.text = "";
+        BuffText.color = new Color(0f, 0f, 0f, 0f);
+        DebuffText.color = new Color(0f, 0f, 0f, 0f);
         TimeText.text = "-:-";
-        BuffText.color = new Color(255f, 255f, 0f, buffAlpha);
-        DebuffText.color = new Color(255f, 255f, 0f, debuffAlpha);
         StartCoroutine(StartCountdown());
         Time.timeScale = 1;
     }
@@ -58,6 +58,31 @@ public class GameManager : MonoBehaviour
             timer--;
         }
         GameObject.Find("FakeAgent").GetComponent<FakeAgent>().StopFakePlay();
+        // combo message
+        CountdownText.text = "Time out!";
+        StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
+        yield return new WaitForSeconds(2f);
+        if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().score > GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score)
+        {
+            CountdownText.text = "You win!";
+            CountdownText.color = new Color(.145098f, .5254902f, .827451f);
+            StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
+            yield return new WaitForSeconds(2f);
+        }
+        else if ( GameObject.Find("TilesManager").GetComponent<TilesManager>().score < GameObject.Find("FakeAgent").GetComponent<FakeAgent>().score )
+        {
+            CountdownText.text = "You lose!";
+            CountdownText.color = new Color(.8039216f, .1607843f, .254902f);
+            StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
+            yield return new WaitForSeconds(2f);
+        }
+        else
+        {
+            CountdownText.text = "Game tied!";
+            CountdownText.color = new Color(1f, 1f, 0f);
+            StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
+            yield return new WaitForSeconds(2f);
+        }
     }
 
     IEnumerator StartCountdown()
