@@ -5,6 +5,7 @@ using UnityEngine;
 public class CardCake : MonoBehaviour
 {
     // Cake splat effect on screen
+    public GameObject stainPrefab;
     private TilesManager tilesManager;
     private bool consumed;
 
@@ -41,6 +42,8 @@ public class CardCake : MonoBehaviour
         tilesManager.state = GameState.Animating;
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
         GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayCake();
+        for ( int i = 0; i < 5; i++ )
+            Instantiate(stainPrefab, Vector3.zero, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
         yield return new WaitForSeconds(Const.AnimationDuration);
         tilesManager.state = GameState.None;
         consumed = true;
