@@ -43,7 +43,7 @@ public class CardJuice : MonoBehaviour
     private IEnumerator CardActivate()
     {
         tilesManager.hitGo = null;
-        //tilesManager.state = GameState.Animating;
+        tilesManager.state = GameState.Animating;
         tilesManager.scoreMultiplier = 2;
         for ( int row = 0; row < Const.Rows; row++ )
         {

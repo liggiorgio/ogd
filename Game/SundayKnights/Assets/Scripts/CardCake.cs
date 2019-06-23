@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardJelly : MonoBehaviour
+public class CardCake : MonoBehaviour
 {
-    // Change backgound colour of tiles, make animation slower, remove after 3 matches in area (if easy to implement, combos count)
-	private TilesManager tilesManager;
-	private bool consumed;
+    // Cake splat effect on screen
+    private TilesManager tilesManager;
+    private bool consumed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class CardJelly : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-		if (consumed)
+        if (consumed)
             return;
         if ( (tilesManager.state == GameState.None) || (tilesManager.state == GameState.Selecting) )
         {
@@ -35,7 +35,7 @@ public class CardJelly : MonoBehaviour
         }
     }
 
-	private IEnumerator CardActivate()
+    private IEnumerator CardActivate()
     {
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
