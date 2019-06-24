@@ -10,6 +10,7 @@ public class PlayerObject : NetworkBehaviour
 {
     private Text ScoreText;
     private Text oppoText;
+    public GameObject stain;
     [SyncVar(hook = "OnScoreChanged")]
      public int score = 0;
 
@@ -112,6 +113,15 @@ public class PlayerObject : NetworkBehaviour
             CmdUseJelly();
     }
 
+    public void PlayCake(GameObject stainPrefab)
+    {
+        //stain = stainPrefab;
+        if (isServer)
+            RpcUseCake();
+        else
+            CmdUseCake();
+    }
+
     // COMMANDS HERE
 
     [Command]
@@ -139,12 +149,16 @@ public class PlayerObject : NetworkBehaviour
     [Command]
     void CmdUseCake()
     {
-
+        for ( int i = 0; i < 5; i++ )
+            Instantiate(stain, Vector3.zero, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
     }
 
     [ClientRpc]
     void RpcUseCake()
     {
-
+        if (isServer)
+            return;
+        for ( int i = 0; i < 5; i++ )
+            Instantiate(stain, Vector3.zero, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
     }
 }

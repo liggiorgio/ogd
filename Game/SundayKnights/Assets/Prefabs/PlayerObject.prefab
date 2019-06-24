@@ -77,4 +77,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a686f25afe0144e8d4affc2c08862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stain: {fileID: 4759709992329751919, guid: 3e214233f57609935bac218a209488ce, type: 3}
   score: 0
