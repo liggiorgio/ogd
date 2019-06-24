@@ -40,6 +40,7 @@ public class CardCake : MonoBehaviour
     {
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         GameObject.Find("local").GetComponent<PlayerObject>().PlayCake(stainPrefab);
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
         GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayCake();

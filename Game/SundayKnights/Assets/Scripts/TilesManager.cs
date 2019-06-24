@@ -42,12 +42,6 @@ public class TilesManager : MonoBehaviour
     [HideInInspector] public float speedMultiplier = 1;
     [HideInInspector] public int jellyMatches = 0;
 
-    // Enable/disable debug info
-    void Awake()
-    {
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {

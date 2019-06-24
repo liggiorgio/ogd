@@ -44,6 +44,7 @@ public class CardJuice : MonoBehaviour
     {
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         tilesManager.scoreMultiplier = 2;
         for ( int row = 0; row < Const.Rows; row++ )
         {
