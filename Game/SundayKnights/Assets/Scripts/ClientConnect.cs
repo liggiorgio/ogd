@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class ClientConnect : MonoBehaviour
 {
@@ -47,5 +48,6 @@ public class ClientConnect : MonoBehaviour
     public void DisconnectClient()
     {
         client.Disconnect();
+        SceneManager.LoadScene("MenuScene");
     }
 }
