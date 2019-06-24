@@ -14,13 +14,13 @@ public class ClientConnect : MonoBehaviour
     void Start()
     {
         manager = GetComponent<NetworkManager>();
+        if (!clientStarted)
+            RunClient();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!clientStarted)
-            RunClient();
     }
 
     public void RunClient()
@@ -29,12 +29,12 @@ public class ClientConnect : MonoBehaviour
         {
             client = new NetworkClient();
             manager.networkAddress = "192.168.1.147";
-            manager.networkPort = 1337;
+            manager.networkPort = 7777;
             client = manager.StartClient();
 
             clientStarted = true;
 
-            if(NetworkClient.active)
+            if(NetworkClient.active && client.isConnected)
                 Debug.Log("Cliente Startato");
         }
         else

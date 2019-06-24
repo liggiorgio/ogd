@@ -79,6 +79,7 @@ public class PlayerObject : NetworkBehaviour
 
     public void OnScoreChanged(int newScore)
     {
+        score = newScore;
         if (isLocalPlayer) // Update local player's score
         {
             ShowScore(newScore);
@@ -93,5 +94,21 @@ public class PlayerObject : NetworkBehaviour
     {
         base.OnStartLocalPlayer();
         gameObject.name = "local";
+    }
+
+    public void UpdateScore(int amount)
+    {
+        if (isServer)
+            score += amount;
+        else
+            CmdIncreaseScore(amount);
+    }
+
+    // COMMANDS HERE
+
+    [Command]
+    void CmdIncreaseScore(int amount)
+    {
+        score += amount;
     }
 }

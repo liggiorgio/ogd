@@ -350,7 +350,7 @@ public class TilesManager : MonoBehaviour
 
     private void IncreaseScore(int amount)
     {
-        player.score += amount;
+        player.UpdateScore(amount);
         //ShowScore(amount);
     }
 
