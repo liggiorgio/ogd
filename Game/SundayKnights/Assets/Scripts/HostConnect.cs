@@ -6,13 +6,13 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(NetworkManager))]
 public class HostConnect : MonoBehaviour
 {
-    private NetworkManager manager;
+    private NetManager manager;
     private bool hostStarted = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        manager = GetComponent<NetworkManager>();
+        manager = GetComponent<NetManager>();
         if (!hostStarted)
             RunHost();
     }
@@ -27,7 +27,7 @@ public class HostConnect : MonoBehaviour
         {
             manager.maxConnections = 2;
             manager.networkPort = 7777;
-            manager.networkAddress = "192.168.1.147";
+            manager.networkAddress = "192.168.1.42";
             manager.StartHost();
 
             hostStarted = true;
@@ -35,7 +35,6 @@ public class HostConnect : MonoBehaviour
             if(NetworkServer.active && NetworkClient.active)
                 Debug.Log("Server partito");
 
-            
         }
         else
         {

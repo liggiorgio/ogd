@@ -28,7 +28,7 @@ public class ClientConnect : MonoBehaviour
         if (!clientStarted)
         {
             client = new NetworkClient();
-            manager.networkAddress = "192.168.1.147";
+            manager.networkAddress = "192.168.1.42";
             manager.networkPort = 7777;
             client = manager.StartClient();
 

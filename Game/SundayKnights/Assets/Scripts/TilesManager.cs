@@ -56,7 +56,7 @@ public class TilesManager : MonoBehaviour
         //ScoreText.text = "0";
 
         // Setup game
-        StartCoroutine(StartGame());
+        //StartCoroutine(StartGame());
     }
 
     // Update is called once per frame
