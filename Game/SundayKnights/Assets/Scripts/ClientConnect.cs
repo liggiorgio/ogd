@@ -28,8 +28,8 @@ public class ClientConnect : MonoBehaviour
         if (!clientStarted)
         {
             client = new NetworkClient();
-            manager.networkAddress = "192.168.1.42";
-            manager.networkPort = 7777;
+            manager.networkAddress = Const.ipAddress;
+            manager.networkPort = Const.port;
             client = manager.StartClient();
 
             clientStarted = true;
@@ -42,5 +42,10 @@ public class ClientConnect : MonoBehaviour
             manager.StopClient();
             clientStarted = false;
         }
+    }
+
+    public void DisconnectClient()
+    {
+        client.Disconnect();
     }
 }

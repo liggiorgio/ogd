@@ -31,7 +31,10 @@ public class NetManager : NetworkManager
     public override void OnClientConnect(NetworkConnection conn)
     {
         base.OnClientConnect(conn);
-        GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
-        GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
+        if (NetworkClient.allClients.Count > 1)
+        {
+            GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
+            GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
+        }
     }
 }

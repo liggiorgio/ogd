@@ -19,6 +19,8 @@ public class HostConnect : MonoBehaviour
 
     void Update()
     {
+        //if (GameObject.Find("GameManager").GetComponent<GameManager>().finished)
+        //    EndGame();
     }
 
     public void RunHost()
@@ -26,8 +28,8 @@ public class HostConnect : MonoBehaviour
         if (!hostStarted)
         {
             manager.maxConnections = 2;
-            manager.networkPort = 7777;
-            manager.networkAddress = "192.168.1.42";
+            manager.networkPort = Const.port;
+            manager.networkAddress = Const.ipAddress;
             manager.StartHost();
 
             hostStarted = true;
@@ -41,5 +43,10 @@ public class HostConnect : MonoBehaviour
             manager.StopHost();
             hostStarted = false;
         }
+    }
+
+    public void EndGame()
+    {
+        manager.StopHost();
     }
 }

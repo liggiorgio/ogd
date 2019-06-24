@@ -33,4 +33,8 @@ public class Const
     public static readonly int MovesTextSize = 65;
     public static readonly int ComboTextSize = 135;
     public static readonly int CountdownTextSize = 220;
+
+    // Network
+    public static readonly string ipAddress = "192.168.137.181";
+    public static readonly int port = 7777;
 }

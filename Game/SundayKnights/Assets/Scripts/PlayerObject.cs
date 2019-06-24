@@ -111,4 +111,6 @@ public class PlayerObject : NetworkBehaviour
     {
         score += amount;
     }
+
+    //Use commands to activate flags to begin red card effects
 }
