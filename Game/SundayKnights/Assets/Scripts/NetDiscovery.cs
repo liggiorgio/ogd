@@ -17,7 +17,7 @@ public class NetDiscovery : NetworkDiscovery
         if (!discovered)
         {
             GetComponent<ClientConnect>().RunClient(fromAddress);
-            NetworkTransport.StopBroadcastDiscovery();
+            StopBroadcast();
             discovered = true;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class NetManager : NetworkManager
@@ -22,7 +23,9 @@ public class NetManager : NetworkManager
         base.OnServerReady(conn);
         if (NetworkServer.connections.Count > 1)
         {
-            NetworkTransport.StopBroadcastDiscovery();
+            GetComponent<NetDiscovery>().StopBroadcast();
+            GameObject.Find("LoadingText").GetComponent<Text>().text = "";
+            GameObject.Find("Black").transform.position = new Vector3(1500f, 0f, 0f);
             GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
             GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
         }
@@ -33,7 +36,9 @@ public class NetManager : NetworkManager
         base.OnClientConnect(conn);
         if (NetworkClient.allClients.Count > 1)
         {
-            NetworkTransport.StopBroadcastDiscovery();
+            GetComponent<NetDiscovery>().StopBroadcast();
+            GameObject.Find("LoadingText").GetComponent<Text>().text = "";
+            GameObject.Find("Black").transform.position = new Vector3(1500f, 0f, 0f);
             GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
             GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
         }

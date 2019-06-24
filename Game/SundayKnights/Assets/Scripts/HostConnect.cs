@@ -12,9 +12,9 @@ public class HostConnect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = GetComponent<NetManager>();
-        if (!hostStarted)
-            RunHost();
+        //manager = GetComponent<NetManager>();
+        //if (!hostStarted)
+        //    RunHost();
     }
 
     void Update()
@@ -27,6 +27,7 @@ public class HostConnect : MonoBehaviour
     {
         if (!hostStarted)
         {
+            manager = GetComponent<NetManager>();
             manager.maxConnections = 2;
             manager.networkPort = Const.port;
             manager.networkAddress = Const.ipAddress;
@@ -43,16 +44,14 @@ public class HostConnect : MonoBehaviour
         else
         {
             manager.StopHost();
-            NetworkTransport.Shutdown();
-            NetworkTransport.Init();
+            GetComponent<NetDiscovery>().StopBroadcast();
             hostStarted = false;
         }
     }
 
     public void EndGame()
     {
-        NetworkTransport.Shutdown();
-        NetworkTransport.Init();
+        GetComponent<NetDiscovery>().StopBroadcast();
         manager.StopHost();
     }
 }
