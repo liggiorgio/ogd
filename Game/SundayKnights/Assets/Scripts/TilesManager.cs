@@ -86,7 +86,7 @@ public class TilesManager : MonoBehaviour
                 var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.collider != null)   // we have another hit
                 {
-                    if (hit.collider.gameObject != hitGo)   // check allowed move
+                    if (hit.collider.gameObject != hitGo && hit.collider.gameObject.GetComponent<Tile>() != null)   // check allowed move
                     {
                         //user did a hit, no need to show him hints
                         StopCheckForPotentialMatches();
