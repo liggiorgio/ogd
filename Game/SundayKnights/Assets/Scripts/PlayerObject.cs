@@ -10,6 +10,7 @@ public class PlayerObject : NetworkBehaviour
 {
     private Text ScoreText;
     private Text oppoText;
+    public GameObject stain;
     [SyncVar(hook = "OnScoreChanged")]
      public int score = 0;
 
@@ -104,11 +105,60 @@ public class PlayerObject : NetworkBehaviour
             CmdIncreaseScore(amount);
     }
 
+    public void PlayJelly()
+    {
+        if (isServer)
+            RpcUseJelly();
+        else
+            CmdUseJelly();
+    }
+
+    public void PlayCake(GameObject stainPrefab)
+    {
+        //stain = stainPrefab;
+        if (isServer)
+            RpcUseCake();
+        else
+            CmdUseCake();
+    }
+
     // COMMANDS HERE
 
     [Command]
     void CmdIncreaseScore(int amount)
     {
         score += amount;
+    }
+
+    [Command]
+    void CmdUseJelly()
+    {
+        GameObject.Find("TilesManager").GetComponent<TilesManager>().speedMultiplier = .2f;
+        GameObject.Find("Jelly").transform.position = new Vector3(0f, 0f, 1f);
+    }
+
+    [ClientRpc]
+    void RpcUseJelly()
+    {
+        if (isServer)
+            return;
+        GameObject.Find("TilesManager").GetComponent<TilesManager>().speedMultiplier = .2f;
+        GameObject.Find("Jelly").transform.position = new Vector3(0f, 0f, 1f);
+    }
+
+    [Command]
+    void CmdUseCake()
+    {
+        for ( int i = 0; i < 5; i++ )
+            Instantiate(stain, Vector3.zero, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+    }
+
+    [ClientRpc]
+    void RpcUseCake()
+    {
+        if (isServer)
+            return;
+        for ( int i = 0; i < 5; i++ )
+            Instantiate(stain, Vector3.zero, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
     }
 }

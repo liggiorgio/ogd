@@ -40,10 +40,12 @@ public class CardCake : MonoBehaviour
     {
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        GameObject.Find("local").GetComponent<PlayerObject>().PlayCake(stainPrefab);
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
         GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayCake();
-        for ( int i = 0; i < 5; i++ )
-            Instantiate(stainPrefab, Vector3.zero, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+        //for ( int i = 0; i < 5; i++ )
+        //    Instantiate(stainPrefab, Vector3.zero, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
         yield return new WaitForSeconds(Const.AnimationDuration);
         tilesManager.state = GameState.None;
         consumed = true;

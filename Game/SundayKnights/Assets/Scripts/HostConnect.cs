@@ -12,22 +12,25 @@ public class HostConnect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = GetComponent<NetManager>();
-        if (!hostStarted)
-            RunHost();
+        //manager = GetComponent<NetManager>();
+        //if (!hostStarted)
+        //    RunHost();
     }
 
     void Update()
     {
+        //if (GameObject.Find("GameManager").GetComponent<GameManager>().finished)
+        //    EndGame();
     }
 
     public void RunHost()
     {
         if (!hostStarted)
         {
+            manager = GetComponent<NetManager>();
             manager.maxConnections = 2;
-            manager.networkPort = 7777;
-            manager.networkAddress = "192.168.1.42";
+            manager.networkPort = Const.port;
+            manager.networkAddress = Const.ipAddress;
             manager.StartHost();
 
             hostStarted = true;
@@ -35,11 +38,20 @@ public class HostConnect : MonoBehaviour
             if(NetworkServer.active && NetworkClient.active)
                 Debug.Log("Server partito");
 
+            if ( GetComponent<NetDiscovery>().Initialize() )
+                GetComponent<NetDiscovery>().StartAsServer();
         }
         else
         {
             manager.StopHost();
+            GetComponent<NetDiscovery>().StopBroadcast();
             hostStarted = false;
         }
+    }
+
+    public void EndGame()
+    {
+        GetComponent<NetDiscovery>().StopBroadcast();
+        manager.StopHost();
     }
 }

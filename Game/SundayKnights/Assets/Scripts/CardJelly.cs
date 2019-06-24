@@ -40,8 +40,10 @@ public class CardJelly : MonoBehaviour
     {
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
-		tilesManager.speedMultiplier = .2f;
-		jellyBox.transform.position = new Vector3(0f, 0f, 1f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //tilesManager.speedMultiplier = .2f;
+        //jellyBox.transform.position = new Vector3(0f, 0f, 1f);
+        GameObject.Find("local").GetComponent<PlayerObject>().PlayJelly();
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
 		GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayJelly();
         yield return new WaitForSeconds(Const.AnimationDuration);

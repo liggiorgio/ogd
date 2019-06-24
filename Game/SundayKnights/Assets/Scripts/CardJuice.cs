@@ -44,6 +44,7 @@ public class CardJuice : MonoBehaviour
     {
         tilesManager.hitGo = null;
         tilesManager.state = GameState.Animating;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         tilesManager.scoreMultiplier = 2;
         for ( int row = 0; row < Const.Rows; row++ )
         {
@@ -65,13 +66,6 @@ public class CardJuice : MonoBehaviour
         transform.positionTo(2 * Const.AnimationDuration, transform.position + new Vector3(0f, -4f, 0f));
         tilesManager.scoreMultiplier = 1;
         TimerText.text = "";
-        for ( int row = 0; row < Const.Rows; row++ )
-        {
-            for ( int column = 0; column < Const.Columns; column++ )
-            {
-                tilesManager.tiles[row, column].GetComponent<Tile>().StopShine();
-            }
-        }
         consumed = true;
     }
 }
