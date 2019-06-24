@@ -73,13 +73,6 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public void StopShine()
-    {
-        if (ShineEffect != null)
-            StopCoroutine(ShineEffect);
-        transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-    }
-
     private IEnumerator DoShine(float delay)
     {
         float alpha = 0f;
