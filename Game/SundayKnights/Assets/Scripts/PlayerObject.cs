@@ -104,6 +104,11 @@ public class PlayerObject : NetworkBehaviour
             CmdIncreaseScore(amount);
     }
 
+    public void PlayJelly()
+    {
+        CmdUseJelly();
+    }
+
     // COMMANDS HERE
 
     [Command]
@@ -112,5 +117,16 @@ public class PlayerObject : NetworkBehaviour
         score += amount;
     }
 
-    //Use commands to activate flags to begin red card effects
+    [Command]
+    void CmdUseJelly()
+    {
+        GameObject.Find("TilesManager").GetComponent<TilesManager>().speedMultiplier = .2f;
+        GameObject.Find("Jelly").transform.position = new Vector3(0f, 0f, 1f);
+    }
+
+    [Command]
+    void CmdUseCake()
+    {
+        
+    }
 }
