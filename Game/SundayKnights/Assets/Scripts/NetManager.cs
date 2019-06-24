@@ -8,13 +8,13 @@ public class NetManager : NetworkManager
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public override void OnServerReady(NetworkConnection conn)
@@ -22,10 +22,10 @@ public class NetManager : NetworkManager
         base.OnServerReady(conn);
         if (NetworkServer.connections.Count > 1)
         {
+            NetworkTransport.StopBroadcastDiscovery();
             GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
             GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
         }
-        
     }
 
     public override void OnClientConnect(NetworkConnection conn)
@@ -33,6 +33,7 @@ public class NetManager : NetworkManager
         base.OnClientConnect(conn);
         if (NetworkClient.allClients.Count > 1)
         {
+            NetworkTransport.StopBroadcastDiscovery();
             GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
             GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
         }

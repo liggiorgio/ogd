@@ -35,6 +35,6 @@ public class Const
     public static readonly int CountdownTextSize = 220;
 
     // Network
-    public static readonly string ipAddress = "192.168.137.181";
+    public static readonly string ipAddress = "localhost";
     public static readonly int port = 7777;
 }

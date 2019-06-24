@@ -15,8 +15,10 @@ public class ClientConnect : MonoBehaviour
     void Start()
     {
         manager = GetComponent<NetworkManager>();
-        if (!clientStarted)
-            RunClient();
+        if ( GetComponent<NetDiscovery>().Initialize() )
+            GetComponent<NetDiscovery>().StartAsClient();
+        //if (!clientStarted)
+        //    RunClient();
     }
 
     // Update is called once per frame
@@ -24,12 +26,12 @@ public class ClientConnect : MonoBehaviour
     {
     }
 
-    public void RunClient()
+    public void RunClient(string addr)
     {
         if (!clientStarted)
         {
             client = new NetworkClient();
-            manager.networkAddress = Const.ipAddress;
+            manager.networkAddress = addr;
             manager.networkPort = Const.port;
             client = manager.StartClient();
 
@@ -41,6 +43,8 @@ public class ClientConnect : MonoBehaviour
         else
         {
             manager.StopClient();
+            NetworkTransport.Shutdown();
+            NetworkTransport.Init();
             clientStarted = false;
         }
     }
@@ -48,6 +52,8 @@ public class ClientConnect : MonoBehaviour
     public void DisconnectClient()
     {
         client.Disconnect();
+        NetworkTransport.Shutdown();
+        NetworkTransport.Init();
         SceneManager.LoadScene("MenuScene");
     }
 }

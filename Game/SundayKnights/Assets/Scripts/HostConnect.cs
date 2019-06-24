@@ -37,16 +37,22 @@ public class HostConnect : MonoBehaviour
             if(NetworkServer.active && NetworkClient.active)
                 Debug.Log("Server partito");
 
+            if ( GetComponent<NetDiscovery>().Initialize() )
+                GetComponent<NetDiscovery>().StartAsServer();
         }
         else
         {
             manager.StopHost();
+            NetworkTransport.Shutdown();
+            NetworkTransport.Init();
             hostStarted = false;
         }
     }
 
     public void EndGame()
     {
+        NetworkTransport.Shutdown();
+        NetworkTransport.Init();
         manager.StopHost();
     }
 }
