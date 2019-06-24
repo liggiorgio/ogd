@@ -106,7 +106,10 @@ public class PlayerObject : NetworkBehaviour
 
     public void PlayJelly()
     {
-        CmdUseJelly();
+        if (isServer)
+            RpcUseJelly();
+        else
+            CmdUseJelly();
     }
 
     // COMMANDS HERE
@@ -124,9 +127,24 @@ public class PlayerObject : NetworkBehaviour
         GameObject.Find("Jelly").transform.position = new Vector3(0f, 0f, 1f);
     }
 
+    [ClientRpc]
+    void RpcUseJelly()
+    {
+        if (isServer)
+            return;
+        GameObject.Find("TilesManager").GetComponent<TilesManager>().speedMultiplier = .2f;
+        GameObject.Find("Jelly").transform.position = new Vector3(0f, 0f, 1f);
+    }
+
     [Command]
     void CmdUseCake()
     {
-        
+
+    }
+
+    [ClientRpc]
+    void RpcUseCake()
+    {
+
     }
 }
