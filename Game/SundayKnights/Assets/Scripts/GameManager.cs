@@ -90,10 +90,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
         }
         yield return new WaitForSeconds(3f);
-        if(GameObject.Find("local").GetComponent<PlayerObject>().isServer)
-            GameObject.Find("NetworkManager").GetComponent<HostConnect>().EndGame();
-        else
-            GameObject.Find("NetworkManager").GetComponent<ClientConnect>().DisconnectClient();
+        GameObject.Find("NetworkManager").GetComponent<NetManager>().QuitGame();
     }
 
     IEnumerator StartCountdown()

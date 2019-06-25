@@ -46,4 +46,12 @@ public class NetManager : NetworkManager
             GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
         }
     }
+
+    public void QuitGame()
+    {
+        if (GetComponent<HostConnect>().enabled)
+            GetComponent<HostConnect>().EndGame();
+        else if (GetComponent<ClientConnect>().enabled)
+            GetComponent<ClientConnect>().DisconnectClient();
+    }
 }
