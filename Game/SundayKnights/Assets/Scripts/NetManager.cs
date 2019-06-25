@@ -26,7 +26,7 @@ public class NetManager : NetworkManager
         {
             Debug.Log("Henlo 1");
             GameObject.Find("LoadingText").GetComponent<Text>().text = "";
-            GameObject.Find("Black").transform.position = new Vector3(1500f, 0f, 0f);
+            GameObject.Find("Black").SetActive(false);
             GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
             GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
         }
@@ -41,7 +41,7 @@ public class NetManager : NetworkManager
             Debug.Log("Henlo 2");
             GetComponent<NetDiscovery>().StopBroadcast();
             GameObject.Find("LoadingText").GetComponent<Text>().text = "";
-            GameObject.Find("Black").transform.position = new Vector3(1500f, 0f, 0f);
+            GameObject.Find("Black").SetActive(false);
             GameObject.Find("TilesManager").GetComponent<TilesManager>().StartCoroutine("StartGame");
             GameObject.Find("GameManager").GetComponent<GameManager>().StartCoroutine("StartCountdown");
         }
