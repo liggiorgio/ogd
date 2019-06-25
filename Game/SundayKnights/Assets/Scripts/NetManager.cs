@@ -47,6 +47,22 @@ public class NetManager : NetworkManager
         }
     }
 
+    public override void OnClientDisconnect(NetworkConnection conn)
+    {
+        base.OnClientDisconnect(conn);
+        Debug.Log("Henlo 2");
+        StartCoroutine(EarlyQuit());
+    }
+
+    IEnumerator EarlyQuit()
+    {
+        GetComponent<NetDiscovery>().StopBroadcast();
+        GameObject.Find("LoadingText").GetComponent<Text>().text = "Disconnected from\nthe game";
+        GameObject.Find("Black").SetActive(true);
+        yield return new WaitForSeconds(3f);
+        QuitGame();
+    }
+
     public void QuitGame()
     {
         if (GetComponent<HostConnect>().enabled)
