@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NetworkManager))]
 public class HostConnect : MonoBehaviour
@@ -40,18 +41,24 @@ public class HostConnect : MonoBehaviour
 
             if ( GetComponent<NetDiscovery>().Initialize() )
                 GetComponent<NetDiscovery>().StartAsServer();
+            else
+                Debug.Log("Not broadcasting :(");
         }
         else
         {
             manager.StopHost();
-            GetComponent<NetDiscovery>().StopBroadcast();
+            NetworkTransport.Shutdown();
+            NetworkTransport.Init();
             hostStarted = false;
         }
     }
 
     public void EndGame()
     {
-        GetComponent<NetDiscovery>().StopBroadcast();
         manager.StopHost();
+        GameObject.Destroy(GameObject.Find("NetworkManager"));
+        NetworkTransport.Shutdown();
+        NetworkTransport.Init();
+        SceneManager.LoadScene("MenuScene");
     }
 }

@@ -15,6 +15,7 @@ public class ClientConnect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CreateClient();
         manager = GetComponent<NetworkManager>();
         if ( GetComponent<NetDiscovery>().Initialize() )
             GetComponent<NetDiscovery>().StartAsClient();
@@ -29,12 +30,16 @@ public class ClientConnect : MonoBehaviour
     {
     }
 
+    public void CreateClient()
+    {
+        //client = new NetworkClient();
+    }
+
     public void RunClient(string addr)
     {
         StopCoroutine(TimeoutRoutine);
         if (!clientStarted)
         {
-            client = new NetworkClient();
             manager.networkAddress = addr;
             manager.networkPort = Const.port;
             client = manager.StartClient();
@@ -43,11 +48,15 @@ public class ClientConnect : MonoBehaviour
 
             if(NetworkClient.active && client.isConnected)
                 Debug.Log("Cliente Startato");
+            else
+                Debug.Log("Cliente non Startato");
         }
         else
         {
             manager.StopClient();
-            GetComponent<NetDiscovery>().StopBroadcast();
+            Debug.Log("Client fermato");
+            NetworkTransport.Shutdown();
+            NetworkTransport.Init();
             clientStarted = false;
         }
     }
@@ -55,7 +64,9 @@ public class ClientConnect : MonoBehaviour
     public void DisconnectClient()
     {
         client.Disconnect();
-        GetComponent<NetDiscovery>().StopBroadcast();
+        GameObject.Destroy(GameObject.Find("NetworkManager"));
+        NetworkTransport.Shutdown();
+        NetworkTransport.Init();
         SceneManager.LoadScene("MenuScene");
     }
 
@@ -65,9 +76,6 @@ public class ClientConnect : MonoBehaviour
         Debug.Log("Searching for games...");
         yield return new WaitForSeconds(5f);
         Debug.Log("Becoming host!");
-        //manager.StopClient();
-        //NetworkTransport.Shutdown();
-        //NetworkTransport.Init();
         GameObject.Find("LoadingText").GetComponent<Text>().text = "Waiting for\nopponents...";
         GetComponent<NetDiscovery>().StopBroadcast();
         this.enabled = false;

@@ -75,7 +75,6 @@ public class GameManager : MonoBehaviour
             CountdownText.color = new Color(.145098f, .5254902f, .827451f);
             StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
             GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayEndMusic(true);
-            yield return new WaitForSeconds(2f);
         }
         else if ( myscore < opposcore)
         {
@@ -83,15 +82,14 @@ public class GameManager : MonoBehaviour
             CountdownText.color = new Color(.8039216f, .1607843f, .254902f);
             StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
             GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayEndMusic(false);
-            yield return new WaitForSeconds(2f);
         }
         else
         {
             CountdownText.text = "Game tied!";
             CountdownText.color = new Color(1f, 1f, 0f);
             StartCoroutine(FlashText(CountdownText, Const.ComboTextSize));
-            yield return new WaitForSeconds(2f);
         }
+        yield return new WaitForSeconds(3f);
         if(GameObject.Find("local").GetComponent<PlayerObject>().isServer)
             GameObject.Find("NetworkManager").GetComponent<HostConnect>().EndGame();
         else
