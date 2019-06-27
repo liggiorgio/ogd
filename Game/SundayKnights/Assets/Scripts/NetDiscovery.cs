@@ -9,7 +9,7 @@ public class NetDiscovery : NetworkDiscovery
     // Start is called before the first frame update
     void Start()
     {
-
+        GetComponent<ClientConnect>().RunClient("192.168.137.164");
     }
 
     public override void OnReceivedBroadcast(string fromAddress, string data)

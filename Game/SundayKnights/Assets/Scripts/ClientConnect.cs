@@ -19,8 +19,8 @@ public class ClientConnect : MonoBehaviour
         manager = GetComponent<NetworkManager>();
         if ( GetComponent<NetDiscovery>().Initialize() )
             GetComponent<NetDiscovery>().StartAsClient();
-        TimeoutRoutine = BroadcastTimeout();
-        StartCoroutine(TimeoutRoutine);
+        //TimeoutRoutine = BroadcastTimeout();
+        //StartCoroutine(TimeoutRoutine);
         //if (!clientStarted)
         //    RunClient();
     }
@@ -37,7 +37,7 @@ public class ClientConnect : MonoBehaviour
 
     public void RunClient(string addr)
     {
-        StopCoroutine(TimeoutRoutine);
+        //StopCoroutine(TimeoutRoutine);
         if (!clientStarted)
         {
             manager.networkAddress = addr;
@@ -64,7 +64,7 @@ public class ClientConnect : MonoBehaviour
     public void DisconnectClient()
     {
         client.Disconnect();
-        GameObject.Destroy(GameObject.Find("NetworkManager"));
+        //GameObject.Destroy(GameObject.Find("NetworkManager"));
         NetworkTransport.Shutdown();
         NetworkTransport.Init();
         SceneManager.LoadScene("MenuScene");

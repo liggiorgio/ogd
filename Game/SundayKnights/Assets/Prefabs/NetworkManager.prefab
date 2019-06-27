@@ -49,11 +49,11 @@ MonoBehaviour:
   m_BroadcastPort: 47777
   m_BroadcastKey: 2222
   m_BroadcastVersion: 1
-  m_BroadcastSubVersion: 1
-  m_BroadcastInterval: 500
+  m_BroadcastSubVersion: 2
+  m_BroadcastInterval: 1000
   m_UseNetworkManager: 0
   m_BroadcastData: HELLO
-  m_ShowGUI: 0
+  m_ShowGUI: 1
   m_OffsetX: 0
   m_OffsetY: 0
 --- !u!114 &5182594757074446939
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_DontDestroyOnLoad: 0
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
-  m_MaxDelay: 0.01
+  m_MaxDelay: 1
   m_LogLevel: 2
   m_PlayerPrefab: {fileID: 7983365587004242841, guid: 7bf6a569ef38ac940903b540d009f845,
     type: 3}
@@ -84,16 +84,16 @@ MonoBehaviour:
   m_OfflineScene: 
   m_OnlineScene: 
   m_SpawnPrefabs: []
-  m_CustomConfig: 0
+  m_CustomConfig: 1
   m_MaxConnections: 2
   m_ConnectionConfig:
     m_PacketSize: 1440
     m_FragmentSize: 500
     m_ResendTimeout: 1200
-    m_DisconnectTimeout: 2000
+    m_DisconnectTimeout: 5000
     m_ConnectTimeout: 2000
     m_MinUpdateTimeout: 10
-    m_PingTimeout: 500
+    m_PingTimeout: 5000
     m_ReducedPingTimeout: 100
     m_AllCostTimeout: 20
     m_NetworkDropThreshold: 5
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_MatchHost: mm.unet.unity3d.com
   m_MatchPort: 443
   matchName: default
-  matchSize: 4
+  matchSize: 2
   isNetworkActive: 0
   matchMaker: {fileID: 0}
 --- !u!114 &5182594757074446938
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5182594757074446936}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cc4c258514ed304aa4843bee36538ad, type: 3}
   m_Name: 
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5182594757074446936}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 637361e3d67e04b49ba6da7e8217137a, type: 3}
   m_Name: 

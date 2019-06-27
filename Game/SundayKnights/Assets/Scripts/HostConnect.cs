@@ -13,9 +13,9 @@ public class HostConnect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //manager = GetComponent<NetManager>();
+        manager = GetComponent<NetManager>();
         //if (!hostStarted)
-        //    RunHost();
+            RunHost();
     }
 
     void Update()
@@ -28,7 +28,7 @@ public class HostConnect : MonoBehaviour
     {
         if (!hostStarted)
         {
-            manager = GetComponent<NetManager>();
+            //manager = GetComponent<NetManager>();
             manager.maxConnections = 2;
             manager.networkPort = Const.port;
             manager.networkAddress = Const.ipAddress;
@@ -56,7 +56,7 @@ public class HostConnect : MonoBehaviour
     public void EndGame()
     {
         manager.StopHost();
-        GameObject.Destroy(GameObject.Find("NetworkManager"));
+        //GameObject.Destroy(GameObject.Find("NetworkManager"));
         NetworkTransport.Shutdown();
         NetworkTransport.Init();
         SceneManager.LoadScene("MenuScene");
